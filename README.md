@@ -4,7 +4,7 @@ MAIM Academy is the practical learning and implementation expression of MAIM / M
 
 ## Current status
 
-Foundation documentation only. No production vector logo, approved font files, imported parent brand export, or release ZIP has been added. Documentation does not constitute approval of new artwork.
+Logo package v0.1 is available for review: [comparison sheet](logos/review/maim-academy_logo-comparison-sheet_v0.1.pdf), [package notes](logos/review/PACKAGE_NOTES.md), and [independent intake findings](handoffs/LOGO_PACKAGE_V0.1_REVIEW.md). The register has 69 in_review assets and one reference source. Artwork approval, approved fonts, the actual MAIM 00 export, and a final release ZIP remain pending.
 
 ## Start here
 
