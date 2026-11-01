@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>body{margin:0;background:#050505;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <section data-label="Title" data-screen-label="01 Title" data-speaker-notes="Welcome everyone. Session number, title and date are editable fields." style="background:#050505;color:#F7F4EA;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px;padding:120px;font-family:'Archivo',sans-serif">
+    <img src="../logos/approved/png/maim-academy_crest_metallic-presentation_transparent_512px_v0.1.png" alt="MAIM Academy crest" style="width:380px;height:380px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:28px;letter-spacing:.24em;color:#D8AF55">SESSION {{ sessionNumber }}</div>
+    <div style="font-size:96px;font-weight:900;line-height:1;letter-spacing:-.02em;text-align:center">{{ sessionTitle }}</div>
+    <div style="display:flex;width:144px;height:4px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#006BB6"></div></div>
+    <div style="font-size:30px;color:#A8A49A">{{ cohortName }} · {{ sessionDate }}</div>
+  </section>
+
+  <section data-label="Agenda" data-screen-label="02 Agenda" data-speaker-notes="Walk through the plan and times." style="background:#050505;color:#F7F4EA;padding:120px 140px;display:flex;flex-direction:column;gap:56px;font-family:'Archivo',sans-serif">
+    <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:.22em;color:#D8AF55">TODAY</div><img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="" style="width:64px;height:64px"></div>
+    <div style="display:flex;flex-direction:column;border-top:1px solid #2A2A2A">
+      <div style="display:grid;grid-template-columns:180px 1fr 200px;padding:34px 0;border-bottom:1px solid #2A2A2A;font-size:44px;align-items:baseline"><span style="font-family:'JetBrains Mono',monospace;color:#D8AF55;font-size:32px">01</span><span style="font-weight:700">Check-in and last week</span><span style="color:#A8A49A;font-size:32px;text-align:right">10 min</span></div>
+      <div style="display:grid;grid-template-columns:180px 1fr 200px;padding:34px 0;border-bottom:1px solid #2A2A2A;font-size:44px;align-items:baseline"><span style="font-family:'JetBrains Mono',monospace;color:#D8AF55;font-size:32px">02</span><span style="font-weight:700">Key idea and method</span><span style="color:#A8A49A;font-size:32px;text-align:right">15 min</span></div>
+      <div style="display:grid;grid-template-columns:180px 1fr 200px;padding:34px 0;border-bottom:1px solid #2A2A2A;font-size:44px;align-items:baseline"><span style="font-family:'JetBrains Mono',monospace;color:#D8AF55;font-size:32px">03</span><span style="font-weight:700">Worked example</span><span style="color:#A8A49A;font-size:32px;text-align:right">10 min</span></div>
+      <div style="display:grid;grid-template-columns:180px 1fr 200px;padding:34px 0;border-bottom:1px solid #2A2A2A;font-size:44px;align-items:baseline"><span style="font-family:'JetBrains Mono',monospace;color:#D8AF55;font-size:32px">04</span><span style="font-weight:700">Work time</span><span style="color:#A8A49A;font-size:32px;text-align:right">15 min</span></div>
+      <div style="display:grid;grid-template-columns:180px 1fr 200px;padding:34px 0;border-bottom:1px solid #2A2A2A;font-size:44px;align-items:baseline"><span style="font-family:'JetBrains Mono',monospace;color:#D8AF55;font-size:32px">05</span><span style="font-weight:700">Assignment and close</span><span style="color:#A8A49A;font-size:32px;text-align:right">10 min</span></div>
+    </div>
+  </section>
+
+  <section data-label="Check-in" data-screen-label="03 Check-in" data-speaker-notes="Two or three people share what they submitted." style="background:#050505;color:#F7F4EA;padding:120px 140px;display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center;font-family:'Archivo',sans-serif">
+    <div style="display:flex;flex-direction:column;gap:32px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:.22em;color:#D8AF55">CHECK-IN</div>
+      <div style="font-size:80px;font-weight:900;line-height:1.05;letter-spacing:-.02em">What did you build since last session?</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="background:#141414;border-top:4px solid #1F7A3A;padding:36px 40px;font-size:36px;line-height:1.4">One thing you finished</div>
+      <div style="background:#141414;border-top:4px solid #F58426;padding:36px 40px;font-size:36px;line-height:1.4">One place you got stuck</div>
+      <div style="background:#141414;border-top:4px solid #006BB6;padding:36px 40px;font-size:36px;line-height:1.4">One question for today</div>
+    </div>
+  </section>
+
+  <section data-label="Section header" data-screen-label="04 Section" data-speaker-notes="Section divider." style="background:#F7F4EA;color:#050505;padding:140px;display:flex;flex-direction:column;justify-content:flex-end;gap:36px;font-family:'Archivo',sans-serif">
+    <div style="display:flex;width:192px;height:6px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#006BB6"></div></div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:32px;letter-spacing:.22em;color:#5A574F">OPENING SEQUENCE · 2 OF 6</div>
+    <div style="font-size:140px;font-weight:900;line-height:.95;letter-spacing:-.03em">D is for Design</div>
+  </section>
+
+  <section data-label="Key idea" data-screen-label="05 Key idea" data-speaker-notes="Pause after reading. Let it land." style="background:#050505;color:#F7F4EA;padding:140px 180px;display:flex;flex-direction:column;justify-content:center;gap:48px;font-family:'Archivo',sans-serif">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:.22em;color:#D8AF55">KEY IDEA</div>
+    <div style="font-size:104px;font-weight:900;line-height:1.08;letter-spacing:-.02em;text-wrap:balance">Design the result <span style="color:#D8AF55">before you build the tool.</span></div>
+  </section>
+
+  <section data-label="Method" data-screen-label="06 Method" data-speaker-notes="Four steps. Each one is a line on the workbook." style="background:#050505;color:#F7F4EA;padding:120px 140px;display:flex;flex-direction:column;gap:72px;font-family:'Archivo',sans-serif">
+    <div style="display:flex;flex-direction:column;gap:20px"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:.22em;color:#D8AF55">METHOD</div><div style="font-size:72px;font-weight:900;letter-spacing:-.02em">Four parts of a journey map</div></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:28px;flex:1">
+      <div style="border-top:4px solid #D8AF55;padding-top:32px;display:flex;flex-direction:column;gap:20px"><div style="font-family:'JetBrains Mono',monospace;font-size:36px;color:#D8AF55">01</div><div style="font-size:44px;font-weight:700;line-height:1.15">User</div><div style="font-size:28px;line-height:1.45;color:#A8A49A">Who it is for.</div></div>
+      <div style="border-top:4px solid #D8AF55;padding-top:32px;display:flex;flex-direction:column;gap:20px"><div style="font-family:'JetBrains Mono',monospace;font-size:36px;color:#D8AF55">02</div><div style="font-size:44px;font-weight:700;line-height:1.15">Steps</div><div style="font-size:28px;line-height:1.45;color:#A8A49A">What they do today, start to finish.</div></div>
+      <div style="border-top:4px solid #D8AF55;padding-top:32px;display:flex;flex-direction:column;gap:20px"><div style="font-family:'JetBrains Mono',monospace;font-size:36px;color:#D8AF55">03</div><div style="font-size:44px;font-weight:700;line-height:1.15">Result</div><div style="font-size:28px;line-height:1.45;color:#A8A49A">What they walk away with.</div></div>
+      <div style="border-top:4px solid #D8AF55;padding-top:32px;display:flex;flex-direction:column;gap:20px"><div style="font-family:'JetBrains Mono',monospace;font-size:36px;color:#D8AF55">04</div><div style="font-size:44px;font-weight:700;line-height:1.15">AI moments</div><div style="font-size:28px;line-height:1.45;color:#A8A49A">Where AI saves time or improves the result.</div></div>
+    </div>
+  </section>
+
+  <section data-label="Example" data-screen-label="07 Example" data-speaker-notes="Drop in a screenshot or demo of a real checklist." style="background:#050505;color:#F7F4EA;padding:100px 140px;display:grid;grid-template-columns:1fr 2fr;gap:72px;align-items:center;font-family:'Archivo',sans-serif">
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:.22em;color:#D8AF55">WORKED EXAMPLE</div>
+      <div style="font-size:64px;font-weight:900;line-height:1.08;letter-spacing:-.02em">{{ exampleTitle }}</div>
+      <div style="font-size:30px;line-height:1.5;color:#A8A49A">{{ exampleNote }}</div>
+    </div>
+    <div style="height:760px;border:2px dashed #A8A49A;background:#141414;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:28px;color:#A8A49A">Screenshot or demo · 16:10</div>
+  </section>
+
+  <section data-label="Work time" data-screen-label="08 Work time" data-speaker-notes="Start a timer. Stay on this slide." style="background:#050505;color:#F7F4EA;padding:120px 140px;display:grid;grid-template-columns:1.1fr 1fr;gap:96px;align-items:center;font-family:'Archivo',sans-serif">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:.22em;color:#D8AF55">WORK TIME</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:260px;font-weight:700;line-height:1;color:#D8AF55;letter-spacing:-.04em">{{ workMinutes }}:00</div>
+      <div style="font-size:32px;color:#A8A49A">Cameras optional. Ask in chat if stuck.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;border-top:1px solid #D8AF55">
+      <div style="display:grid;grid-template-columns:80px 1fr;padding:30px 0;border-bottom:1px solid #D8AF55;font-size:38px;line-height:1.3"><b>01</b><span>Name one user and their result</span></div>
+      <div style="display:grid;grid-template-columns:80px 1fr;padding:30px 0;border-bottom:1px solid #D8AF55;font-size:38px;line-height:1.3"><b>02</b><span>List the steps they take today</span></div>
+      <div style="display:grid;grid-template-columns:80px 1fr;padding:30px 0;border-bottom:1px solid #D8AF55;font-size:38px;line-height:1.3"><b>03</b><span>Mark where AI could help</span></div>
+    </div>
+  </section>
+
+  <section data-label="Assignment" data-screen-label="09 Assignment" data-speaker-notes="Due date is an editable field." style="background:#F7F4EA;color:#050505;padding:120px 140px;display:flex;flex-direction:column;justify-content:center;gap:48px;font-family:'Archivo',sans-serif">
+    <div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-family:'JetBrains Mono',monospace;font-size:28px;letter-spacing:.22em;font-weight:700">ASSIGNMENT {{ assignmentId }}</div><div style="font-size:36px;font-weight:700;color:#050505;border-bottom:4px solid #F58426;padding-bottom:6px">Due {{ dueDate }}</div></div>
+    <div style="font-size:112px;font-weight:900;line-height:1;letter-spacing:-.025em">Submit your journey map</div>
+    <div style="font-size:36px;line-height:1.5;color:#5A574F;max-width:1300px">Your journey map with the user, steps and result marked. Upload it on the lesson page.</div>
+  </section>
+
+  <section data-label="Close" data-screen-label="10 Close" data-speaker-notes="Questions, then walk the weekly rhythm and next session." style="background:#050505;color:#F7F4EA;padding:120px 140px;display:flex;flex-direction:column;justify-content:space-between;font-family:'Archivo',sans-serif">
+    <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:.22em;color:#D8AF55">NEXT SESSION</div><img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="" style="width:72px;height:72px"></div>
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <div style="font-size:120px;font-weight:900;line-height:1;letter-spacing:-.025em">{{ nextTitle }}</div>
+      <div style="font-size:40px;color:#A8A49A">{{ nextSession }}</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px"><div style="border-top:4px solid #D8AF55;padding-top:12px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#D8AF55">SUN</span><span style="font-size:26px;font-weight:700">Live</span></div><div style="border-top:4px solid #2A2A2A;padding-top:12px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#A8A49A">MON</span><span style="font-size:26px;font-weight:700">Lesson</span></div><div style="border-top:4px solid #2A2A2A;padding-top:12px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#A8A49A">TUE</span><span style="font-size:26px;font-weight:700">Build</span></div><div style="border-top:4px solid #2A2A2A;padding-top:12px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#A8A49A">WED</span><span style="font-size:26px;font-weight:700">Office hours</span></div><div style="border-top:4px solid #2A2A2A;padding-top:12px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#A8A49A">THU</span><span style="font-size:26px;font-weight:700">Accountability</span></div><div style="border-top:4px solid #1F7A3A;padding-top:12px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#A8A49A">FRI</span><span style="font-size:26px;font-weight:700">Wins</span></div><div style="border-top:4px solid #2A2A2A;padding-top:12px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#A8A49A">SAT</span><span style="font-size:26px;font-weight:700">Prep</span></div></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #D8AF55;padding-top:32px"><span style="font-size:28px;color:#A8A49A">MAIM Academy · {{ cohortName }}</span><span style="font-size:28px;color:#D8AF55">majoraimindset.com</span></div>
+  </section>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;sessionNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[00]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;sessionTitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;D is for Design&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;cohortName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Cohort name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;sessionDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Session date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;workMinutes&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:15,&quot;min&quot;:5,&quot;max&quot;:60,&quot;step&quot;:5,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;assignmentId&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;D&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Assignment&quot;},&quot;dueDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[due date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Assignment&quot;},&quot;nextTitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;P is for Prototype&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Next&quot;},&quot;nextSession&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Next session date · time]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Next&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return {
+      sessionNumber: p.sessionNumber ?? '[00]',
+      sessionTitle: p.sessionTitle ?? 'D is for Design',
+      cohortName: p.cohortName ?? '[Cohort name]',
+      sessionDate: p.sessionDate ?? '[Session date]',
+      exampleTitle: p.exampleTitle ?? 'Designing a client onboarding journey',
+      exampleNote: p.exampleNote ?? '[One line on what the example shows]',
+      workMinutes: p.workMinutes ?? 15,
+      assignmentId: p.assignmentId ?? 'D',
+      dueDate: p.dueDate ?? '[due date]',
+      nextTitle: p.nextTitle ?? 'P is for Prototype',
+      nextSession: p.nextSession ?? '[Next session date · time]'
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>body{margin:0;background:#050505;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
+</helmet>
+<div data-screen-label="Offer card set" style="padding:72px;display:flex;flex-direction:column;gap:56px;width:1440px">
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.2em;color:#D8AF55">ACADEMY ENROLLMENT · OFFER CARDS</div>
+    <div style="font-size:15px;color:#A8A49A">Bracketed values are editable campaign fields. Offer names, prices and dates are never part of the brand assets.</div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#A8A49A">A · TIER SET (DARK)</div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:stretch">
+      <div style="background:#141414;border:1px solid #2A2A2A;padding:36px;display:flex;flex-direction:column;gap:22px">
+        <div style="font-size:13px;letter-spacing:.22em;color:#A8A49A;font-weight:700">START</div>
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="font-size:28px;font-weight:900;line-height:1.15">{{ t1Name }}</div><div style="font-size:15px;line-height:1.55;color:#A8A49A">{{ t1Desc }}</div></div>
+        <div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:40px;font-weight:900">{{ t1Price }}</span><span style="font-size:14px;color:#A8A49A">{{ t1Note }}</span></div>
+        <div style="display:flex;flex-direction:column;border-top:1px solid #2A2A2A">
+          <sc-for list="{{ t1Items }}" as="it" hint-placeholder-count="3"><div style="display:grid;grid-template-columns:20px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid #2A2A2A;font-size:15px;line-height:1.45"><span style="color:#D8AF55">—</span><span>{{ it }}</span></div></sc-for>
+        </div>
+        <div style="margin-top:auto;border:1px solid #D8AF55;color:#D8AF55;font-weight:600;font-size:16px;padding:15px;text-align:center">{{ t1Cta }}</div>
+      </div>
+      <div style="background:#050505;border:2px solid #D8AF55;padding:36px;display:flex;flex-direction:column;gap:22px;position:relative">
+        <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size:13px;letter-spacing:.22em;color:#D8AF55;font-weight:700">COHORT</div><div style="background:#D8AF55;color:#050505;font-size:12px;font-weight:800;letter-spacing:.12em;padding:5px 10px">RECOMMENDED</div></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="font-size:28px;font-weight:900;line-height:1.15">{{ t2Name }}</div><div style="font-size:15px;line-height:1.55;color:#A8A49A">{{ t2Desc }}</div></div>
+        <div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:40px;font-weight:900;color:#D8AF55">{{ t2Price }}</span><span style="font-size:14px;color:#A8A49A">{{ t2Note }}</span></div>
+        <div style="display:flex;flex-direction:column;border-top:1px solid #2A2A2A">
+          <sc-for list="{{ t2Items }}" as="it" hint-placeholder-count="4"><div style="display:grid;grid-template-columns:20px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid #2A2A2A;font-size:15px;line-height:1.45"><span style="color:#D8AF55">—</span><span>{{ it }}</span></div></sc-for>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:14px;color:#F58426;font-weight:600"><span>Starts {{ startDate }}</span><span>{{ seats }}</span></div>
+        <div style="margin-top:auto;background:#D8AF55;color:#050505;font-weight:700;font-size:16px;padding:16px;text-align:center">{{ t2Cta }}</div>
+      </div>
+      <div style="background:#141414;border:1px solid #2A2A2A;padding:36px;display:flex;flex-direction:column;gap:22px">
+        <div style="font-size:13px;letter-spacing:.22em;color:#A8A49A;font-weight:700">GO FURTHER</div>
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="font-size:28px;font-weight:900;line-height:1.15">{{ t3Name }}</div><div style="font-size:15px;line-height:1.55;color:#A8A49A">{{ t3Desc }}</div></div>
+        <div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:40px;font-weight:900">{{ t3Price }}</span><span style="font-size:14px;color:#A8A49A">{{ t3Note }}</span></div>
+        <div style="display:flex;flex-direction:column;border-top:1px solid #2A2A2A">
+          <sc-for list="{{ t3Items }}" as="it" hint-placeholder-count="3"><div style="display:grid;grid-template-columns:20px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid #2A2A2A;font-size:15px;line-height:1.45"><span style="color:#D8AF55">—</span><span>{{ it }}</span></div></sc-for>
+        </div>
+        <div style="margin-top:auto;border:1px solid #D8AF55;color:#D8AF55;font-weight:600;font-size:16px;padding:15px;text-align:center">{{ t3Cta }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#A8A49A">B · INLINE BANNER CARD (in-page, email, end of lesson)</div>
+      <div style="background:#141414;border-top:3px solid #D8AF55;padding:28px 32px;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center">
+        <img src="../logos/approved/png/maim-academy_crest_metallic-presentation_transparent_512px_v0.1.png" alt="" style="width:128px;height:128px">
+        <div style="display:flex;flex-direction:column;gap:8px;min-width:0"><div style="font-size:13px;letter-spacing:.22em;color:#D8AF55;font-weight:700">NEXT COHORT · {{ startDate }}</div><div style="font-size:24px;font-weight:900;line-height:1.2">{{ t2Name }}</div><div style="font-size:15px;color:#A8A49A">{{ t2Price }} · {{ seats }}</div></div>
+        <div style="background:#D8AF55;color:#050505;font-weight:700;font-size:16px;padding:15px 22px;white-space:nowrap">{{ t2Cta }}</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#A8A49A">C · FREE GUIDE CARD (MAIM 05 lead magnet)</div>
+      <div style="background:#F7F4EA;color:#050505;padding:28px 32px;display:flex;flex-direction:column;gap:14px;border-top:3px solid #050505">
+        <div style="font-size:13px;letter-spacing:.22em;font-weight:700;color:#5A574F">FREE GUIDE</div>
+        <div style="font-size:24px;font-weight:900;line-height:1.2">{{ guideName }}</div>
+        <div style="display:flex;gap:10px"><div style="flex:1;height:48px;border:1px solid #5A574F;background:#FFFFFF;padding:0 14px;display:flex;align-items:center;font-size:15px;color:#5A574F">you@example.com</div><div style="background:#050505;color:#F7F4EA;font-weight:700;font-size:15px;padding:0 20px;display:flex;align-items:center">Send it</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;startDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Start date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Shared&quot;},&quot;seats&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[N] places&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Shared&quot;},&quot;t1Name&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Self-paced course]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Tier 1&quot;},&quot;t1Price&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Price]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Tier 1&quot;},&quot;t2Name&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Cohort name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Tier 2&quot;},&quot;t2Price&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Price]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Tier 2&quot;},&quot;t2Cta&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Apply for this cohort&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Tier 2&quot;},&quot;t3Name&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Advanced offer]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Tier 3&quot;},&quot;t3Price&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Price]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Tier 3&quot;},&quot;guideName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Free guide title]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Guide&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return {
+      startDate: p.startDate ?? '[Start date]', seats: p.seats ?? '[N] places',
+      t1Name: p.t1Name ?? '[Self-paced course]', t1Desc: p.t1Desc ?? '[One line on who it is for]', t1Price: p.t1Price ?? '[Price]', t1Note: p.t1Note ?? 'one-time', t1Cta: p.t1Cta ?? 'Start learning',
+      t1Items: ['[Lessons + workbooks]', '[Assignments, self-reviewed]', '[Lifetime access]'],
+      t2Name: p.t2Name ?? '[Cohort name]', t2Desc: p.t2Desc ?? '[One line on who it is for]', t2Price: p.t2Price ?? '[Price]', t2Note: p.t2Note ?? '[or payment plan]', t2Cta: p.t2Cta ?? 'Apply for this cohort',
+      t2Items: ['[Everything in Start]', '[Weekly live sessions]', '[Assignment feedback]', '[Cohort community]'],
+      t3Name: p.t3Name ?? '[Advanced offer]', t3Desc: p.t3Desc ?? '[One line on who it is for]', t3Price: p.t3Price ?? '[Price]', t3Note: p.t3Note ?? '[billing]', t3Cta: p.t3Cta ?? 'Book a call',
+      t3Items: ['[Everything in Cohort]', '[1:1 implementation calls]', '[System review]'],
+      guideName: p.guideName ?? '[Free guide title]'
+    };
+  }
+}
+</script>
+</body>
+</html>

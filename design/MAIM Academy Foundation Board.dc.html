@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+body{margin:0;background:#050505;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#D8AF55;text-decoration:underline}a:hover{color:#F7F4EA}
+*{box-sizing:border-box}
+</style>
+</helmet>
+
+<section id="board" data-screen-label="00 Foundation board" style="width:1600px;padding:80px;display:flex;flex-direction:column;gap:72px;background:#050505">
+
+  <header style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;padding-bottom:28px;border-bottom:1px solid #2A2A2A">
+    <div style="display:flex;align-items:center;gap:28px">
+      <img src="../logos/approved/png/maim-academy_crest_metallic-presentation_transparent_512px_v0.1.png" alt="MAIM Academy crest" style="width:120px;height:120px">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:13px;letter-spacing:.24em;color:#D8AF55">MAIM 00 → ACADEMY · COURSE/COHORT HOME MAIM 07</div>
+        <h1 style="margin:0;font-size:56px;font-weight:900;letter-spacing:-.02em;line-height:1">MAIM — Academy</h1>
+        <div style="font-size:18px;color:#A8A49A">Foundation board v0.1 · extends the MAIM 00 Brand System</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:13px;letter-spacing:.16em;color:#F7F4EA;background:#1F7A3A;padding:6px 10px">FOUNDATION + EXAMPLES · FOUNDER APPROVED 2026-10-31</div>
+      <div style="font-size:14px;color:#A8A49A">Approver: Major Dream Williams · evidence: chat “approved”</div>
+      <div style="font-size:14px;color:#F58426">Open inputs: MAIM 00 export · final fonts · backdrop masters</div>
+      <div style="display:flex;width:96px;height:3px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#006BB6"></div></div>
+    </div>
+  </header>
+
+  <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:13px;letter-spacing:.2em;color:#D8AF55">RELATIONSHIP</div>
+      <p style="margin:0;font-size:28px;line-height:1.3;font-weight:600;text-wrap:pretty">MAIM provides the mindset and philosophy. MAIM Academy teaches people to apply it through practical tools, business systems, assignments and cohorts.</p>
+      <p style="margin:0;font-size:16px;line-height:1.55;color:#A8A49A;text-wrap:pretty">Visual consequence: the parent palette, tri-bar and MD monogram carry over unchanged. The Academy adds the crest, a quiet learning layout and learning components. It is part of the MAIM ecosystem, not a separate brand.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:13px;letter-spacing:.2em;color:#D8AF55">AUDIT OF SUPPLIED MATERIALS</div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px">
+        <div style="background:#141414;padding:20px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-size:15px;font-weight:700;color:#F7F4EA">Inherited from MAIM 00</div>
+          <div style="font-size:14px;line-height:1.55;color:#A8A49A">Six color references · green–gold–blue tri-bar · MD monogram and woven crown · black + gold + restrained green · generous dark space · filament treatments · project numbering 00–07</div>
+        </div>
+        <div style="background:#141414;padding:20px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-size:15px;font-weight:700;color:#F7F4EA">Academy-specific</div>
+          <div style="font-size:14px;line-height:1.55;color:#A8A49A">Academy crest (3 approved versions) · crest green #015D1B as artwork color only · quiet learning layouts · print variants · caption rule: white, thin black outline, gold emphasis</div>
+        </div>
+        <div style="background:#141414;padding:20px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-size:15px;font-weight:700;color:#F58426">Missing / not supplied</div>
+          <div style="font-size:14px;line-height:1.55;color:#A8A49A">MAIM 00 export itself · font families and licenses · spacing scale · logo minimums and clear space · semantic UI colors · clean (text-free) backdrop plate · normal-orientation backdrop master</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;align-items:baseline;gap:16px"><h2 style="margin:0;font-size:32px;font-weight:700">1 · Logo hierarchy</h2><span style="font-size:14px;color:#A8A49A">Approved artwork 2026-10-31. Roles, clear space and minimums approved 2026-10-31.</span></div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px">
+      <div style="background:#141414;display:flex;flex-direction:column">
+        <div style="height:320px;display:flex;align-items:center;justify-content:center;background:#050505"><img src="../logos/approved/png/maim-academy_crest_metallic-presentation_transparent_512px_v0.1.png" alt="" style="width:240px;height:240px"></div>
+        <div style="padding:20px;display:flex;flex-direction:column;gap:8px">
+          <div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.16em;color:#D8AF55">PRIMARY · RASTER</div>
+          <div style="font-size:18px;font-weight:700">Metallic presentation crest</div>
+          <div style="font-size:14px;line-height:1.55;color:#A8A49A">Hero placements, video, thumbnails, social. Preserve as supplied: no recolor, redraw, effects or crop. Dark grounds only.</div>
+          <div style="font-size:14px;line-height:1.55;color:#F7F4EA">Min: 128 px digital. Not for print.</div>
+        </div>
+      </div>
+      <div style="background:#141414;display:flex;flex-direction:column">
+        <div style="height:320px;display:flex;align-items:center;justify-content:center;gap:40px;background:#F7F4EA"><img src="../logos/approved/vector/maim-academy_crest_simplified_flat-color_transparent_v0.1.svg" alt="" style="width:200px;height:200px"><img src="../logos/approved/vector/maim-academy_crest_simplified_flat-color_transparent_v0.1.svg" alt="" style="width:64px;height:64px"></div>
+        <div style="padding:20px;display:flex;flex-direction:column;gap:8px">
+          <div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.16em;color:#D8AF55">SECONDARY · VECTOR</div>
+          <div style="font-size:18px;font-weight:700">Simplified flat-color crest</div>
+          <div style="font-size:14px;line-height:1.55;color:#A8A49A">Documents, workbooks, certificates of participation, print, signage. Self-contained black disk works on light or dark grounds.</div>
+          <div style="font-size:14px;line-height:1.55;color:#F7F4EA">Min: 64 px digital · 25 mm print.</div>
+        </div>
+      </div>
+      <div style="background:#141414;display:flex;flex-direction:column">
+        <div style="height:320px;display:flex;align-items:center;justify-content:center;gap:28px;background:#050505">
+          <img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="" style="width:120px;height:120px">
+          <img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="" style="width:48px;height:48px">
+          <img src="../logos/approved/png/maim-academy_mark-small_flat-color_transparent_32px_v0.1.png" alt="" style="width:32px;height:32px">
+          <img src="../logos/approved/png/maim-academy_mark-small_flat-color_transparent_16px_v0.1.png" alt="" style="width:16px;height:16px">
+        </div>
+        <div style="padding:20px;display:flex;flex-direction:column;gap:8px">
+          <div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.16em;color:#D8AF55">COMPACT · VECTOR</div>
+          <div style="font-size:18px;font-weight:700">Small MD mark</div>
+          <div style="font-size:14px;line-height:1.55;color:#A8A49A">Nav bars, avatars, favicons, page footers, watermark corners. Replaces the crest wherever it would render under 64 px.</div>
+          <div style="font-size:14px;line-height:1.55;color:#F7F4EA">Min: 32 px digital. 16 px allowed for favicons only.</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:420px 1fr;gap:24px">
+      <div style="background:#141414;padding:24px;display:flex;flex-direction:column;gap:16px">
+        <div style="font-size:15px;font-weight:700">Clear space</div>
+        <div style="display:flex;justify-content:center;padding:8px">
+          <div style="padding:40px;outline:1px dashed #F58426;position:relative"><img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="" style="width:160px;height:160px;display:block;outline:1px solid #2A2A2A"></div>
+        </div>
+        <div style="font-size:14px;line-height:1.55;color:#A8A49A">Keep 25% of the mark's diameter clear on every side (40 px at 160 px). Applies to all three versions.</div>
+      </div>
+      <div style="background:#141414;padding:24px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px">
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="font-size:15px;font-weight:700">Hierarchy rule</div><div style="font-size:14px;line-height:1.55;color:#A8A49A">One crest per surface. If the metallic crest is present, the small mark may appear only as a functional icon (nav, favicon).</div></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="font-size:15px;font-weight:700">Placement</div><div style="font-size:14px;line-height:1.55;color:#A8A49A">Pages: mark top-left in navigation. Media: crest centered or lower-left. Documents: simplified crest on the cover, mark in running footer.</div></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="font-size:15px;font-weight:700">Tri-bar</div><div style="font-size:14px;line-height:1.55;color:#A8A49A">Green → gold → blue, equal thirds, 3 px tall (4 px at 1920+). Use once per surface as a section or signature mark.</div><div style="display:flex;width:96px;height:3px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#006BB6"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;align-items:baseline;gap:16px"><h2 style="margin:0;font-size:32px;font-weight:700">2 · Color roles</h2><span style="font-size:14px;color:#A8A49A">Hex values inherited. Roles approved 2026-10-31.</span></div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px">
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="height:88px;background:#050505;outline:1px solid #2A2A2A"></div><div style="font-size:14px;font-weight:700">Black Foundation #050505</div><div style="font-size:13px;color:#A8A49A">Ground for media + marketing; ink on paper</div></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="height:88px;background:#D8AF55"></div><div style="font-size:14px;font-weight:700">Gold Authority #D8AF55</div><div style="font-size:13px;color:#A8A49A">Primary action, emphasis, progress fill</div></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="height:88px;background:#F7F4EA"></div><div style="font-size:14px;font-weight:700">White Clarity #F7F4EA</div><div style="font-size:13px;color:#A8A49A">Text on dark; paper for learning + print</div></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="height:88px;background:#1F7A3A"></div><div style="font-size:14px;font-weight:700">Jamaican Green #1F7A3A</div><div style="font-size:13px;color:#A8A49A">Complete / submitted states, tri-bar</div></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="height:88px;background:#006BB6"></div><div style="font-size:14px;font-weight:700">Knicks Blue #006BB6</div><div style="font-size:13px;color:#A8A49A">Links on paper, info callouts, tri-bar</div></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="height:88px;background:#F58426"></div><div style="font-size:14px;font-weight:700">Knicks Orange #F58426</div><div style="font-size:13px;color:#A8A49A">Attention: due dates, needs revision</div></div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center;background:#141414;padding:14px 16px">
+        <div style="width:40px;height:40px;background:#015D1B;flex:none"></div>
+        <div style="font-size:13px;line-height:1.5;color:#A8A49A"><span style="color:#F7F4EA;font-weight:700">Crest green #015D1B</span> · artwork color inside the crest only. Not a UI token; does not replace Jamaican Green.</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center;background:#141414;padding:14px 16px">
+        <div style="width:40px;height:40px;background:#D4AF37;flex:none"></div>
+        <div style="font-size:13px;line-height:1.5;color:#A8A49A"><span style="color:#F7F4EA;font-weight:700">Gold Deep #D4AF37</span> · inherited from MAIM 00. Artwork and fills only; never text or UI.</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center;background:#141414;padding:14px 16px">
+        <div style="display:flex;flex:none"><div style="width:40px;height:40px;background:#141414;outline:1px solid #2A2A2A"></div><div style="width:40px;height:40px;background:#2A2A2A"></div><div style="width:40px;height:40px;background:#A8A49A"></div><div style="width:40px;height:40px;background:#5A574F"></div><div style="width:40px;height:40px;background:#E9E4D4"></div></div>
+        <div style="font-size:13px;line-height:1.5;color:#A8A49A"><span style="color:#F7F4EA;font-weight:700">Academy neutrals</span> (approved 2026-10-31; not in MAIM 00 references): surface #141414, line #2A2A2A, muted-on-dark #A8A49A, muted-on-paper #5A574F, paper line #E9E4D4. Mixed from Black and White Clarity.</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <h2 style="margin:0;font-size:32px;font-weight:700">Accessible text pairs</h2>
+      <div style="display:flex;flex-direction:column;gap:6px;font-size:14px">
+        <div style="display:grid;grid-template-columns:1fr 70px 110px;gap:12px;padding:10px 14px;background:#050505;color:#F7F4EA;outline:1px solid #2A2A2A"><span>White Clarity on Black</span><span>18.5:1</span><span>All text</span></div>
+        <div style="display:grid;grid-template-columns:1fr 70px 110px;gap:12px;padding:10px 14px;background:#050505;color:#D8AF55;outline:1px solid #2A2A2A"><span>Gold Authority on Black</span><span>9.9:1</span><span>All text</span></div>
+        <div style="display:grid;grid-template-columns:1fr 70px 110px;gap:12px;padding:10px 14px;background:#050505;color:#F58426;outline:1px solid #2A2A2A"><span>Orange on Black</span><span>8.0:1</span><span>All text</span></div>
+        <div style="display:grid;grid-template-columns:1fr 70px 110px;gap:12px;padding:10px 14px;background:#D8AF55;color:#050505"><span>Black on Gold Authority</span><span>9.9:1</span><span>Buttons, all text</span></div>
+        <div style="display:grid;grid-template-columns:1fr 70px 110px;gap:12px;padding:10px 14px;background:#F7F4EA;color:#050505"><span>Black on White Clarity</span><span>18.5:1</span><span>All text</span></div>
+        <div style="display:grid;grid-template-columns:1fr 70px 110px;gap:12px;padding:10px 14px;background:#F7F4EA;color:#006BB6"><span>Blue on White Clarity</span><span>5.0:1</span><span>Links, body</span></div>
+        <div style="display:grid;grid-template-columns:1fr 70px 110px;gap:12px;padding:10px 14px;background:#1F7A3A;color:#F7F4EA"><span>White on Jamaican Green</span><span>4.9:1</span><span>Badges, body</span></div>
+        <div style="display:grid;grid-template-columns:1fr 70px 110px;gap:12px;padding:10px 14px;background:#050505;color:#1F7A3A;outline:1px solid #2A2A2A"><span>Green on Black</span><span>3.8:1</span><span>Large/icons only</span></div>
+        <div style="display:grid;grid-template-columns:1fr 70px 110px;gap:12px;padding:10px 14px;background:#050505;color:#006BB6;outline:1px solid #2A2A2A"><span>Blue on Black</span><span>3.7:1</span><span>Large/icons only</span></div>
+        <div style="display:grid;grid-template-columns:1fr 70px 110px;gap:12px;padding:10px 14px;background:#F7F4EA;color:#B08A3A"><span style="color:#050505">Gold on White Clarity</span><span style="color:#050505">1.9:1</span><span style="color:#050505;font-weight:700">Never for text</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;align-items:baseline;gap:16px"><h2 style="margin:0;font-size:32px;font-weight:700">3 · Typography roles</h2><span style="font-size:14px;color:#A8A49A">Inherited from MAIM 00 §03: Archivo (display 800–900, body 400–600) + JetBrains Mono (labels, tracked uppercase)</span></div>
+      <div style="display:flex;flex-direction:column;background:#141414">
+        <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 24px;border-bottom:1px solid #2A2A2A;align-items:baseline"><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:12px;color:#A8A49A">DISPLAY · 900 · 64/1.0</div><div style="font-size:64px;font-weight:900;line-height:1;letter-spacing:-.02em">Build something that runs</div></div>
+        <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 24px;border-bottom:1px solid #2A2A2A;align-items:baseline"><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:12px;color:#A8A49A">HEADING · 700 · 32/1.15</div><div style="font-size:32px;font-weight:700;line-height:1.15">Map one repeatable process</div></div>
+        <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 24px;border-bottom:1px solid #2A2A2A;align-items:baseline"><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:12px;color:#A8A49A">SUBHEAD · 600 · 20/1.3</div><div style="font-size:20px;font-weight:600;line-height:1.3">Objective, instructions and assignment</div></div>
+        <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 24px;border-bottom:1px solid #2A2A2A;align-items:baseline"><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:12px;color:#A8A49A">BODY · 400 · 18/1.6</div><div style="font-size:18px;line-height:1.6;color:#F7F4EA;max-width:640px">Learning text is set at 18 px with a 68-character measure. Print body is 11 pt.</div></div>
+        <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 24px;align-items:baseline"><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:12px;color:#A8A49A">EYEBROW · 13 · +0.24em</div><div style="font-size:13px;letter-spacing:.24em;color:#D8AF55;text-transform:uppercase">MAIM Academy · Module 2</div></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;align-items:baseline;gap:16px"><h2 style="margin:0;font-size:32px;font-weight:700">Spacing + grid</h2><span style="font-size:14px;color:#A8A49A">Approved 2026-10-31</span></div>
+      <div style="background:#141414;padding:24px;display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;align-items:flex-end;gap:14px">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:4px;height:4px;background:#D8AF55"></div><span style="font-size:12px;color:#A8A49A">4</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:8px;height:8px;background:#D8AF55"></div><span style="font-size:12px;color:#A8A49A">8</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:16px;height:16px;background:#D8AF55"></div><span style="font-size:12px;color:#A8A49A">16</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:24px;height:24px;background:#D8AF55"></div><span style="font-size:12px;color:#A8A49A">24</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:32px;height:32px;background:#D8AF55"></div><span style="font-size:12px;color:#A8A49A">32</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:48px;height:48px;background:#D8AF55"></div><span style="font-size:12px;color:#A8A49A">48</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:72px;height:72px;background:#D8AF55"></div><span style="font-size:12px;color:#A8A49A">72</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:96px;height:96px;background:#D8AF55"></div><span style="font-size:12px;color:#A8A49A">96</span></div>
+        </div>
+        <div style="font-size:14px;line-height:1.55;color:#A8A49A">4 px base. Web: 12 columns, 24 px gutters, 1200 px max. Lessons: 720 px reading column + 280 px course rail. Print: A4/Letter, 18 mm margins. Media: 64 px safe margin at 1280 wide.</div>
+        <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:6px;height:48px">
+          <div style="background:#2A2A2A"></div><div style="background:#2A2A2A"></div><div style="background:#2A2A2A"></div><div style="background:#2A2A2A"></div><div style="background:#2A2A2A"></div><div style="background:#2A2A2A"></div><div style="background:#2A2A2A"></div><div style="background:#2A2A2A"></div><div style="background:#2A2A2A"></div><div style="background:#2A2A2A"></div><div style="background:#2A2A2A"></div><div style="background:#2A2A2A"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;align-items:baseline;gap:16px"><h2 style="margin:0;font-size:32px;font-weight:700">4 · Core components</h2><span style="font-size:14px;color:#A8A49A">Approved 2026-10-31</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px">
+      <div style="background:#141414;padding:24px;display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:12px;color:#A8A49A">BUTTONS</div>
+        <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+          <div style="background:#D8AF55;color:#050505;font-weight:700;font-size:16px;padding:14px 22px">Primary action</div>
+          <div style="border:1px solid #D8AF55;color:#D8AF55;font-weight:600;font-size:16px;padding:13px 21px">Secondary</div>
+          <div style="color:#F7F4EA;font-size:16px;padding:6px 0;border-bottom:1px solid #D8AF55">Text link</div>
+        </div>
+        <div style="font-size:13px;color:#A8A49A">Square corners. 48 px min height. One primary per view.</div>
+      </div>
+      <div style="background:#141414;padding:24px;display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:12px;color:#A8A49A">FORM FIELD</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font-size:14px;font-weight:600">Email</div>
+          <div style="height:48px;border:1px solid #2A2A2A;background:#050505;padding:0 14px;display:flex;align-items:center;font-size:16px;color:#A8A49A">you@example.com</div>
+          <div style="font-size:14px;font-weight:600;margin-top:6px">Focused</div>
+          <div style="height:48px;border:1px solid #D8AF55;background:#050505;padding:0 14px;display:flex;align-items:center;font-size:16px">Major</div>
+        </div>
+      </div>
+      <div style="background:#141414;padding:24px;display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:12px;color:#A8A49A">CALLOUTS</div>
+        <div style="border-top:3px solid #D8AF55;background:#050505;padding:14px;font-size:14px;line-height:1.5"><b style="color:#D8AF55">Key idea</b><br>A system is a task someone else can run.</div>
+        <div style="border-top:3px solid #006BB6;background:#050505;padding:14px;font-size:14px;line-height:1.5"><b>Note</b><br>Tools mentioned are examples, not requirements.</div>
+        <div style="border-top:3px solid #F58426;background:#050505;padding:14px;font-size:14px;line-height:1.5"><b style="color:#F58426">Due</b><br>[due date]</div>
+      </div>
+      <div style="background:#141414;padding:24px;display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:12px;color:#A8A49A">NAVIGATION + CARD</div>
+        <div style="display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1px solid #2A2A2A">
+          <img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="" style="width:28px;height:28px">
+          <span style="font-size:13px;letter-spacing:.2em;font-weight:700">MAIM ACADEMY</span>
+        </div>
+        <div style="background:#050505;padding:16px;display:flex;flex-direction:column;gap:8px;border:1px solid #2A2A2A">
+          <div style="font-size:12px;letter-spacing:.2em;color:#D8AF55">MODULE 2</div>
+          <div style="font-size:17px;font-weight:700">Business systems</div>
+          <div style="font-size:13px;color:#A8A49A">6 lessons · 2 assignments</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;align-items:baseline;gap:16px"><h2 style="margin:0;font-size:32px;font-weight:700">5 · Learning components</h2><span style="font-size:14px;color:#A8A49A">Shown on paper (White Clarity), the proposed default for learning. See the lesson example.</span></div>
+    <div style="background:#F7F4EA;color:#050505;padding:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px">
+      <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid #050505;padding-top:14px"><div style="font-size:12px;letter-spacing:.2em;font-weight:700">OBJECTIVE</div><div style="font-size:15px;line-height:1.5">"By the end of this lesson you can…" One sentence, one verb.</div></div>
+      <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid #050505;padding-top:14px"><div style="font-size:12px;letter-spacing:.2em;font-weight:700">INSTRUCTIONS</div><div style="font-size:15px;line-height:1.5">Numbered steps in a gold-ruled list. Max 7 steps per block.</div></div>
+      <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid #050505;padding-top:14px"><div style="font-size:12px;letter-spacing:.2em;font-weight:700">ASSIGNMENT</div><div style="font-size:15px;line-height:1.5">Black block on paper. Holds task, deliverable, due date (editable).</div></div>
+      <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid #050505;padding-top:14px"><div style="font-size:12px;letter-spacing:.2em;font-weight:700">SUBMISSION</div><div style="font-size:15px;line-height:1.5">Text answer + file attach + submit. States: draft, submitted (green), needs revision (orange).</div></div>
+      <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid #050505;padding-top:14px"><div style="font-size:12px;letter-spacing:.2em;font-weight:700">FEEDBACK</div><div style="font-size:15px;line-height:1.5">Reviewer name, date, note. Plain language, one next step.</div></div>
+      <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid #050505;padding-top:14px"><div style="font-size:12px;letter-spacing:.2em;font-weight:700">PROGRESS</div><div style="display:flex;gap:4px;height:8px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#E9E4D4"></div><div style="flex:1;background:#E9E4D4"></div><div style="flex:1;background:#E9E4D4"></div></div><div style="font-size:15px;line-height:1.5">Segmented: complete green, current gold, upcoming paper line. Always paired with "3 of 6" text.</div></div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;align-items:baseline;gap:16px"><h2 style="margin:0;font-size:32px;font-weight:700">6 · Media rules</h2><span style="font-size:14px;color:#A8A49A">Approved 2026-10-31</span></div>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:24px">
+      <div style="background:#141414;padding:24px;display:flex;flex-direction:column;gap:14px">
+        <div style="font-size:15px;font-weight:700">Backdrops · orientation must be labelled</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="position:relative"><img src="../assets/backdrops/maim-academy_backdrop_filament_MIRRORED_reference.png" alt="" style="width:100%;display:block"><div style="position:absolute;top:8px;left:8px;background:#F58426;color:#050505;font-size:11px;font-weight:800;letter-spacing:.14em;padding:4px 8px">MIRRORED</div></div>
+            <div style="font-size:13px;line-height:1.5;color:#A8A49A">As supplied. Camera/monitor variant: text reads backwards on file, correctly through a mirroring camera. Filename must contain <span style="color:#F7F4EA">_MIRRORED</span>.</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="position:relative;overflow:hidden"><img src="../assets/backdrops/maim-academy_backdrop_filament_CLEAN-PLATE_v0.1.png" alt="" style="width:100%;display:block"><div style="position:absolute;top:8px;left:8px;background:#F7F4EA;color:#050505;font-size:11px;font-weight:800;letter-spacing:.14em;padding:4px 8px">CLEAN PLATE · v0.1</div></div>
+            <div style="font-size:13px;line-height:1.5;color:#A8A49A">Normal orientation, no text. Use for all media templates; add titles, dates and names as editable layers. A normal version with the original text also exists: _NORMAL_v0.1.png.</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <div style="background:#141414;padding:24px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-size:15px;font-weight:700">Captions</div>
+          <div style="background:#3a3a3a;padding:28px 16px;display:flex;justify-content:center"><div style="font-size:30px;font-weight:900;color:#F7F4EA;-webkit-text-stroke:1.5px #050505;paint-order:stroke fill;text-align:center">Write it down <span style="color:#D8AF55">once</span></div></div>
+          <div style="font-size:13px;line-height:1.5;color:#A8A49A">White, thin black outline (repo reference). Gold on one emphasized word per line. Max 2 lines, lower third.</div>
+        </div>
+        <div style="background:#141414;padding:24px;display:flex;flex-direction:column;gap:8px">
+          <div style="font-size:15px;font-weight:700">Thumbnails + banners</div>
+          <div style="font-size:13px;line-height:1.55;color:#A8A49A">1280×720, 64 px safe margin, keep the lower-right 240×80 clear (YouTube timestamp). Headline ≤ 5 words, legible at 320 px wide. Metallic crest plus a discreet small-mark watermark bottom-right, above the timestamp zone. Dates, prices and episode numbers live in editable layers, never in the backdrop file.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="1" data-screen-label="01 Enrollment page" style="width:1600px;padding:0 80px 80px;display:flex;flex-direction:column;gap:20px;background:#050505">
+  <div style="display:flex;align-items:center;gap:14px"><div style="background:#D8AF55;color:#050505;font-weight:800;font-size:14px;padding:4px 10px">1</div><div style="font-size:24px;font-weight:700">Academy enrollment page</div><div style="font-size:14px;color:#F58426">Approved layout · bracketed values are editable campaign fields</div></div>
+  <div style="width:1280px;background:#050505;outline:1px solid #2A2A2A;display:flex;flex-direction:column">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:20px 64px;border-bottom:1px solid #2A2A2A">
+      <div style="display:flex;align-items:center;gap:12px"><img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="MAIM Academy" style="width:36px;height:36px"><span style="font-size:14px;letter-spacing:.22em;font-weight:700">MAIM ACADEMY</span></div>
+      <div style="display:flex;align-items:center;gap:32px;font-size:15px;color:#A8A49A"><span>How it works</span><span>Cohort</span><span>FAQ</span><div style="background:#D8AF55;color:#050505;font-weight:700;padding:10px 18px">Apply</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:48px;padding:96px 64px 88px;align-items:center;position:relative;overflow:hidden">
+      <div style="display:flex;flex-direction:column;gap:24px;position:relative">
+        <div style="font-size:13px;letter-spacing:.24em;color:#D8AF55">PART OF MAIM — MAJOR AI MINDSET</div>
+        <h1 style="margin:0;font-size:72px;font-weight:900;line-height:1;letter-spacing:-.02em">Build something that runs.</h1>
+        <p style="margin:0;font-size:20px;line-height:1.55;color:#A8A49A;max-width:540px;text-wrap:pretty">MAIM gives you the mindset. The Academy teaches you to apply it: practical tools, business systems, weekly assignments and a cohort that builds alongside you.</p>
+        <div style="display:flex;gap:12px;align-items:center"><div style="background:#D8AF55;color:#050505;font-weight:700;font-size:17px;padding:16px 26px">Check your readiness</div><div style="border:1px solid #D8AF55;color:#D8AF55;font-weight:600;font-size:17px;padding:15px 25px">Get the free guide</div></div>
+        <div style="display:flex;width:96px;height:3px;margin-top:12px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#006BB6"></div></div>
+      </div>
+      <div style="display:flex;justify-content:center"><img src="../logos/approved/png/maim-academy_crest_metallic-presentation_transparent_512px_v0.1.png" alt="MAIM Academy crest" style="width:400px;height:400px"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #2A2A2A;border-bottom:1px solid #2A2A2A">
+      <div style="padding:40px 64px 40px 64px;display:flex;flex-direction:column;gap:10px;border-right:1px solid #2A2A2A"><div style="font-size:13px;letter-spacing:.2em;color:#D8AF55">01 · LEARN</div><div style="font-size:22px;font-weight:700">Short lessons</div><div style="font-size:16px;line-height:1.55;color:#A8A49A">One idea per lesson, with an example you can copy.</div></div>
+      <div style="padding:40px;display:flex;flex-direction:column;gap:10px;border-right:1px solid #2A2A2A"><div style="font-size:13px;letter-spacing:.2em;color:#D8AF55">02 · APPLY</div><div style="font-size:22px;font-weight:700">Weekly assignments</div><div style="font-size:16px;line-height:1.55;color:#A8A49A">Apply each lesson to your own business and submit it.</div></div>
+      <div style="padding:40px 64px 40px 40px;display:flex;flex-direction:column;gap:10px"><div style="font-size:13px;letter-spacing:.2em;color:#D8AF55">03 · BUILD</div><div style="font-size:22px;font-weight:700">Cohort review</div><div style="font-size:16px;line-height:1.55;color:#A8A49A">Get feedback in live sessions and keep what works.</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:88px 64px">
+      <div style="border:1px solid #D8AF55;padding:36px;display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size:13px;letter-spacing:.22em;color:#D8AF55">NEXT COHORT</div><sc-if value="{{ annotate }}" hint-placeholder-val="{{ true }}"><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:11px;color:#F58426;border:1px dashed #F58426;padding:3px 6px">EDITABLE FIELDS</div></sc-if></div>
+        <div style="font-size:34px;font-weight:900;line-height:1.1">{{ cohortName }}</div>
+        <div style="display:flex;flex-direction:column;border-top:1px solid #2A2A2A">
+          <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #2A2A2A;font-size:16px"><span style="color:#A8A49A">Starts</span><span style="font-weight:600">{{ startDate }}</span></div>
+          <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #2A2A2A;font-size:16px"><span style="color:#A8A49A">Format</span><span style="font-weight:600">{{ format }}</span></div>
+          <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #2A2A2A;font-size:16px"><span style="color:#A8A49A">Places</span><span style="font-weight:600">{{ seats }}</span></div>
+          <div style="display:flex;justify-content:space-between;padding:14px 0;font-size:16px"><span style="color:#A8A49A">Investment</span><span style="font-weight:800;font-size:22px;color:#D8AF55">{{ price }}</span></div>
+        </div>
+        <div style="background:#D8AF55;color:#050505;font-weight:700;font-size:17px;padding:16px;text-align:center">Apply for this cohort</div>
+      </div>
+      <div style="background:#141414;padding:36px;display:flex;flex-direction:column;gap:18px">
+        <div style="font-size:13px;letter-spacing:.22em;color:#D8AF55">READINESS CHECK</div>
+        <div style="font-size:26px;font-weight:700;line-height:1.2">Three questions. We'll tell you if this cohort fits.</div>
+        <div style="display:flex;flex-direction:column;gap:8px"><label style="font-size:14px;font-weight:600">Name</label><input placeholder="Your name" style="height:48px;border:1px solid #2A2A2A;background:#050505;color:#F7F4EA;padding:0 14px;font-size:16px;font-family:inherit;outline:none" style-focus="border-color:#D8AF55"></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><label style="font-size:14px;font-weight:600">Email</label><input placeholder="you@example.com" style="height:48px;border:1px solid #2A2A2A;background:#050505;color:#F7F4EA;padding:0 14px;font-size:16px;font-family:inherit;outline:none" style-focus="border-color:#D8AF55"></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><label style="font-size:14px;font-weight:600">Where are you now?</label>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <sc-for list="{{ stages }}" as="s" hint-placeholder-count="3">
+              <div onClick="{{ s.pick }}" style="display:flex;align-items:center;gap:12px;height:48px;padding:0 14px;border:1px solid {{ s.border }};background:#050505;font-size:15px;cursor:pointer"><div style="width:16px;height:16px;border-radius:50%;border:2px solid {{ s.border }};background:{{ s.dot }}"></div>{{ s.label }}</div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="border:1px solid #D8AF55;color:#D8AF55;font-weight:600;font-size:16px;padding:14px;text-align:center">See my result</div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-top:1px solid #D8AF55">
+      <div style="display:flex;align-items:center;gap:12px"><img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="" style="width:28px;height:28px"><span style="font-size:14px;color:#A8A49A">MAIM Academy is part of MAIM — Major AI Mindset</span></div>
+      <span style="font-size:15px;color:#D8AF55">majoraimindset.com</span>
+    </div>
+  </div>
+</section>
+
+<section id="2" data-screen-label="02 Lesson page" style="width:1600px;padding:0 80px 80px;display:flex;flex-direction:column;gap:20px;background:#050505">
+  <div style="display:flex;align-items:center;gap:14px"><div style="background:#D8AF55;color:#050505;font-weight:800;font-size:14px;padding:4px 10px">2</div><div style="font-size:24px;font-weight:700">Lesson page · MAIM 07 ten-beat anatomy</div><div style="font-size:14px;color:#A8A49A">A–Z spine · paper ground prints as-is · story, visual and demo are content slots</div></div>
+  <div style="width:1280px;background:#F7F4EA;color:#050505;display:flex;flex-direction:column">
+    <div style="background:#050505;color:#F7F4EA;display:flex;justify-content:space-between;align-items:center;padding:16px 40px">
+      <div style="display:flex;align-items:center;gap:12px"><img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="MAIM Academy" style="width:32px;height:32px"><span style="font-size:13px;letter-spacing:.22em;font-weight:700">MAIM ACADEMY</span><span style="font-size:14px;color:#A8A49A;margin-left:12px">{{ cohortName }}</span></div>
+      <div style="display:flex;align-items:center;gap:14px;font-size:14px"><span style="color:#A8A49A">Cohort progress</span><div style="width:160px;height:6px;background:#2A2A2A"><div style="width:{{ progressPct }};height:6px;background:#D8AF55"></div></div><span style="font-weight:600">{{ doneCount }} of 6 steps</span></div>
+    </div>
+    <div style="display:flex;width:100%;height:3px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#006BB6"></div></div>
+    <div style="display:grid;grid-template-columns:280px 1fr">
+      <div style="border-right:1px solid #E9E4D4;padding:32px 24px;display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;font-weight:700;color:#5A574F">ABC'S VOL 2 · OPENING SEQUENCE</div><div style="font-size:16px;font-weight:800;line-height:1.35">Audit → Design → Prototype → Test → Ship → Measure</div></div>
+        <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:3px;height:6px"><sc-for list="{{ lessons }}" as="l" hint-placeholder-count="6"><div style="background:{{ l.bar }}"></div></sc-for></div>
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ lessons }}" as="l" hint-placeholder-count="6">
+            <div style="display:flex;flex-direction:column">
+              <sc-if value="{{ l.weekStart }}" hint-placeholder-val="{{ false }}"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.18em;font-weight:700;color:#5A574F;padding:14px 10px 6px">{{ l.weekLabel }}</div></sc-if>
+              <div style="display:flex;gap:12px;align-items:center;padding:9px 10px;background:{{ l.bg }};border-left:3px solid {{ l.edge }}">
+                <div style="width:26px;height:26px;flex:none;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;background:{{ l.dotBg }};color:{{ l.dotFg }};border:1.5px solid {{ l.dotBorder }}">{{ l.mark }}</div>
+                <div style="display:flex;flex-direction:column;gap:1px"><span style="font-size:14px;font-weight:{{ l.weight }};line-height:1.3">{{ l.title }}</span><span style="font-size:12px;color:#5A574F">{{ l.state }}</span></div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #E9E4D4;padding-top:16px">
+          <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.18em;font-weight:700;color:#5A574F">FULL A–Z MAP · ANY ORDER</div>
+          <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:3px">
+            <sc-for list="{{ abcList }}" as="a" hint-placeholder-count="26"><div title="{{ a.word }}" style="aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;border:1px solid #B9B4A6">{{ a.letter }}</div></sc-for>
+          </div>
+        </div>
+      </div>
+      <div style="padding:56px 72px 72px;display:flex;flex-direction:column;gap:44px;max-width:900px">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;font-weight:700;color:#5A574F;padding-top:4px">01 · HEADLINE</div>
+          <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.2em;color:#5A574F">ABC'S VOL 2 · OPENING SEQUENCE · STEP 2 OF 6 · 15 MIN</div>
+          <h1 style="margin:0;font-size:56px;font-weight:900;line-height:1.02;letter-spacing:-.02em">D is for Design</h1>
+          <div style="font-size:22px;font-weight:600;line-height:1.35">Map the user’s journey and the result they need.</div>
+          <div style="border-top:2px solid #050505;padding-top:12px;display:grid;grid-template-columns:120px 1fr;gap:16px;margin-top:6px"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;font-weight:700;padding-top:3px">OBJECTIVE</div><div style="font-size:18px;line-height:1.5">By the end of this lesson you have a one-page map of one user’s journey and the result they need.</div></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;max-width:680px">
+          <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;font-weight:700;color:#5A574F;padding-top:4px">02 · STORY</div>
+          <div style="display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:start"><div style="width:96px;height:96px;background:#E9E4D4;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;color:#5A574F;text-align:center">PHOTO</div><p style="margin:0;font-size:18px;line-height:1.65;color:#5A574F;font-style:italic">[A real human moment: one person, one task they handed to AI, and what changed. 80–120 words.]</p></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;max-width:680px">
+          <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;font-weight:700;color:#5A574F;padding-top:4px">03 · CONCEPT</div>
+          <div style="background:#050505;color:#F7F4EA;border-top:3px solid #D8AF55;padding:22px 24px;font-size:22px;font-weight:700;line-height:1.35">Design the result before you build the tool. Start with who it is for and what they walk away with.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+          <div style="display:flex;flex-direction:column;gap:12px"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;font-weight:700;color:#5A574F;padding-top:4px">04 · VISUAL</div><div style="aspect-ratio:16/10;border:1.5px dashed #5A574F;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#5A574F">Diagram or screenshot</div></div>
+          <div style="display:flex;flex-direction:column;gap:12px"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;font-weight:700;color:#5A574F;padding-top:4px">05 · LIVE DEMO</div><div style="aspect-ratio:16/10;background:#050505;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px"><div style="width:56px;height:56px;border:2px solid #D8AF55;display:flex;align-items:center;justify-content:center;color:#D8AF55;font-size:20px">▶</div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#A8A49A">Demo video · [mm:ss]</span></div></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;font-weight:700;color:#5A574F;padding-top:4px">06 · EXERCISE</div>
+          <div style="display:flex;flex-direction:column;max-width:680px">
+            <div style="display:grid;grid-template-columns:40px 1fr;gap:12px;padding:12px 0;border-top:1px solid #D8AF55;font-size:17px;line-height:1.5"><b>01</b><span>Name one user and the result they need.</span></div>
+            <div style="display:grid;grid-template-columns:40px 1fr;gap:12px;padding:12px 0;border-top:1px solid #D8AF55;font-size:17px;line-height:1.5"><b>02</b><span>List the steps they take today, from first contact to final result.</span></div>
+            <div style="display:grid;grid-template-columns:40px 1fr;gap:12px;padding:12px 0;border-top:1px solid #D8AF55;border-bottom:1px solid #D8AF55;font-size:17px;line-height:1.5"><b>03</b><span>Mark where AI could save time or improve the result.</span></div>
+          </div>
+          <div style="background:#050505;color:#F7F4EA;padding:32px;display:flex;flex-direction:column;gap:18px">
+            <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.22em;font-weight:700;color:#D8AF55">ASSIGNMENT D</div><div style="font-size:14px;color:#F58426;font-weight:600">Due {{ dueDate }}</div></div>
+            <div style="font-size:26px;font-weight:900;line-height:1.25">Submit your journey map</div>
+            <div style="font-size:16px;line-height:1.6;color:#A8A49A;max-width:620px">Paste your map or attach a photo or file.</div>
+            <textarea placeholder="User: … / Result: … / Steps: …" style="min-height:120px;background:#141414;border:1px solid #2A2A2A;color:#F7F4EA;padding:14px;font-family:inherit;font-size:16px;line-height:1.5;resize:vertical;outline:none" style-focus="border-color:#D8AF55"></textarea>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+              <div style="border:1px dashed #A8A49A;color:#A8A49A;padding:12px 16px;font-size:14px">Attach file · PDF, DOC, image</div>
+              <div style="display:flex;align-items:center;gap:14px">
+                <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}"><div style="background:#1F7A3A;color:#F7F4EA;font-size:13px;font-weight:700;letter-spacing:.08em;padding:6px 10px">SUBMITTED</div></sc-if>
+                <div onClick="{{ toggleSubmit }}" style="background:#D8AF55;color:#050505;font-weight:700;font-size:16px;padding:14px 24px;cursor:pointer">{{ submitLabel }}</div>
+              </div>
+            </div>
+          </div>
+          <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+            <div style="border-top:2px solid #1F7A3A;display:flex;flex-direction:column;gap:8px;padding-top:14px;max-width:680px">
+              <div style="display:flex;justify-content:space-between;font-size:13px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;letter-spacing:.2em;font-weight:700">FEEDBACK</span><span style="color:#5A574F">Cohort reviewer · [date]</span></div>
+              <div style="font-size:17px;line-height:1.6">Clear result. Add the moment the user first contacts you, so the map starts at the real beginning. Bring it to Wednesday office hours.</div>
+            </div>
+          </sc-if>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;max-width:680px">
+          <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;font-weight:700;color:#5A574F;padding-top:4px">07 · PROMPT</div>
+          <div style="background:#FFFFFF;border:1px solid #050505;padding:20px 22px;display:flex;flex-direction:column;gap:12px"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:15px;line-height:1.7">Here is a process I want to improve: [steps]. The user is [who] and the result they need is [result]. Map their journey step by step and flag where AI could help.</div><div style="align-self:flex-end;font-size:13px;font-weight:700;color:#006BB6">Copy prompt</div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+          <div style="display:flex;flex-direction:column;gap:12px"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;font-weight:700;color:#5A574F;padding-top:4px">08 · REFLECTION</div><div style="font-size:17px;font-weight:600;line-height:1.45">Where does the user wait, repeat work or get stuck?</div><div style="height:96px;background:repeating-linear-gradient(180deg,transparent 0,transparent 31px,#B9B4A6 31px,#B9B4A6 32px)"></div></div>
+          <div style="display:flex;flex-direction:column;gap:12px"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;font-weight:700;color:#5A574F;padding-top:4px">09 · ACTION</div><div style="border:1.5px solid #050505;border-top:4px solid #D8AF55;padding:18px 20px;display:flex;flex-direction:column;gap:8px"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.18em;font-weight:700">THE 5-MINUTE MOVE</div><div style="font-size:17px;line-height:1.5">Before tomorrow, show the map to one real user and ask what is missing.</div></div></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;font-weight:700;color:#5A574F;padding-top:4px">10 · NEXT STEP</div>
+          <div style="background:#D8AF55;color:#050505;padding:22px 26px;display:flex;justify-content:space-between;align-items:center"><div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;font-weight:700">NEXT LETTER</span><span style="font-size:24px;font-weight:900">P is for Prototype</span></div><span style="font-size:24px;font-weight:900">→</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 40px;border-top:1px solid #E9E4D4;font-size:13px;color:#5A574F">
+      <div style="display:flex;align-items:center;gap:10px"><img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="" style="width:32px;height:32px">MAIM Academy · MAIM 07</div><span>Print: black blocks become 1 pt outlines</span>
+    </div>
+  </div>
+</section>
+
+<section id="3" data-screen-label="03 YouTube thumbnail" style="width:1600px;padding:0 80px 120px;display:flex;flex-direction:column;gap:20px;background:#050505">
+  <div style="display:flex;align-items:center;gap:14px"><div style="background:#D8AF55;color:#050505;font-weight:800;font-size:14px;padding:4px 10px">3</div><div style="font-size:24px;font-weight:700">YouTube thumbnail · 1280×720</div><div style="font-size:14px;color:#F58426">Episode box lower-left (editable) · timestamp corner kept clear · backdrop: CLEAN-PLATE v0.1</div></div>
+  <div style="display:flex;gap:40px;align-items:flex-start">
+    <div style="width:1280px;height:720px;position:relative;overflow:hidden;background:#050505;flex:none;outline:1px solid #2A2A2A">
+      <div style="position:absolute;inset:0;background:#050505">
+          <img src="../assets/backdrops/maim-academy_backdrop_filament_CLEAN-PLATE_v0.1.png" alt="" style="position:absolute;left:-160px;top:-90px;width:1600px;height:900px">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,#050505 0%,#050505 8%,rgba(5,5,5,0) 20%,rgba(5,5,5,0) 46%,#050505 60%,#050505 100%)"></div>
+          <img src="../logos/approved/png/maim-academy_crest_metallic-presentation_transparent_512px_v0.1.png" alt="" style="position:absolute;left:540px;top:56px;width:200px;height:200px">
+          <div style="position:absolute;left:48px;right:48px;top:44px;display:flex;justify-content:space-between;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:20px;letter-spacing:.24em;font-weight:700"><span style="color:#D8AF55">MAIM ACADEMY</span><span style="color:#A8A49A">{{ episode }}</span></div>
+          <img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="" style="position:absolute;right:56px;bottom:100px;width:40px;height:40px;opacity:.55">
+          <div style="position:absolute;left:48px;right:48px;top:292px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center">
+            <div style="font-size:92px;font-weight:900;line-height:.98;letter-spacing:-.025em;color:#F7F4EA;text-wrap:balance">{{ thumbLine1 }} <span style="color:#D8AF55">{{ thumbEmphasis }}</span></div>
+            <div style="display:flex;width:120px;height:4px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#006BB6"></div></div>
+          </div>
+          <div style="position:absolute;left:48px;bottom:40px;max-width:780px;display:flex;align-items:stretch;background:#050505;border:2px solid #D8AF55">
+            <div style="background:#D8AF55;color:#050505;padding:14px 18px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;letter-spacing:.2em;font-weight:700">EP</span><span style="font-size:36px;font-weight:900;line-height:1">{{ episodeNum }}</span></div>
+            <div style="padding:14px 22px;display:flex;align-items:center;font-size:30px;font-weight:700;line-height:1.15;color:#F7F4EA">{{ episodeTitle }}</div>
+          </div>
+        </div>
+      <sc-if value="{{ annotate }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;inset:40px 48px;outline:1px dashed #F58426;pointer-events:none"></div>
+        <div style="position:absolute;right:0;bottom:0;width:240px;height:80px;background:rgba(245,132,38,.18);outline:1px dashed #F58426;outline-offset:-1px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#F58426">TIMESTAMP · KEEP CLEAR</div>
+      </sc-if>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#A8A49A">PHONE FEED SIZE · 320×180</div>
+      <div style="width:320px;height:180px;overflow:hidden;position:relative;background:#050505">
+        <div style="width:1280px;height:720px;transform:scale(.25);transform-origin:0 0;position:absolute;left:0;top:0">
+          <div style="position:absolute;inset:0;background:#050505">
+          <img src="../assets/backdrops/maim-academy_backdrop_filament_CLEAN-PLATE_v0.1.png" alt="" style="position:absolute;left:-160px;top:-90px;width:1600px;height:900px">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,#050505 0%,#050505 8%,rgba(5,5,5,0) 20%,rgba(5,5,5,0) 46%,#050505 60%,#050505 100%)"></div>
+          <img src="../logos/approved/png/maim-academy_crest_metallic-presentation_transparent_512px_v0.1.png" alt="" style="position:absolute;left:540px;top:56px;width:200px;height:200px">
+          <div style="position:absolute;left:48px;right:48px;top:44px;display:flex;justify-content:space-between;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:20px;letter-spacing:.24em;font-weight:700"><span style="color:#D8AF55">MAIM ACADEMY</span><span style="color:#A8A49A">{{ episode }}</span></div>
+          <img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="" style="position:absolute;right:56px;bottom:100px;width:40px;height:40px;opacity:.55">
+          <div style="position:absolute;left:48px;right:48px;top:292px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center">
+            <div style="font-size:92px;font-weight:900;line-height:.98;letter-spacing:-.025em;color:#F7F4EA;text-wrap:balance">{{ thumbLine1 }} <span style="color:#D8AF55">{{ thumbEmphasis }}</span></div>
+            <div style="display:flex;width:120px;height:4px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#006BB6"></div></div>
+          </div>
+          <div style="position:absolute;left:48px;bottom:40px;max-width:780px;display:flex;align-items:stretch;background:#050505;border:2px solid #D8AF55">
+            <div style="background:#D8AF55;color:#050505;padding:14px 18px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;letter-spacing:.2em;font-weight:700">EP</span><span style="font-size:36px;font-weight:900;line-height:1">{{ episodeNum }}</span></div>
+            <div style="padding:14px 22px;display:flex;align-items:center;font-size:30px;font-weight:700;line-height:1.15;color:#F7F4EA">{{ episodeTitle }}</div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div style="font-size:13px;line-height:1.55;color:#A8A49A;max-width:320px">Headline, crest and episode box stay legible at feed size. Top labels are secondary.</div>
+      <div style="font-size:13px;line-height:1.55;color:#A8A49A;max-width:320px">Episode box: number + title are editable layers, never baked into the backdrop. Max 2 lines.</div>
+    </div>
+  </div>
+</section>
+
+<section id="abc" data-screen-label="04b ABC's Vol 2" style="width:1600px;padding:48px 80px 24px;display:flex;flex-direction:column;gap:24px;background:#050505">
+  <div style="padding-top:48px;border-top:1px solid #D8AF55;display:flex;flex-direction:column;gap:10px">
+    <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap"><h2 style="margin:0;font-size:32px;font-weight:900">MAIM Academy ABC’s · Volume 2</h2><span style="font-size:14px;color:#A8A49A">Adopted 2026-11-01 · MAIM ABC’s Volume 1 stays with MAIM</span></div>
+    <p style="margin:0;font-size:17px;line-height:1.6;color:#A8A49A;max-width:920px">Major AI Mindset carries the philosophy: how you see, decide, and grow. MAIM Academy teaches you to turn an idea into something that works. Learn it, build it, use it.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px">
+    <sc-for list="{{ abcList }}" as="a" hint-placeholder-count="26">
+      <div style="background:#141414;border-top:3px solid {{ a.border }};padding:16px 18px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start">
+        <div style="font-size:32px;font-weight:900;line-height:1;color:{{ a.letterColor }}">{{ a.letter }}</div>
+        <div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:16px;font-weight:800">{{ a.word }}</div><div style="font-size:13px;line-height:1.5;color:#A8A49A">{{ a.desc }}</div></div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;background:#141414;padding:18px 22px">
+    <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.18em;color:#F58426">OPENING SEQUENCE · APPROVED 2026-11-01</span>
+    <span style="font-size:17px;font-weight:700">Audit → Design → Prototype → Test → Ship → Measure</span>
+    <span style="font-size:14px;color:#A8A49A">Gold-edged letters above. The 26 letters are workshop themes and project prompts, not a forced order.</span>
+  </div>
+</section>
+
+<section id="typetest" data-screen-label="04a Archivo weight test" style="width:1600px;padding:48px 80px 24px;display:flex;flex-direction:column;gap:24px;background:#050505">
+  <div style="padding-top:48px;border-top:1px solid #D8AF55;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap"><h2 style="margin:0;font-size:32px;font-weight:900">Archivo weight test</h2><span style="font-size:14px;color:#F58426">DECIDED 2026-11-01 · B, Archivo 900, for all Academy headlines (24 px and up)</span></div>
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px">
+    <div style="display:flex;flex-direction:column;gap:18px;background:#141414;padding:32px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;color:#A8A49A">A · ARCHIVO 800 · NOT CHOSEN</div>
+      <div style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-.02em">Build something that runs.</div>
+      <div style="font-size:44px;font-weight:800;line-height:1.05;letter-spacing:-.02em">D is for Design</div>
+      <div style="font-size:32px;font-weight:800;line-height:1.1">Submit your journey map</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px;background:#141414;padding:32px;outline:1px solid #D8AF55">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;color:#D8AF55">B · ARCHIVO 900 · CHOSEN</div>
+      <div style="font-size:72px;font-weight:900;line-height:1;letter-spacing:-.02em">Build something that runs.</div>
+      <div style="font-size:44px;font-weight:900;line-height:1.05;letter-spacing:-.02em">D is for Design</div>
+      <div style="font-size:32px;font-weight:900;line-height:1.1">Submit your journey map</div>
+    </div>
+  </div>
+  <div style="font-size:14px;line-height:1.55;color:#A8A49A">Body text stays Archivo 400–600 either way. The thumbnail already uses 900. MAIM 00 uses 900 in uppercase; the Academy keeps sentence case.</div>
+</section>
+
+<section id="recon" data-screen-label="04 MAIM 00 reconciliation" style="width:1600px;padding:48px 80px 64px;display:flex;flex-direction:column;gap:24px;background:#050505">
+  <div style="padding-top:48px;border-top:1px solid #D8AF55;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap"><h2 style="margin:0;font-size:32px;font-weight:900">MAIM 00 + MAIM 07 reconciliation</h2><span style="font-size:14px;color:#A8A49A">Audit of the imported MAIM 00 Brand System (Vol 00, v1.0, June 2026) against Academy v0.1 · 2026-11-01</span></div>
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px">
+    <div style="background:#141414;border-top:3px solid #1F7A3A;padding:24px;display:flex;flex-direction:column;gap:12px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;color:#F7F4EA">CONFIRMED · ALREADY ALIGNED</div>
+      <div style="font-size:15px;line-height:1.6;color:#A8A49A">Six hex values match exactly · tri-bar order green → gold → blue under headlines and CTAs · JetBrains Mono for labels, tracked uppercase · gold never as text on white · dark-first, gold-led palette · MD monogram never re-typeset · campaign details kept editable.</div>
+    </div>
+    <div style="background:#141414;border-top:3px solid #1F7A3A;padding:24px;display:flex;flex-direction:column;gap:12px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;color:#F7F4EA">APPLIED TODAY</div>
+      <div style="font-size:15px;line-height:1.6;color:#A8A49A">Archivo replaces provisional Manrope in this board and all ten Academy files. JetBrains Mono unchanged. No other change made without review.</div>
+    </div>
+  </div>
+  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;color:#F58426">CONFLICTS · ALL DECIDED 2026-11-01</div>
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
+    <sc-for list="{{ conflicts }}" as="c" hint-placeholder-count="7">
+      <div style="background:#141414;padding:20px 24px;display:grid;grid-template-columns:40px 1fr;gap:12px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;color:#F58426">{{ c.n }}</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font-size:16px;font-weight:700">{{ c.t }}</div>
+          <div style="font-size:14px;line-height:1.55;color:#A8A49A"><span style="color:#F7F4EA">MAIM 00:</span> {{ c.parent }}</div>
+          <div style="font-size:14px;line-height:1.55;color:#A8A49A"><span style="color:#F7F4EA">Academy v0.1:</span> {{ c.academy }}</div>
+          <div style="font-size:14px;line-height:1.55;color:#F7F4EA;border-left:3px solid {{ c.recColor }};padding-left:10px">{{ c.rec }}</div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="open" data-screen-label="05 Decision log" style="width:1600px;padding:0 80px 120px;display:flex;flex-direction:column;gap:24px;background:#050505">
+  <div style="padding-top:48px;border-top:1px solid #F58426;display:flex;align-items:baseline;gap:16px"><h2 style="margin:0;font-size:32px;font-weight:700;color:#F58426">Decision log</h2><span style="font-size:14px;color:#A8A49A">Proposals approved 2026-10-31 · open items wait on missing inputs</span></div>
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
+    <sc-for list="{{ openItems }}" as="o" hint-placeholder-count="8">
+      <div style="background:#141414;padding:20px 24px;display:grid;grid-template-columns:40px 1fr;gap:12px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:14px;color:#F58426">{{ o.n }}</div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;gap:10px;align-items:center"><div style="font-size:16px;font-weight:700">{{ o.t }}</div><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.12em;padding:3px 6px;color:{{ o.fg }};background:{{ o.bg }}">{{ o.s }}</div></div><div style="font-size:14px;line-height:1.55;color:#A8A49A">{{ o.d }}</div></div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;annotate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;cohortName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Cohort name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;startDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Start date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;format&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Weeks] · live online&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;seats&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Number] places&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;price&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Price]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;dueDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[due date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;episode&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Series name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Thumbnail&quot;},&quot;episodeNum&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;00&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Thumbnail&quot;},&quot;episodeTitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Episode title]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Thumbnail&quot;},&quot;thumbLine1&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Build your first&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Thumbnail&quot;},&quot;thumbEmphasis&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;system&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Thumbnail&quot;}}">
+class Component extends DCLogic {
+  state = { stage: 1, submitted: false };
+  renderVals() {
+    const p = this.props;
+    const done = this.state.submitted ? 2 : 1;
+    const seq = [['A','Audit'],['D','Design'],['P','Prototype'],['T','Test'],['S','Ship'],['M','Measure']];
+    const abc = [["A","Audit","Find a real problem or repetitive task worth solving."],["B","Build","Make the first working version."],["C","Connect","Link the tools, data, and people the solution needs."],["D","Design","Map the user’s journey and the result they need."],["E","Evaluate","Check whether the output is useful and accurate."],["F","Flow","Turn scattered steps into a repeatable workflow."],["G","Guard","Set permissions, review points, and data boundaries."],["H","Handoff","Make the work usable by someone besides its creator."],["I","Integrate","Bring the solution into an existing business process."],["J","Journey","Trace what happens from first contact to final result."],["K","Knowledge","Organize source material so AI can use it responsibly."],["L","Launch","Put a tested version in front of real users."],["M","Measure","Track time saved, quality, adoption, or revenue."],["N","Navigate","Handle failures, exceptions, and changing requirements."],["O","Optimize","Improve the part that slows the system down."],["P","Prototype","Test an idea quickly before a full build."],["Q","Quality","Review outputs against clear acceptance standards."],["R","Refine","Use feedback to improve the next version."],["S","Ship","Deliver a complete, usable piece of work."],["T","Test","Check the workflow with realistic cases."],["U","Use","Practice with the tools in an actual task."],["V","Validate","Confirm that the solution solves the original problem."],["W","Workflow","Document who does what, when, and with which tool."],["X","eXchange","Move information reliably between systems."],["Y","Yield","Show the outcome the build produced."],["Z","Zero to One","Take the next idea from blank page to working proof."]];
+    const seqLetters = 'ADPTSM';
+    const abcList = abc.map(([letter, word, desc]) => ({ letter, word, desc, inSeq: seqLetters.includes(letter), border: seqLetters.includes(letter) ? '#D8AF55' : '#2A2A2A', letterColor: seqLetters.includes(letter) ? '#D8AF55' : '#F7F4EA' }));
+    const lessons = seq.map(([letter, t], i) => {
+      const complete = i < done, cur = i === 1;
+      return {
+        title: t, mark: letter, weekStart: i === 0, weekLabel: 'OPENING SEQUENCE',
+        state: complete ? 'Complete' : cur ? 'In progress' : 'Upcoming',
+        bar: complete ? '#1F7A3A' : cur ? '#D8AF55' : '#E9E4D4',
+        bg: cur ? '#FFFFFF' : 'transparent', edge: cur ? '#D8AF55' : 'transparent',
+        dotBg: complete ? '#1F7A3A' : cur ? '#D8AF55' : 'transparent', dotFg: complete ? '#F7F4EA' : '#050505',
+        dotBorder: complete ? '#1F7A3A' : cur ? '#D8AF55' : '#B9B4A6', weight: cur ? 700 : 500
+      };
+    });
+    const stageLabels = ['Exploring an idea', 'Running a business without systems', 'Ready to scale what works'];
+    return {
+      annotate: p.annotate ?? true,
+      cohortName: p.cohortName ?? '[Cohort name]',
+      startDate: p.startDate ?? '[Start date]',
+      format: p.format ?? '[Weeks] · live online',
+      seats: p.seats ?? '[Number] places',
+      price: p.price ?? '[Price]',
+      dueDate: p.dueDate ?? '[due date]',
+      episode: p.episode ?? '[Series name]',
+      episodeNum: p.episodeNum ?? '00',
+      episodeTitle: p.episodeTitle ?? '[Episode title]',
+      thumbLine1: p.thumbLine1 ?? 'Build your first',
+      thumbEmphasis: p.thumbEmphasis ?? 'system',
+      submitted: this.state.submitted,
+      submitLabel: this.state.submitted ? 'Edit submission' : 'Submit assignment',
+      toggleSubmit: () => this.setState(s => ({ submitted: !s.submitted })),
+      doneCount: done,
+      progressPct: Math.round(done / 6 * 100) + '%',
+      lessons, abcList,
+      stages: stageLabels.map((label, i) => {
+        const on = this.state.stage === i;
+        return { label, border: on ? '#D8AF55' : '#2A2A2A', dot: on ? '#D8AF55' : 'transparent', pick: () => this.setState({ stage: i }) };
+      }),
+      conflicts: [
+        { n: 'C1', t: 'Color names', parent: 'Black Foundation, White Clarity, Gold Authority, Jamaican Green, Knicks Blue, Knicks Orange.', academy: 'Previously used repo names.', rec: 'DECIDED 2026-11-01: MAIM 00 color scheme and names adopted across all Academy files.' },
+        { n: 'C2', t: 'Gold Deep #D4AF37', parent: 'Listed as a palette color.', academy: 'Not used.', rec: 'DECIDED 2026-11-01: inherited for artwork and fills only. No text or UI role.' },
+        { n: 'C3', t: 'Corner radius', parent: 'Rounded: cards 12–16 px, buttons 8–9 px, pills.', academy: 'Square corners.', rec: 'DECIDED 2026-11-01: Academy keeps square corners as its distinction from MAIM.' },
+        { n: 'C4', t: 'Primary action color', parent: 'Orange reserved for the single most important action.', academy: 'Gold primary; orange for due dates and needs-revision.', rec: 'DECIDED 2026-11-01: Academy primary action is gold.' },
+        { n: 'C5', t: 'Mark minimums', parent: 'Icon 32 px digital · lockup 120 px · print 25 mm.', academy: 'Was: mark 16 px, crest print 20 mm.', rec: 'DECIDED 2026-11-01: raised to the parent floor. Mark 32 px (16 px favicon only), print 25 mm.' },
+        { n: 'C6', t: 'Display type style', parent: 'Archivo 900, often uppercase. Labelled Archivo Black but loads Archivo 900.', academy: 'Archivo 900, sentence case (was 800).', rec: 'DECIDED 2026-11-01: Academy headlines use Archivo 900 (heaviest), sentence case. Archivo Black is not used.' },
+        { n: 'C7', t: 'Thumbnail watermark', parent: 'Subtle MD watermark bottom-right at ~5% width.', academy: 'Bottom-right is the YouTube timestamp; lower-left is the episode box.', rec: 'DECIDED 2026-11-01: discreet small mark bottom-right, 40 px at 55% opacity, sitting just above the timestamp zone.' },
+        { n: 'C8', t: 'MAIM 07 · Lesson anatomy', parent: '10 beats: Headline, Story, Concept, Visual, Live Demo, Exercise, Prompt, Reflection, Action, Next Step.', academy: 'Lesson page and workbook rebuilt on the 10 beats.', rec: 'DECIDED 2026-11-01: applied. Objective sits in beat 01; assignment + submission in beat 06.' },
+        { n: 'C9', t: 'Curriculum spine', parent: 'MAIM ABC’s Vol 1: A–Z mindset words, linear, three letters per week.', academy: 'MAIM Academy ABC’s Vol 2: 26 action letters (Audit … Zero to One), used as workshop themes and project prompts, not a forced order.', rec: 'DECIDED 2026-11-01: Vol 2 adopted. Opening sequence Audit → Design → Prototype → Test → Ship → Measure approved.' },
+        { n: 'C10', t: 'MAIM 07 · Graduation', parent: 'Certificate, badge, seal, portfolio, alumni, referral, next cohort.', academy: 'Academy Credentials file: certificate + badge.', rec: 'DECIDED 2026-11-01: both MAIM and the Academy issue a badge and certificate. MAIM certifies the mindset; the Academy certifies performance.' },
+        { n: 'C11', t: 'MAIM 07 · Weekly rhythm', parent: 'Sun Live · Mon Lesson · Tue Build · Wed Office Hours · Thu Accountability · Fri Wins · Sat Prep.', academy: 'Added to onboarding and the session deck close slide.', rec: 'DECIDED 2026-11-01: applied.' }
+      ].map(c => ({ ...c, recColor: c.rec.startsWith('DECIDED') ? '#1F7A3A' : '#D8AF55' })),
+      openItems: [
+        { n: '01', t: 'Font families', s: 'RESOLVED', d: 'Archivo + JetBrains Mono, per MAIM 00 Brand System §03. Provisional Manrope removed 2026-11-01.' },
+        { n: '02', t: 'MAIM 00 export', s: 'RESOLVED', d: 'Imported 2026-11-01. All six hex values match. Conflicts found are listed in the reconciliation section above; none resolved silently.' },
+        { n: '03', t: 'Academy neutrals', s: 'APPROVED', d: '#141414 surface, #2A2A2A line, #A8A49A muted on dark, #5A574F muted on paper, #E9E4D4 paper line.' },
+        { n: '04', t: 'Logo minimums + clear space', s: 'APPROVED', d: 'Metallic ≥128 px, simplified ≥64 px / 25 mm, mark ≥32 px (16 px favicon only), per MAIM 00. Clear space 25% of diameter.' },
+        { n: '05', t: 'Learning ground', s: 'APPROVED', d: 'White Clarity paper is the default for lessons and workbooks. Marketing and media stay on Black Foundation.' },
+        { n: '06', t: 'Backdrop masters', s: 'RESOLVED', d: 'NORMAL_v0.1 (flipped from the mirrored source, text reads correctly) and CLEAN-PLATE_v0.1 (no text) created 2026-11-01. Media templates use the clean plate. Pending founder approval in the register.' },
+        { n: '07', t: 'Semantic state colors', s: 'APPROVED', d: 'Green complete/submitted, orange due/needs revision, blue info and links on paper, gold current/primary.' },
+        { n: '08', t: 'Corners + buttons', s: 'APPROVED', d: 'Square corners, 48 px minimum height, one primary action per view.' }
+      ].map(o => ({ ...o, fg: (o.s === 'APPROVED' || o.s === 'RESOLVED') ? '#F7F4EA' : '#050505', bg: (o.s === 'APPROVED' || o.s === 'RESOLVED') ? '#1F7A3A' : '#F58426' }))
+    };
+  }
+}
+</script>
+</body>
+</html>

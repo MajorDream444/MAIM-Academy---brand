@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>body{margin:0;background:#0E0E0E;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
+</helmet>
+<div style="padding:80px;display:flex;flex-direction:column;gap:80px">
+
+  <div data-screen-label="YouTube banner" style="display:flex;flex-direction:column;gap:20px">
+    <div style="display:flex;gap:16px;align-items:baseline"><div style="font-size:28px;font-weight:700">YouTube channel banner · 2560×1440</div><div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#F58426">Backdrop: CLEAN-PLATE v0.1 (normal, no text)</div></div>
+    <div style="width:2560px;height:1440px;position:relative;overflow:hidden;background:#050505">
+      <img src="../assets/backdrops/maim-academy_backdrop_filament_CLEAN-PLATE_v0.1.png" alt="" style="position:absolute;left:-870px;top:-532px;width:4300px;height:2420px">
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,#050505 0%,rgba(5,5,5,0) 30%,rgba(5,5,5,0) 62%,#050505 78%)"></div>
+      <div style="position:absolute;left:507px;top:508px;width:1546px;height:423px;display:flex;align-items:center;justify-content:center;gap:56px">
+        <img src="../logos/approved/png/maim-academy_crest_metallic-presentation_transparent_512px_v0.1.png" alt="MAIM Academy crest" style="width:300px;height:300px">
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <div style="font-size:30px;letter-spacing:.3em;font-weight:700;color:#D8AF55">MAIM ACADEMY</div>
+          <div style="font-size:92px;font-weight:900;line-height:1;letter-spacing:-.02em">Build something that runs.</div>
+          <div style="display:flex;align-items:center;gap:20px"><div style="display:flex;width:120px;height:4px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#006BB6"></div></div><span style="font-size:32px;color:#F7F4EA">{{ ytSchedule }}</span></div>
+        </div>
+      </div>
+      <sc-if value="{{ showSafe }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;left:507px;top:508px;width:1546px;height:423px;outline:3px dashed #F58426;pointer-events:none"></div>
+        <div style="position:absolute;left:507px;top:470px;font-family:'JetBrains Mono',monospace;font-size:24px;color:#F58426">SAFE AREA 1546×423 · all devices</div>
+      </sc-if>
+    </div>
+  </div>
+
+  <div data-screen-label="LinkedIn banner" style="display:flex;flex-direction:column;gap:20px">
+    <div style="display:flex;gap:16px;align-items:baseline"><div style="font-size:28px;font-weight:700">LinkedIn profile banner · 1584×396</div><div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#A8A49A">Profile photo covers lower-left; content sits right</div></div>
+    <div style="width:1584px;height:396px;position:relative;overflow:hidden;background:#050505">
+      <img src="../assets/backdrops/maim-academy_backdrop_filament_CLEAN-PLATE_v0.1.png" alt="" style="position:absolute;left:0;top:-227px;width:1584px;height:891px">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,5,0) 0%,rgba(5,5,5,0) 38%,#050505 62%)"></div>
+      <div style="position:absolute;right:72px;top:0;bottom:0;display:flex;align-items:center;gap:36px">
+        <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-end;text-align:right">
+          <div style="font-size:18px;letter-spacing:.3em;font-weight:700;color:#D8AF55">MAIM ACADEMY</div>
+          <div style="font-size:52px;font-weight:900;line-height:1;letter-spacing:-.02em">Build something that runs.</div>
+          <div style="display:flex;align-items:center;gap:14px"><span style="font-size:20px;color:#A8A49A">{{ liLine }}</span><div style="display:flex;width:72px;height:3px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#006BB6"></div></div></div>
+        </div>
+        <img src="../logos/approved/png/maim-academy_crest_metallic-presentation_transparent_512px_v0.1.png" alt="MAIM Academy crest" style="width:200px;height:200px">
+      </div>
+      <sc-if value="{{ showSafe }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;left:40px;bottom:-60px;width:300px;height:300px;border-radius:50%;outline:3px dashed #F58426;pointer-events:none"></div>
+        <div style="position:absolute;left:360px;bottom:24px;font-family:'JetBrains Mono',monospace;font-size:14px;color:#F58426">PROFILE PHOTO ZONE</div>
+      </sc-if>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showSafe&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;ytSchedule&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[New lessons every · day]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;liLine&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Next cohort · date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return {
+      showSafe: p.showSafe ?? true,
+      ytSchedule: p.ytSchedule ?? '[New lessons every · day]',
+      liLine: p.liLine ?? '[Next cohort · date]'
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>body{margin:0;background:#0E0E0E;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
+</helmet>
+<div style="padding:80px;display:flex;gap:64px;align-items:flex-start">
+  <div data-screen-label="Shorts caption frame" style="display:flex;flex-direction:column;gap:20px">
+    <div style="font-size:28px;font-weight:700">Shorts / Reels caption frame · 1080×1920 · transparent overlay</div>
+    <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:repeating-linear-gradient(135deg,#2A2A2A 0,#2A2A2A 24px,#333 24px,#333 48px)">
+      <div style="position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);font-family:'JetBrains Mono',monospace;font-size:28px;color:#A8A49A;background:#141414;padding:14px 20px">VIDEO LAYER (not part of overlay)</div>
+      <div style="position:absolute;left:64px;top:140px;display:flex;align-items:center;gap:18px;background:rgba(5,5,5,.72);padding:14px 22px 14px 14px">
+        <img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="" style="width:64px;height:64px">
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:24px;letter-spacing:.24em;font-weight:900">MAIM ACADEMY</span><span style="font-size:24px;color:#D8AF55">{{ topic }}</span></div>
+      </div>
+      <div style="position:absolute;left:80px;right:180px;top:1180px;display:flex;justify-content:center;text-align:center">
+        <div style="font-size:84px;font-weight:900;line-height:1.1;color:#F7F4EA;-webkit-text-stroke:5px #050505;paint-order:stroke fill;text-wrap:balance">{{ capBefore }} <span style="color:#D8AF55">{{ capEmphasis }}</span> {{ capAfter }}</div>
+      </div>
+      <div style="position:absolute;left:80px;bottom:440px;display:flex;width:120px;height:5px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#006BB6"></div></div>
+      <sc-if value="{{ showSafe }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;right:0;top:640px;width:160px;height:900px;background:rgba(245,132,38,.14);border-left:3px dashed #F58426;display:flex;align-items:center;justify-content:center"><span style="writing-mode:vertical-rl;font-family:'JetBrains Mono',monospace;font-size:22px;color:#F58426">ACTION BUTTONS</span></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;height:400px;background:rgba(245,132,38,.14);border-top:3px dashed #F58426;padding:16px 24px;font-family:'JetBrains Mono',monospace;font-size:22px;color:#F58426">BOTTOM UI · 400px · title, handle, audio</div>
+        <div style="position:absolute;left:0;right:0;top:0;height:120px;background:rgba(245,132,38,.14);border-bottom:3px dashed #F58426;padding:16px 24px;font-family:'JetBrains Mono',monospace;font-size:22px;color:#F58426">TOP UI · 120px</div>
+      </sc-if>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:16px;max-width:420px;padding-top:60px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.2em;color:#D8AF55">CAPTION RULES</div>
+    <div style="font-size:17px;line-height:1.6;color:#A8A49A">White Clarity text, thin Black Foundation outline. Gold on one emphasized word or phrase per caption. Max 2 lines, sitting above the bottom UI zone and clear of the action buttons. Mark tag top-left only; no crest on shorts.</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showSafe&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;topic&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Topic or series]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Caption&quot;},&quot;capBefore&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Write it down&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Caption&quot;},&quot;capEmphasis&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;once&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Caption&quot;},&quot;capAfter&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Caption&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return {
+      showSafe: p.showSafe ?? true,
+      topic: p.topic ?? '[Topic or series]',
+      capBefore: p.capBefore ?? 'Write it down',
+      capEmphasis: p.capEmphasis ?? 'once',
+      capAfter: p.capAfter ?? ''
+    };
+  }
+}
+</script>
+</body>
+</html>
