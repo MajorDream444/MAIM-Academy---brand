@@ -19,7 +19,30 @@
   </div>
 
   <div style="display:flex;flex-direction:column;gap:16px">
-    <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#A8A49A">A · TIER SET (DARK)</div>
+    <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#D8AF55">LAUNCH · CONFIRMED OFFER (use this one publicly)</div>
+    <div style="background:#050505;border:2px solid #D8AF55;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);">
+      <div style="padding:44px;display:flex;flex-direction:column;gap:24px;border-right:1px solid #2A2A2A">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:16px"><div style="font-size:13px;letter-spacing:.22em;color:#D8AF55;font-weight:700">ACADEMY COHORT · STARTS {{ startDate }}</div><div style="background:#F58426;color:#050505;font-size:12px;font-weight:800;letter-spacing:.12em;padding:5px 10px">20 SEATS</div></div>
+        <div style="font-size:48px;font-weight:900;line-height:1.05;letter-spacing:-.02em">{{ t2Name }}</div>
+        <div style="display:flex;align-items:baseline;gap:10px"><span style="font-size:64px;font-weight:900;color:#D8AF55;line-height:1">$249</span><span style="font-size:16px;color:#A8A49A">one-time · no payment plan</span></div>
+        <div style="display:flex;flex-direction:column;border-top:1px solid #2A2A2A">
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid #2A2A2A;font-size:17px;line-height:1.45"><span style="color:#D8AF55">—</span><span>Weekly group sessions for 30 days</span></div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid #2A2A2A;font-size:17px;line-height:1.45"><span style="color:#D8AF55">—</span><span>One 45-minute 1:1 session</span></div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid #2A2A2A;font-size:17px;line-height:1.45"><span style="color:#D8AF55">—</span><span>Cohort capped at 20 people</span></div>
+        </div>
+      </div>
+      <div style="padding:44px;display:flex;flex-direction:column;gap:20px;background:#141414">
+        <div style="font-size:13px;letter-spacing:.22em;color:#D8AF55;font-weight:700">READINESS GATE</div>
+        <div style="font-size:24px;font-weight:900;line-height:1.2">Check your readiness before you pay.</div>
+        <div style="font-size:16px;line-height:1.6;color:#A8A49A">Tell us your goal, the problem you keep repeating and the time you have to prepare. If the cohort fits, we invite you to pay. If not, we point you to MAIM learning first.</div>
+        <div style="display:flex;flex-direction:column;gap:8px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.12em;color:#A8A49A"><span>1 · CHECK READINESS</span><span>2 · DECISION BY EMAIL</span><span>3 · PAYMENT INVITE</span><span>4 · SEAT CONFIRMED</span></div>
+        <div style="margin-top:auto;background:#D8AF55;color:#050505;font-weight:700;font-size:17px;padding:17px;text-align:center">Check your readiness</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:16px;opacity:.85">
+    <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#A8A49A">A · TIER SET (DARK)</div><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.12em;color:#050505;background:#F58426;padding:4px 8px;font-weight:700">INTERNAL EXAMPLE · OFFERS NOT CONFIRMED · DO NOT PUBLISH</div></div>
     <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:stretch">
       <div style="background:#141414;border:1px solid #2A2A2A;padding:36px;display:flex;flex-direction:column;gap:22px">
         <div style="font-size:13px;letter-spacing:.22em;color:#A8A49A;font-weight:700">START</div>
@@ -77,10 +100,10 @@ class Component extends DCLogic {
   renderVals() {
     const p = this.props;
     return {
-      startDate: p.startDate ?? '[Start date]', seats: p.seats ?? '[N] places',
+      startDate: p.startDate ?? '[Start date]', seats: p.seats ?? '20 seats',
       t1Name: p.t1Name ?? '[Self-paced course]', t1Desc: p.t1Desc ?? '[One line on who it is for]', t1Price: p.t1Price ?? '[Price]', t1Note: p.t1Note ?? 'one-time', t1Cta: p.t1Cta ?? 'Start learning',
       t1Items: ['[Lessons + workbooks]', '[Assignments, self-reviewed]', '[Lifetime access]'],
-      t2Name: p.t2Name ?? '[Cohort name]', t2Desc: p.t2Desc ?? '[One line on who it is for]', t2Price: p.t2Price ?? '[Price]', t2Note: p.t2Note ?? '[or payment plan]', t2Cta: p.t2Cta ?? 'Apply for this cohort',
+      t2Name: p.t2Name ?? '[Cohort name]', t2Desc: p.t2Desc ?? '[One line on who it is for]', t2Price: p.t2Price ?? '$249', t2Note: p.t2Note ?? 'one-time', t2Cta: p.t2Cta ?? 'Apply for this cohort',
       t2Items: ['[Everything in Start]', '[Weekly live sessions]', '[Assignment feedback]', '[Cohort community]'],
       t3Name: p.t3Name ?? '[Advanced offer]', t3Desc: p.t3Desc ?? '[One line on who it is for]', t3Price: p.t3Price ?? '[Price]', t3Note: p.t3Note ?? '[billing]', t3Cta: p.t3Cta ?? 'Book a call',
       t3Items: ['[Everything in Cohort]', '[1:1 implementation calls]', '[System review]'],

@@ -22,7 +22,7 @@
       <img src="../logos/approved/png/maim-academy_crest_metallic-presentation_transparent_512px_v0.1.png" alt="MAIM Academy crest" style="width:clamp(96px,14vw,160px);height:auto">
       <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
         <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.2em;color:#D8AF55">MAIM 00 → MAIM 07 · TEMPLATE LIBRARY v0.1</div>
-        <h1 style="margin:0;font-size:clamp(36px,5vw,56px);font-weight:800;line-height:1.04;letter-spacing:-.02em">MAIM — Academy</h1>
+        <h1 style="margin:0;font-size:clamp(36px,5vw,56px);font-weight:900;line-height:1.04;letter-spacing:-.02em">MAIM — Academy</h1>
         <p style="margin:0;font-size:18px;line-height:1.6;color:#A8A49A;max-width:640px;text-wrap:pretty">MAIM provides the mindset and philosophy. The Academy teaches people to apply it. Every template below uses the same foundation; campaign details stay in editable fields.</p>
       </div>
     </div>
@@ -45,8 +45,8 @@
       </div>
     </sc-for>
     <div style="border-top:3px solid #F58426;background:#141414;padding:24px 28px;display:flex;flex-direction:column;gap:10px">
-      <div style="font-size:13px;letter-spacing:.2em;color:#F58426;font-weight:700">OPEN INPUTS</div>
-      <div style="font-size:15px;line-height:1.6;color:#A8A49A">1 · Remaining MAIM 00/07 items on the foundation board: color names, Gold Deep, minimums, watermark, lesson anatomy, A–Z spine, weekly rhythm. 2 · Fonts resolved: Archivo + JetBrains Mono per MAIM 00. 3 · Normal-orientation backdrop master and a text-free filament plate; media templates use the flipped MIRRORED file as a stand-in. 4 · Approval entry in the repo asset register.</div>
+      <div style="font-size:13px;letter-spacing:.2em;color:#F58426;font-weight:700">STATUS · 2026-11-01</div>
+      <div style="font-size:15px;line-height:1.6;color:#A8A49A">Locked: MAIM 00/07 reconciliation C1–C11, Archivo 900 headlines, ABC’s Vol 2 opening sequence. Recorded in brand/ASSET_REGISTER.csv and handoffs/FOUNDER_DECISIONS_2026-11-01.md on review/logo-package-v0.1. In review: template library (19 templates, 6 added 2026-11-01), credential issuing criteria, NORMAL_v0.1 and CLEAN-PLATE_v0.1 backdrops. Changes follow guidelines/APPROVAL.md.</div>
     </div>
   </div>
   <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:24px clamp(20px,5vw,64px);border-top:1px solid #D8AF55">
@@ -63,14 +63,20 @@ class Component extends DCLogic {
         { name: 'Academy Enrollment', desc: 'Attract and enroll', color: '#D8AF55', items: [
           { name: 'Enrollment page', desc: 'Hero, how it works, cohort card, readiness check', spec: 'Board · example 1', href: 'MAIM Academy Foundation Board.dc.html#1' },
           { name: 'Offer cards', desc: 'Three tiers, inline banner card, free guide card', spec: 'Cards · dark + paper', href: 'Academy Offer Cards.dc.html' },
-          { name: 'Onboarding welcome', desc: 'Four setup steps with progress', spec: 'Responsive page', href: 'Academy Onboarding Welcome.dc.html' }
+          { name: 'Onboarding welcome', desc: 'Four setup steps with progress', spec: 'Responsive page', href: 'Academy Onboarding Welcome.dc.html' },
+          { name: 'Enrollment status', desc: 'Received, approved, payment invited, confirmed, waitlisted, redirected to MAIM', spec: 'Responsive page · 6 states', href: 'Academy Enrollment Status.dc.html' },
+          { name: 'Email templates', desc: 'One layout, seven messages from application to completion', spec: '600 px email', href: 'Academy Email Templates.dc.html' }
         ]},
         { name: 'Academy Learning & Cohorts', desc: 'Teach and track', color: '#1F7A3A', items: [
           { name: 'Lesson page', desc: 'Objective, instructions, assignment, feedback, progress', spec: 'Board · example 2', href: 'MAIM Academy Foundation Board.dc.html#2' },
           { name: 'Workbook page', desc: 'Printable checklist + reflection', spec: '2 pages · Letter / A4', href: 'Academy Workbook Page.dc.html' },
           { name: 'Session deck', desc: 'Title to close, live cohort session', spec: '10 slides · 1920×1080', href: 'Academy Session Deck.dc.html' },
           { name: 'Completion page', desc: 'Summary of work, credentials, next step', spec: 'Responsive page', href: 'Academy Completion Page.dc.html' },
-          { name: 'Certificate + badge', desc: 'Academy credentials: printable certificate, shareable badge', spec: 'Letter landscape · 1080×1080', href: 'Academy Credentials.dc.html' }
+          { name: 'Certificate + badge', desc: 'Academy credentials: printable certificate, shareable badge', spec: 'Letter landscape · 1080×1080', href: 'Academy Credentials.dc.html' },
+          { name: 'Cohort schedule', desc: 'Four weeks: sessions, office hours, deadlines, replays, calendar', spec: 'Responsive page', href: 'Academy Cohort Schedule.dc.html' },
+          { name: 'Project submission + feedback', desc: 'Brief, criteria, upload, review, revision, accepted', spec: 'Responsive page · 5 states', href: 'Academy Project Submission.dc.html' },
+          { name: 'Facilitator run sheet', desc: 'Prep, timed run of show, checkpoints, fallback, follow-up', spec: 'Print · facilitator only', href: 'Academy Facilitator Run Sheet.dc.html' },
+          { name: 'ABC’s Vol 2 reference card', desc: 'A–Z action words front, opening sequence back', spec: 'Letter portrait · 2 sides', href: 'Academy ABCs Vol 2 Reference Card.dc.html' }
         ]},
         { name: 'Academy Media', desc: 'Reach and announce', color: '#006BB6', items: [
           { name: 'YouTube thumbnail', desc: 'Crest, 5-word headline, timestamp zone', spec: 'Board · example 3 · 1280×720', href: 'MAIM Academy Foundation Board.dc.html#3' },

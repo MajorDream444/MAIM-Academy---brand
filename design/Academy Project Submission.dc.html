@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>body{margin:0;background:#050505;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
+</helmet>
+<div data-screen-label="Project submission + feedback" style="min-height:100vh;display:flex;flex-direction:column;background:#050505">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px clamp(20px,5vw,64px);border-bottom:1px solid #2A2A2A">
+    <div style="display:flex;align-items:center;gap:12px"><img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="MAIM Academy" style="width:36px;height:36px"><span style="font-size:14px;letter-spacing:.22em;font-weight:700">MAIM ACADEMY</span></div>
+    <div style="font-size:14px;color:#A8A49A">{{ cohortName }} · Week 1</div>
+  </div>
+  <div style="display:flex;width:100%;height:3px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#006BB6"></div></div>
+
+  <div style="width:100%;max-width:1200px;margin:0 auto;padding:24px clamp(20px,5vw,64px) 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+    <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.18em;color:#F58426;font-weight:700">PREVIEW STATE</span>
+    <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5"><div onClick="{{ t.pick }}" style="font-size:13px;padding:8px 12px;border:1px solid {{ t.border }};color:{{ t.color }};cursor:pointer">{{ t.label }}</div></sc-for>
+  </div>
+
+  <div style="width:100%;max-width:1200px;margin:0 auto;padding:clamp(32px,5vw,56px) clamp(20px,5vw,64px) 72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:28px;min-width:0">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><span style="background:#D8AF55;color:#050505;font-size:14px;font-weight:800;padding:4px 10px">D</span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.2em;color:#D8AF55">PROJECT · DESIGN</span><span style="font-size:13px;font-weight:700;padding:4px 10px;background:{{ st.color }};color:{{ st.ink }}">{{ st.label }}</span></div>
+        <h1 style="margin:0;font-size:clamp(32px,4.5vw,48px);font-weight:900;line-height:1.06;letter-spacing:-.02em">Map the user’s journey and the result they need.</h1>
+        <div style="font-size:15px;color:#A8A49A">Due {{ dueDate }} · Reviewer: {{ reviewer }}</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.18em;color:#A8A49A">DELIVERABLE</div>
+        <div style="font-size:17px;line-height:1.6">One journey map (image, PDF or link) from first contact to the result, for the problem you chose in Audit.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.18em;color:#A8A49A">SUCCESS CRITERIA</div>
+        <div style="display:flex;flex-direction:column;background:#141414">
+          <sc-for list="{{ criteria }}" as="c" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 18px;border-bottom:1px solid #2A2A2A">
+              <div style="width:22px;height:22px;border:2px solid {{ c.color }};background:{{ c.fill }};color:#F7F4EA;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">{{ c.mark }}</div>
+              <div style="font-size:15px;line-height:1.5">{{ c.text }}</div>
+              <div style="font-size:12px;font-weight:700;color:{{ c.color }};white-space:nowrap">{{ c.state }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
+      <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+        <div style="background:#141414;padding:28px;display:flex;flex-direction:column;gap:18px;border-top:3px solid #D8AF55">
+          <div style="font-size:22px;font-weight:900">{{ formTitle }}</div>
+          <div style="display:flex;flex-direction:column;gap:8px"><label style="font-size:14px;font-weight:600">Link to your work</label><input placeholder="https://" style="height:48px;border:1px solid #2A2A2A;background:#050505;color:#F7F4EA;padding:0 14px;font-size:16px;font-family:inherit;outline:none" style-focus="border-color:#D8AF55"></div>
+          <div style="border:1px dashed #5A574F;padding:24px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center"><div style="font-size:15px;font-weight:700">Or drop a file</div><div style="font-size:13px;color:#A8A49A">PNG, JPG or PDF · up to 25 MB</div></div>
+          <div style="display:flex;flex-direction:column;gap:8px"><label style="font-size:14px;font-weight:600">{{ noteLabel }}</label><textarea rows="3" placeholder="Two or three lines" style="border:1px solid #2A2A2A;background:#050505;color:#F7F4EA;padding:12px 14px;font-size:16px;font-family:inherit;outline:none;resize:vertical" style-focus="border-color:#D8AF55"></textarea></div>
+          <div style="background:#D8AF55;color:#050505;font-weight:700;font-size:16px;padding:15px;text-align:center">{{ submitLabel }}</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ showWaiting }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#141414;padding:24px 28px;border-top:3px solid #D8AF55;display:flex;flex-direction:column;gap:8px"><div style="font-size:18px;font-weight:700">{{ waitTitle }}</div><div style="font-size:15px;line-height:1.55;color:#A8A49A">Peer review first, then your facilitator. Feedback within {{ reviewDays }}; you will get an email when it’s ready.</div></div>
+      </sc-if>
+      <sc-if value="{{ showFeedback }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#F7F4EA;color:#050505;padding:28px;display:flex;flex-direction:column;gap:14px;border-top:3px solid {{ st.color }}">
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.18em;font-weight:700;color:#5A574F">REVIEWER FEEDBACK</div><div style="font-size:13px;color:#5A574F">{{ reviewer }} · {{ reviewDate }}</div></div>
+          <div style="font-size:22px;font-weight:900;line-height:1.2">{{ fbTitle }}</div>
+          <div style="font-size:16px;line-height:1.6">{{ fbBody }}</div>
+          <sc-if value="{{ isRevision }}" hint-placeholder-val="{{ false }}"><div style="border-left:3px solid #F58426;padding:4px 0 4px 14px;font-size:15px;line-height:1.55"><b>To resubmit:</b> add the step where the user gets a reply, and mark where AI drafts the reply and where you approve it.</div></sc-if>
+        </div>
+      </sc-if>
+      <div style="background:#141414;padding:24px 28px;display:flex;flex-direction:column;gap:12px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.18em;color:#A8A49A">HISTORY</div>
+        <sc-for list="{{ history }}" as="h" hint-placeholder-count="2">
+          <div style="display:grid;grid-template-columns:10px 110px minmax(0,1fr);gap:12px;align-items:center;font-size:14px"><span style="width:10px;height:10px;background:{{ h.color }}"></span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#A8A49A">{{ h.when }}</span><span>{{ h.text }}</span></div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;status&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;draft&quot;,&quot;submitted&quot;,&quot;revision&quot;,&quot;resubmitted&quot;,&quot;accepted&quot;],&quot;default&quot;:&quot;revision&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;State&quot;},&quot;cohortName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Cohort name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Fields&quot;},&quot;dueDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Due date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Fields&quot;},&quot;reviewer&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Reviewer]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Fields&quot;},&quot;reviewDays&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;3 working days&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Fields&quot;}}">
+class Component extends DCLogic {
+  state = { i: null };
+  renderVals() {
+    const p = this.props;
+    const keys = ['draft', 'submitted', 'revision', 'resubmitted', 'accepted'];
+    const S = {
+      draft: { label: 'Not submitted', color: '#2A2A2A', ink: '#F7F4EA' },
+      submitted: { label: 'In review', color: '#D8AF55', ink: '#050505' },
+      revision: { label: 'Revision requested', color: '#F58426', ink: '#050505' },
+      resubmitted: { label: 'Resubmitted · in review', color: '#D8AF55', ink: '#050505' },
+      accepted: { label: 'Accepted', color: '#1F7A3A', ink: '#F7F4EA' }
+    };
+    const idx = this.state.i ?? Math.max(0, keys.indexOf(p.status ?? 'revision'));
+    const k = keys[idx], st = S[k];
+    const texts = ['Starts at first contact and ends at the result the user needs', 'Every step names who acts: the user, you, or a tool', 'Marks where AI is used and where a person reviews it', 'Uses the problem from your Audit project'];
+    const reviewed = k === 'revision' || k === 'accepted';
+    const criteria = texts.map((text, i) => {
+      if (!reviewed) return { text, state: '', mark: '', color: '#5A574F', fill: 'transparent' };
+      const ok = k === 'accepted' || i !== 2;
+      return { text, state: ok ? 'MET' : 'NOT YET', mark: ok ? '✓' : '!', color: ok ? '#1F7A3A' : '#F58426', fill: ok ? '#1F7A3A' : 'transparent' };
+    });
+    const h = [];
+    if (idx >= 1) h.push({ when: '[date] 18:40', text: 'Submitted · journey-map-v1.pdf', color: '#D8AF55' });
+    if (idx >= 2) h.push({ when: '[date] 21:15', text: 'Peer review · [peer name] left notes', color: '#006BB6' });
+    if (idx >= 2) h.push({ when: '[date] 11:05', text: 'Revision requested · 3 of 4 criteria met', color: '#F58426' });
+    if (idx >= 3) h.push({ when: '[date] 20:12', text: 'Resubmitted · journey-map-v2.pdf', color: '#D8AF55' });
+    if (idx >= 4) h.push({ when: '[date] 09:30', text: 'Accepted · all criteria met', color: '#1F7A3A' });
+    if (!h.length) h.push({ when: '—', text: 'Nothing submitted yet', color: '#2A2A2A' });
+    return {
+      st, history: h.reverse(), criteria,
+      tabs: keys.map((key, i) => ({ label: S[key].label, border: i === idx ? '#D8AF55' : '#2A2A2A', color: i === idx ? '#D8AF55' : '#A8A49A', pick: () => this.setState({ i }) })),
+      showForm: k === 'draft' || k === 'revision', showWaiting: k === 'submitted' || k === 'resubmitted', showFeedback: reviewed, isRevision: k === 'revision',
+      formTitle: k === 'revision' ? 'Resubmit your work' : 'Submit your work', submitLabel: k === 'revision' ? 'Resubmit for review' : 'Submit for review',
+      noteLabel: k === 'revision' ? 'What did you change?' : 'Anything the reviewer should know?',
+      waitTitle: k === 'resubmitted' ? 'Resubmission received.' : 'Submitted. Your reviewer has it.',
+      fbTitle: k === 'accepted' ? 'Accepted. Move on to Prototype.' : 'Close. One criterion to fix.',
+      fbBody: k === 'accepted' ? 'Every step has an owner and the AI and review points are clear. This map is ready to build from.' : 'The journey is clear from first contact to booking, and each step has an owner. It does not yet show where AI is used or where you check its output.',
+      cohortName: p.cohortName ?? '[Cohort name]', dueDate: p.dueDate ?? '[Due date]', reviewer: p.reviewer ?? '[Reviewer]', reviewDate: p.reviewDate ?? '[date]', reviewDays: p.reviewDays ?? '3 working days'
+    };
+  }
+}
+</script>
+</body>
+</html>
