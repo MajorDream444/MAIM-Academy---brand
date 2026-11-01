@@ -38,6 +38,14 @@ Channel: Claude Design project "MAIM Academy Design System" chat.
 - 2026-11-01 · Founding cohort: "MAIM Academy — Founding Cohort 01". Day 1 Wed 18 Nov 2026 (orientation + office hours); Sunday group sessions 22 Nov, 29 Nov, 6 Dec, 13 Dec; Wednesday office hours; closes Thu 17 Dec 2026 (Day 30). Session times, timezone, platform, cohort space, contact email and links: pending, not invented.
 - 2026-11-01 · Delivery rules: visual approval is separate from operational readiness. Learner-facing buttons without a destination show "link pending" and do not look clickable. Internal notes, preview controls and safe-zone guides are hidden by default. The QA report's limitations stand. The unused A–L draft is superseded; ABC's Vol 2 A–Z is unchanged.
 
+- 2026-11-01 · Deadline order (approved): every project is taught before it is due. Session 1 (22 Nov) Audit + Design → Audit due 24 Nov, Design 27 Nov. Session 2 (29 Nov) Prototype + Test → Prototype 1 Dec, Test 4 Dec. Session 3 (6 Dec) Ship + Measure → Ship 8 Dec, Measure 12 Dec. Session 4 (13 Dec) Showcase.
+
+- 2026-11-01 · VISUAL DESIGN APPROVED: all 20 templates and both backdrops (NORMAL_v0.1, CLEAN-PLATE_v0.1). Evidence: founder chat message "I approve".
+- 2026-11-01 · Revised Sunday teaching sequence approved: 22 Nov Audit + Design · 29 Nov Prototype + Test · 6 Dec Ship + Measure · 13 Dec Showcase. Each project taught before it is due.
+- Recorded separately from OPERATIONAL LAUNCH READINESS, which stays OPEN: session times, timezone, platform, cohort space, contact email, links, integration checks (booking, payment, email, credential generation).
+
+## Open · operational launch readiness
+- Session times + timezone · platform + cohort space · verified contact email · booking, payment, calendar, community, replay links · integration checks.
+
 ## In review (not approved)
-- Template library (onboarding, offer cards, workbook, session deck, completion, credentials, banners, Instagram, Shorts).
-- Backdrops NORMAL_v0.1 and CLEAN-PLATE_v0.1.
+- None for visual design.

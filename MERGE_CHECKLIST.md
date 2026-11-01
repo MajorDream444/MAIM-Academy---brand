@@ -2,7 +2,7 @@
 
 Before merging
 1. Commit this package: design/ (18 files), brand/ASSET_REGISTER_append_2026-11-01c.csv (append 2 rows, edit the A–L row to superseded), qa/QA_REPORT_2026-11-01.md.
-2. Founder approval recorded for: template library (20 templates), NORMAL_v0.1 and CLEAN-PLATE_v0.1 backdrops. Update their register rows to approved with date and evidence.
+2. Founder visual approval recorded 2026-11-01 (all 20 templates + both backdrops). Apply brand/ASSET_REGISTER_approvals_2026-11-01.csv.
 3. Confirm no register row for a published asset is still in_review.
 4. Confirm the internal tier set on Offer cards stays marked DO NOT PUBLISH.
 
@@ -13,3 +13,5 @@ Merge
 
 After merge
 - Changes to approved assets need a new version (v0.2) and founder approval per guidelines/APPROVAL.md.
+
+Note: merging locks the visual brand v0.1. Operational launch readiness stays open and is tracked in the decision record; it does not block the merge.
