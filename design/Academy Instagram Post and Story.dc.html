@@ -10,7 +10,7 @@
 <helmet>
 <meta name="design_doc_mode" content="canvas">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
-<style>body{margin:0;background:#0E0E0E;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
+<style>html{background:#0E0E0E}body{margin:0;background:#0E0E0E;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
 </helmet>
 <div style="padding:80px;display:flex;gap:80px;align-items:flex-start">
 
@@ -50,18 +50,18 @@
   </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;showSafe&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;noteNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[00]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Post&quot;},&quot;postLine&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Write the task down before you&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Post&quot;},&quot;postEmphasis&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;automate it.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Post&quot;},&quot;postSupport&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Most broken systems are a step nobody wrote down.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Post&quot;},&quot;storyEyebrow&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;APPLICATIONS OPEN&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Story&quot;},&quot;storyHeadline&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Cohort name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Story&quot;},&quot;storyDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Starts [date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Story&quot;},&quot;storyCta&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Check your readiness&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Story&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;showSafe&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;noteNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[00]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Post&quot;},&quot;postLine&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Write the task down before you&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Post&quot;},&quot;postEmphasis&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;automate it.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Post&quot;},&quot;postSupport&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Most broken systems are a step nobody wrote down.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Post&quot;},&quot;storyEyebrow&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;APPLICATIONS OPEN&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Story&quot;},&quot;storyHeadline&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;MAIM Academy — Founding Cohort 01&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Story&quot;},&quot;storyDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Starts [date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Story&quot;},&quot;storyCta&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Check your readiness&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Story&quot;}}">
 class Component extends DCLogic {
   renderVals() {
     const p = this.props;
     return {
-      showSafe: p.showSafe ?? true,
+      showSafe: p.showSafe ?? false,
       noteNumber: p.noteNumber ?? '[00]',
       postLine: p.postLine ?? 'Write the task down before you',
       postEmphasis: p.postEmphasis ?? 'automate it.',
       postSupport: p.postSupport ?? 'Most broken systems are a step nobody wrote down.',
       storyEyebrow: p.storyEyebrow ?? 'APPLICATIONS OPEN',
-      storyHeadline: p.storyHeadline ?? '[Cohort name]',
+      storyHeadline: p.storyHeadline ?? 'MAIM Academy — Founding Cohort 01',
       storyDate: p.storyDate ?? 'Starts [date]',
       storyCta: p.storyCta ?? 'Check your readiness'
     };

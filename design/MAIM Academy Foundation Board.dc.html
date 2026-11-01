@@ -283,7 +283,7 @@ a{color:#D8AF55;text-decoration:underline}a:hover{color:#F7F4EA}
         <div style="font-size:13px;letter-spacing:.24em;color:#D8AF55">PART OF MAIM — MAJOR AI MINDSET</div>
         <h1 style="margin:0;font-size:72px;font-weight:900;line-height:1;letter-spacing:-.02em">Build something that runs.</h1>
         <p style="margin:0;font-size:20px;line-height:1.55;color:#A8A49A;max-width:540px;text-wrap:pretty">MAIM gives you the mindset. The Academy teaches you to apply it: practical tools, business systems, weekly assignments and a cohort that builds alongside you.</p>
-        <div style="display:flex;gap:12px;align-items:center"><div style="background:#D8AF55;color:#050505;font-weight:700;font-size:17px;padding:16px 26px">Check your readiness</div><div style="border:1px solid #D8AF55;color:#D8AF55;font-weight:600;font-size:17px;padding:15px 25px">Get the free guide</div></div>
+        <div style="display:flex;gap:12px;align-items:center"><div style="background:#D8AF55;color:#050505;font-weight:700;font-size:17px;padding:16px 26px;white-space:nowrap">Check your readiness</div><div style="border:1px solid #D8AF55;color:#D8AF55;font-weight:600;font-size:17px;padding:15px 25px;white-space:nowrap">Get the free guide</div></div>
         <div style="display:flex;width:96px;height:3px;margin-top:12px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#006BB6"></div></div>
       </div>
       <div style="display:flex;justify-content:center"><img src="../logos/approved/png/maim-academy_crest_metallic-presentation_transparent_512px_v0.1.png" alt="MAIM Academy crest" style="width:400px;height:400px"></div>
@@ -295,7 +295,7 @@ a{color:#D8AF55;text-decoration:underline}a:hover{color:#F7F4EA}
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:88px 64px">
       <div style="border:1px solid #D8AF55;padding:36px;display:flex;flex-direction:column;gap:20px">
-        <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size:13px;letter-spacing:.22em;color:#D8AF55">NEXT COHORT</div><sc-if value="{{ annotate }}" hint-placeholder-val="{{ true }}"><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:11px;color:#F58426;border:1px dashed #F58426;padding:3px 6px">EDITABLE FIELDS</div></sc-if></div>
+        <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size:13px;letter-spacing:.22em;color:#D8AF55">NEXT COHORT</div><sc-if value="{{ annotate }}" hint-placeholder-val="{{ true }}"><div style="font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:11px;color:#F58426;border:1px dashed #F58426;padding:3px 6px;white-space:nowrap">EDITABLE FIELDS</div></sc-if></div>
         <div style="font-size:34px;font-weight:900;line-height:1.1">{{ cohortName }}</div>
         <div style="display:flex;flex-direction:column;border-top:1px solid #2A2A2A">
           <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #2A2A2A;font-size:16px"><span style="color:#A8A49A">Starts</span><span style="font-weight:600">{{ startDate }}</span></div>
@@ -303,7 +303,13 @@ a{color:#D8AF55;text-decoration:underline}a:hover{color:#F7F4EA}
           <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #2A2A2A;font-size:16px"><span style="color:#A8A49A">Places</span><span style="font-weight:600">{{ seats }}</span></div>
           <div style="display:flex;justify-content:space-between;padding:14px 0;font-size:16px"><span style="color:#A8A49A">Investment</span><span style="font-weight:800;font-size:22px;color:#D8AF55">{{ price }}</span></div>
         </div>
-        <div style="background:#D8AF55;color:#050505;font-weight:700;font-size:17px;padding:16px;text-align:center">Apply for this cohort</div>
+        <div style="display:flex;flex-direction:column;gap:10px"><div style="font-size:13px;letter-spacing:.22em;color:#D8AF55">INCLUDED</div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:16px;line-height:1.45"><span style="color:#D8AF55">—</span><span>Weekly group sessions for 30 days</span></div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:16px;line-height:1.45"><span style="color:#D8AF55">—</span><span>One 45-minute 1:1 session</span></div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:16px;line-height:1.45"><span style="color:#D8AF55">—</span><span>Feedback on six projects, Audit to Measure</span></div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:16px;line-height:1.45"><span style="color:#D8AF55">—</span><span>Certificate and badge for accepted work</span></div>
+        </div>
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:8px"><div style="background:#D8AF55;color:#050505;font-weight:700;font-size:17px;padding:16px;text-align:center">Check your readiness to apply</div><div style="font-size:13px;color:#A8A49A;text-align:center">You pay only after we confirm the cohort fits.</div></div>
       </div>
       <div style="background:#141414;padding:36px;display:flex;flex-direction:column;gap:18px">
         <div style="font-size:13px;letter-spacing:.22em;color:#D8AF55">READINESS CHECK</div>
@@ -568,7 +574,7 @@ a{color:#D8AF55;text-decoration:underline}a:hover{color:#F7F4EA}
   </div>
 </section>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;annotate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;cohortName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Cohort name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;startDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Start date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;format&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Weeks] · live online&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;seats&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Number] places&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;price&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Price]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;dueDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[due date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;episode&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Series name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Thumbnail&quot;},&quot;episodeNum&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;00&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Thumbnail&quot;},&quot;episodeTitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Episode title]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Thumbnail&quot;},&quot;thumbLine1&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Build your first&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Thumbnail&quot;},&quot;thumbEmphasis&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;system&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Thumbnail&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;annotate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;cohortName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;MAIM Academy — Founding Cohort 01&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;startDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Wed 18 Nov 2026&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;format&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;30 days · live online&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;seats&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;20 seats&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;price&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$249 one-time&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;dueDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[due date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;episode&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Series name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Thumbnail&quot;},&quot;episodeNum&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;00&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Thumbnail&quot;},&quot;episodeTitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Episode title]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Thumbnail&quot;},&quot;thumbLine1&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Build your first&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Thumbnail&quot;},&quot;thumbEmphasis&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;system&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Thumbnail&quot;}}">
 class Component extends DCLogic {
   state = { stage: 1, submitted: false, goal: '', problem: '', time: 1 };
   decide() {
@@ -598,11 +604,11 @@ class Component extends DCLogic {
     const stageLabels = ['Exploring an idea', 'Running a business without systems', 'Ready to scale what works'];
     return {
       annotate: p.annotate ?? true,
-      cohortName: p.cohortName ?? '[Cohort name]',
-      startDate: p.startDate ?? '[Start date]',
-      format: p.format ?? '[Weeks] · live online',
-      seats: p.seats ?? '[Number] places',
-      price: p.price ?? '[Price]',
+      cohortName: p.cohortName ?? 'MAIM Academy — Founding Cohort 01',
+      startDate: p.startDate ?? 'Wed 18 Nov 2026',
+      format: p.format ?? '30 days · live online',
+      seats: p.seats ?? '20 seats',
+      price: p.price ?? '$249 one-time',
       dueDate: p.dueDate ?? '[due date]',
       episode: p.episode ?? '[Series name]',
       episodeNum: p.episodeNum ?? '00',

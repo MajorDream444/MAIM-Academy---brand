@@ -60,12 +60,12 @@
   </section>
 </doc-page>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;cohortName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Cohort name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;dueDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[due date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;cohortName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;MAIM Academy — Founding Cohort 01&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;dueDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[due date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;}}">
 class Component extends DCLogic {
   renderVals() {
     const p = this.props;
     return {
-      cohortName: p.cohortName ?? '[Cohort name]',
+      cohortName: p.cohortName ?? 'MAIM Academy — Founding Cohort 01',
       dueDate: p.dueDate ?? '[due date]',
       rows: ['01','02','03','04','05','06','07','08','09','10']
     };

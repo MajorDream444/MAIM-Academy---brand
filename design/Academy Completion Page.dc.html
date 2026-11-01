@@ -9,7 +9,7 @@
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
-<style>body{margin:0;background:#050505;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
+<style>html{background:#050505}body{margin:0;background:#050505;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
 </helmet>
 <div data-screen-label="Completion" style="min-height:100vh;display:flex;flex-direction:column;background:#050505">
   <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px clamp(20px,5vw,64px);border-bottom:1px solid #2A2A2A">
@@ -26,17 +26,17 @@
   <div style="width:100%;max-width:960px;margin:0 auto;padding:0 clamp(20px,5vw,64px) 72px;display:flex;flex-direction:column;gap:48px">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:#2A2A2A;border:1px solid #2A2A2A">
       <div style="background:#050505;padding:24px;display:flex;flex-direction:column;gap:6px"><span style="font-size:36px;font-weight:900">{{ lessonsDone }}</span><span style="font-size:14px;color:#A8A49A">Lessons completed</span></div>
-      <div style="background:#050505;padding:24px;display:flex;flex-direction:column;gap:6px"><span style="font-size:36px;font-weight:900">{{ assignmentsDone }}</span><span style="font-size:14px;color:#A8A49A">Projects accepted</span></div>
-      <div style="background:#050505;padding:24px;display:flex;flex-direction:column;gap:6px"><span style="font-size:36px;font-weight:900">{{ sessionsDone }}</span><span style="font-size:14px;color:#A8A49A">Live sessions attended</span></div>
+      <div style="background:#050505;padding:24px;display:flex;flex-direction:column;gap:6px"><span style="font-size:36px;font-weight:900">{{ assignmentsDone }}</span><span style="font-size:14px;color:#A8A49A">Projects accepted (of 6)</span></div>
+      <div style="background:#050505;padding:24px;display:flex;flex-direction:column;gap:6px"><span style="font-size:36px;font-weight:900">{{ sessionsDone }}</span><span style="font-size:14px;color:#A8A49A">Group sessions attended (of 4)</span></div>
     </div>
     <div style="display:flex;flex-direction:column;gap:12px">
       <div style="font-size:13px;letter-spacing:.2em;color:#D8AF55;font-weight:700">YOUR WORK</div>
       <div style="display:flex;flex-direction:column;border-top:1px solid #2A2A2A">
         <sc-for list="{{ work }}" as="w" hint-placeholder-count="5">
           <div style="display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid #2A2A2A">
-            <div style="background:#1F7A3A;color:#F7F4EA;font-size:12px;font-weight:800;letter-spacing:.08em;padding:4px 8px">{{ w.id }}</div>
+            <div style="background:#1F7A3A;color:#F7F4EA;font-size:12px;font-weight:800;width:28px;padding:4px 0;text-align:center">{{ w.id }}</div>
             <div style="font-size:17px;font-weight:600;min-width:0">{{ w.title }}</div>
-            <a href="{{ w.url }}" style="font-size:14px;color:#D8AF55">View</a>
+            <a href="{{ w.url }}" style="font-size:14px;color:{{ w.color }}">{{ w.label }}</a>
           </div>
         </sc-for>
       </div>
@@ -44,8 +44,8 @@
     <div style="display:flex;flex-direction:column;gap:12px">
       <div style="font-size:13px;letter-spacing:.2em;color:#D8AF55;font-weight:700">YOUR CREDENTIALS</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px">
-        <a href="{{ certificateUrl }}" download="" style="background:#F7F4EA;color:#050505;padding:24px;display:flex;flex-direction:column;gap:10px;text-decoration:none;border-top:3px solid #D8AF55"><div style="font-size:12px;letter-spacing:.2em;font-weight:800;color:#5A574F">CERTIFICATE</div><div style="font-size:20px;font-weight:800;line-height:1.2">Certificate of Completion</div><div style="font-size:14px;line-height:1.5;color:#5A574F">Printable record that you completed the program and submitted the required work.</div><div style="font-size:14px;font-weight:700;color:#006BB6;margin-top:4px">Download PDF</div></a>
-        <a href="{{ badgeUrl }}" download="" style="background:#141414;color:#F7F4EA;padding:24px;display:flex;flex-direction:column;gap:10px;text-decoration:none;border-top:3px solid #D8AF55"><div style="font-size:12px;letter-spacing:.2em;font-weight:800;color:#D8AF55">BADGE</div><div style="font-size:20px;font-weight:800;line-height:1.2">Academy Builder badge</div><div style="font-size:14px;line-height:1.5;color:#A8A49A">Share it on LinkedIn, Instagram or your site.</div><div style="font-size:14px;font-weight:700;color:#D8AF55;margin-top:4px">Download PNG</div></a>
+        <a href="{{ certificateUrl }}" download="" style="background:#F7F4EA;color:#050505;padding:24px;display:flex;flex-direction:column;gap:10px;text-decoration:none;border-top:3px solid #D8AF55"><div style="font-size:12px;letter-spacing:.2em;font-weight:800;color:#5A574F">CERTIFICATE</div><div style="font-size:20px;font-weight:800;line-height:1.2">Certificate of Completion</div><div style="font-size:14px;line-height:1.5;color:#5A574F">Printable record of six accepted projects, four sessions and your showcase.</div><div style="font-size:14px;font-weight:700;color:{{ certColor }};margin-top:4px">{{ certLabel }}</div></a>
+        <a href="{{ badgeUrl }}" download="" style="background:#141414;color:#F7F4EA;padding:24px;display:flex;flex-direction:column;gap:10px;text-decoration:none;border-top:3px solid #D8AF55"><div style="font-size:12px;letter-spacing:.2em;font-weight:800;color:#D8AF55">BADGE</div><div style="font-size:20px;font-weight:800;line-height:1.2">Academy Builder badge</div><div style="font-size:14px;line-height:1.5;color:#A8A49A">Share it on LinkedIn, Instagram or your site.</div><div style="font-size:14px;font-weight:700;color:{{ badgeColor }};margin-top:4px">{{ badgeLabel }}</div></a>
       </div>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px">
@@ -53,36 +53,41 @@
       <div style="background:#141414;border-top:3px solid #006BB6;padding:24px;display:flex;flex-direction:column;gap:10px"><div style="font-size:18px;font-weight:700">Tell us how it went</div><div style="font-size:15px;line-height:1.55;color:#A8A49A">Five questions. Your answers shape the next cohort.</div><div style="margin-top:8px;border:1px solid #D8AF55;color:#D8AF55;font-weight:600;font-size:15px;padding:12px 17px;align-self:flex-start">Give feedback</div></div>
     </div>
   </div>
+  <sc-if value="{{ annotate }}" hint-placeholder-val="{{ true }}">
   <div style="width:100%;max-width:960px;margin:0 auto;padding:0 clamp(20px,5vw,64px) 56px">
     <div style="border:1px dashed #F58426;padding:20px 24px;display:flex;flex-direction:column;gap:10px;text-align:left">
       <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.18em;color:#F58426;font-weight:700">BUILD REQUIREMENTS · NOT SHOWN TO LEARNERS</div>
       <div style="font-size:14px;line-height:1.6;color:#A8A49A">1 · Show this page only when the issuing criteria on the credentials template are met. 2 · Work list: each View link (w.url) opens the stored submission and its feedback; the platform keeps these available to the learner for 12 months from cohort close (approved 2026-11-01). 30 days before access ends, email the learner a link to download everything (submissions, feedback, certificate, badge). The credential and its public verification page stay live after access ends. 3 · certificateUrl: a generated PDF of the certificate (Letter landscape) with the learner's name, cohort, date and ID. badgeUrl: a generated 1080×1080 PNG. Both must be real files generated per learner by the platform when criteria are met; this template only defines their layout (Academy Credentials). Until then the buttons are placeholders (#). 4 · Counts come from the platform, not manual entry.</div>
     </div>
   </div>
+  </sc-if>
   <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:24px clamp(20px,5vw,64px);border-top:1px solid #D8AF55">
     <div style="display:flex;align-items:center;gap:12px"><img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="" style="width:24px;height:24px"><span style="font-size:14px;color:#A8A49A">MAIM Academy is part of MAIM — Major AI Mindset</span></div>
     <span style="font-size:14px;color:#D8AF55">majoraimindset.com</span>
   </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;firstName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[First name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Learner&quot;},&quot;programName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Program name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Program&quot;},&quot;cohortName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Cohort name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Program&quot;},&quot;lessonsDone&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[00]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Learner&quot;},&quot;assignmentsDone&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[00]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Learner&quot;},&quot;sessionsDone&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[00]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Learner&quot;},&quot;nextOffer&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[One line on the next cohort or offer]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Program&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;annotate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;firstName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[First name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Learner&quot;},&quot;programName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Program name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Program&quot;},&quot;cohortName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;MAIM Academy — Founding Cohort 01&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Program&quot;},&quot;lessonsDone&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[00]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Learner&quot;},&quot;assignmentsDone&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[00]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Learner&quot;},&quot;sessionsDone&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[00]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Learner&quot;},&quot;nextOffer&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[One line on the next cohort or offer]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Program&quot;}}">
 class Component extends DCLogic {
   renderVals() {
     const p = this.props;
     return {
+      annotate: p.annotate ?? false,
       firstName: p.firstName ?? '[First name]',
       programName: p.programName ?? '[Program name]',
-      cohortName: p.cohortName ?? '[Cohort name]',
+      cohortName: p.cohortName ?? 'MAIM Academy — Founding Cohort 01',
       lessonsDone: p.lessonsDone ?? '[00]', assignmentsDone: p.assignmentsDone ?? '[00]', sessionsDone: p.sessionsDone ?? '[00]',
       nextOffer: p.nextOffer ?? '[One line on the next cohort or offer]',
-      certificateUrl: p.certificateUrl ?? '#', badgeUrl: p.badgeUrl ?? '#',
+      certificateUrl: p.certificateUrl, badgeUrl: p.badgeUrl,
+      certLabel: p.certificateUrl ? 'Download PDF' : 'Available when issued', certColor: p.certificateUrl ? '#006BB6' : '#5A574F',
+      badgeLabel: p.badgeUrl ? 'Download PNG' : 'Available when issued', badgeColor: p.badgeUrl ? '#D8AF55' : '#A8A49A',
       work: [
-        { id: 'A', title: 'Audit · problem worth solving', url: '#' },
-        { id: 'D', title: 'Design · journey map', url: '#' },
-        { id: 'P', title: 'Prototype · first test', url: '#' },
-        { id: 'T', title: 'Test · realistic cases', url: '#' },
-        { id: 'S', title: 'Ship · usable piece of work', url: '#' },
-        { id: 'M', title: 'Measure · result tracked', url: '#' }
+        { id: 'A', title: 'Audit · problem worth solving', url: undefined, label: 'Pending', color: '#A8A49A' },
+        { id: 'D', title: 'Design · journey map', url: undefined, label: 'Pending', color: '#A8A49A' },
+        { id: 'P', title: 'Prototype · first test', url: undefined, label: 'Pending', color: '#A8A49A' },
+        { id: 'T', title: 'Test · realistic cases', url: undefined, label: 'Pending', color: '#A8A49A' },
+        { id: 'S', title: 'Ship · usable piece of work', url: undefined, label: 'Pending', color: '#A8A49A' },
+        { id: 'M', title: 'Measure · result tracked', url: undefined, label: 'Pending', color: '#A8A49A' }
       ]
     };
   }

@@ -9,7 +9,7 @@
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
-<style>body{margin:0;background:#050505;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#F7F4EA;text-decoration:none}a:hover{color:#D8AF55}*{box-sizing:border-box}</style>
+<style>html{background:#050505}body{margin:0;background:#050505;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#F7F4EA;text-decoration:none}a:hover{color:#D8AF55}*{box-sizing:border-box}</style>
 </helmet>
 <div data-screen-label="Template library" style="min-height:100vh;display:flex;flex-direction:column">
   <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px clamp(20px,5vw,64px);border-bottom:1px solid #2A2A2A">
@@ -46,7 +46,7 @@
     </sc-for>
     <div style="border-top:3px solid #F58426;background:#141414;padding:24px 28px;display:flex;flex-direction:column;gap:10px">
       <div style="font-size:13px;letter-spacing:.2em;color:#F58426;font-weight:700">STATUS · 2026-11-01</div>
-      <div style="font-size:15px;line-height:1.6;color:#A8A49A">Locked: MAIM 00/07 reconciliation C1–C11, Archivo 900 headlines, ABC’s Vol 2 opening sequence. Recorded in brand/ASSET_REGISTER.csv and handoffs/FOUNDER_DECISIONS_2026-11-01.md on review/logo-package-v0.1. In review: template library (19 templates, 6 added 2026-11-01), credential issuing criteria, NORMAL_v0.1 and CLEAN-PLATE_v0.1 backdrops. Changes follow guidelines/APPROVAL.md.</div>
+      <div style="font-size:15px;line-height:1.6;color:#A8A49A">Locked: MAIM 00/07 reconciliation C1–C11, Archivo 900 headlines, ABC’s Vol 2 opening sequence. Recorded in brand/ASSET_REGISTER.csv and handoffs/FOUNDER_DECISIONS_2026-11-01.md on review/logo-package-v0.1. In review: template library (20 templates, QA pass 2026-11-01), credential issuing criteria, NORMAL_v0.1 and CLEAN-PLATE_v0.1 backdrops. Changes follow guidelines/APPROVAL.md.</div>
     </div>
   </div>
   <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:24px clamp(20px,5vw,64px);border-top:1px solid #D8AF55">
@@ -65,7 +65,7 @@ class Component extends DCLogic {
           { name: 'Offer cards', desc: 'Three tiers, inline banner card, free guide card', spec: 'Cards · dark + paper', href: 'Academy Offer Cards.dc.html' },
           { name: 'Onboarding welcome', desc: 'Four setup steps with progress', spec: 'Responsive page', href: 'Academy Onboarding Welcome.dc.html' },
           { name: 'Enrollment status', desc: 'Received, approved, payment invited, confirmed, waitlisted, redirected to MAIM', spec: 'Responsive page · 6 states', href: 'Academy Enrollment Status.dc.html' },
-          { name: 'Email templates', desc: 'One layout, seven messages from application to completion', spec: '600 px email', href: 'Academy Email Templates.dc.html' }
+          { name: 'Email templates', desc: 'One layout, eight messages from application to completion', spec: '600 px email', href: 'Academy Email Templates.dc.html' }
         ]},
         { name: 'Academy Learning & Cohorts', desc: 'Teach and track', color: '#1F7A3A', items: [
           { name: 'Lesson page', desc: 'Objective, instructions, assignment, feedback, progress', spec: 'Board · example 2', href: 'MAIM Academy Foundation Board.dc.html#2' },
@@ -73,6 +73,7 @@ class Component extends DCLogic {
           { name: 'Session deck', desc: 'Title to close, live cohort session', spec: '10 slides · 1920×1080', href: 'Academy Session Deck.dc.html' },
           { name: 'Completion page', desc: 'Summary of work, credentials, next step', spec: 'Responsive page', href: 'Academy Completion Page.dc.html' },
           { name: 'Certificate + badge', desc: 'Academy credentials: printable certificate, shareable badge', spec: 'Letter landscape · 1080×1080', href: 'Academy Credentials.dc.html' },
+          { name: 'Community recognition', desc: 'Contributor card and cohort shout-out, kept apart from credentials', spec: '1080×1080 · 1080×1350', href: 'Academy Community Recognition.dc.html' },
           { name: 'Cohort schedule', desc: 'Four weeks: sessions, office hours, deadlines, replays, calendar', spec: 'Responsive page', href: 'Academy Cohort Schedule.dc.html' },
           { name: 'Project submission + feedback', desc: 'Brief, criteria, upload, review, revision, accepted', spec: 'Responsive page · 5 states', href: 'Academy Project Submission.dc.html' },
           { name: 'Facilitator run sheet', desc: 'Prep, timed run of show, checkpoints, fallback, follow-up', spec: 'Print · facilitator only', href: 'Academy Facilitator Run Sheet.dc.html' },

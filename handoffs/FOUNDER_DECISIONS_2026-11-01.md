@@ -35,6 +35,9 @@ Channel: Claude Design project "MAIM Academy Design System" chat.
 
 - 2026-11-01 · Operational promises: replays posted within 24 hours; late projects reviewed after on-time work; seat held 72 hours after payment invite; readiness decision within 2 working days; project feedback within 3 working days.
 
+- 2026-11-01 · Founding cohort: "MAIM Academy — Founding Cohort 01". Day 1 Wed 18 Nov 2026 (orientation + office hours); Sunday group sessions 22 Nov, 29 Nov, 6 Dec, 13 Dec; Wednesday office hours; closes Thu 17 Dec 2026 (Day 30). Session times, timezone, platform, cohort space, contact email and links: pending, not invented.
+- 2026-11-01 · Delivery rules: visual approval is separate from operational readiness. Learner-facing buttons without a destination show "link pending" and do not look clickable. Internal notes, preview controls and safe-zone guides are hidden by default. The QA report's limitations stand. The unused A–L draft is superseded; ABC's Vol 2 A–Z is unchanged.
+
 ## In review (not approved)
 - Template library (onboarding, offer cards, workbook, session deck, completion, credentials, banners, Instagram, Shorts).
 - Backdrops NORMAL_v0.1 and CLEAN-PLATE_v0.1.

@@ -9,7 +9,7 @@
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
-<style>body{margin:0;background:#050505;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
+<style>html{background:#050505}body{margin:0;background:#050505;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
 </helmet>
 <x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
 
@@ -105,14 +105,14 @@
 
 </x-import>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;sessionNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[00]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;sessionTitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;D is for Design&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;cohortName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Cohort name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;sessionDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Session date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;workMinutes&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:15,&quot;min&quot;:5,&quot;max&quot;:60,&quot;step&quot;:5,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;assignmentId&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;D&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Assignment&quot;},&quot;dueDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[due date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Assignment&quot;},&quot;nextTitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;P is for Prototype&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Next&quot;},&quot;nextSession&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Next session date · time]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Next&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;sessionNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[00]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;sessionTitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;D is for Design&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;cohortName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;MAIM Academy — Founding Cohort 01&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;sessionDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Session date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;workMinutes&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:15,&quot;min&quot;:5,&quot;max&quot;:60,&quot;step&quot;:5,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;assignmentId&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;D&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Assignment&quot;},&quot;dueDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[due date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Assignment&quot;},&quot;nextTitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;P is for Prototype&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Next&quot;},&quot;nextSession&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Next session date · time]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Next&quot;}}">
 class Component extends DCLogic {
   renderVals() {
     const p = this.props;
     return {
       sessionNumber: p.sessionNumber ?? '[00]',
       sessionTitle: p.sessionTitle ?? 'D is for Design',
-      cohortName: p.cohortName ?? '[Cohort name]',
+      cohortName: p.cohortName ?? 'MAIM Academy — Founding Cohort 01',
       sessionDate: p.sessionDate ?? '[Session date]',
       exampleTitle: p.exampleTitle ?? 'Designing a client onboarding journey',
       exampleNote: p.exampleNote ?? '[One line on what the example shows]',

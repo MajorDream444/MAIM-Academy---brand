@@ -10,7 +10,7 @@
 <helmet>
 <meta name="design_doc_mode" content="canvas">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
-<style>body{margin:0;background:#0E0E0E;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
+<style>html{background:#0E0E0E}body{margin:0;background:#0E0E0E;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
 </helmet>
 <div style="padding:80px;display:flex;flex-direction:column;gap:80px">
 
@@ -55,12 +55,12 @@
   </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;showSafe&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;ytSchedule&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[New lessons every · day]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;liLine&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Next cohort · date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;showSafe&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;ytSchedule&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[New lessons every · day]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;},&quot;liLine&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Next cohort · date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaign fields&quot;}}">
 class Component extends DCLogic {
   renderVals() {
     const p = this.props;
     return {
-      showSafe: p.showSafe ?? true,
+      showSafe: p.showSafe ?? false,
       ytSchedule: p.ytSchedule ?? '[New lessons every · day]',
       liLine: p.liLine ?? '[Next cohort · date]'
     };
