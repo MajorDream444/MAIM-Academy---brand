@@ -1,0 +1,7 @@
+# Founder approval 2026-11-01 ("I approve"). APPEND the non-UPDATE rows (5 → 100 entries); apply the UPDATE notes to existing rows.
+maim-academy_approval_visual_templates-x20_v0_1,design/,v0.1,approved,Major Dream Williams,2026-11-01,handoffs/FOUNDER_DECISIONS_2026-11-01.md,visual design of all 20 templates · operational readiness open
+maim-academy_backdrop_filament_normal_v0_1_png,assets/backdrops/maim-academy_backdrop_filament_NORMAL_v0.1.png,v0.1,approved,Major Dream Williams,2026-11-01,handoffs/FOUNDER_DECISIONS_2026-11-01.md,UPDATE existing row: in_review -> approved
+maim-academy_backdrop_filament_clean-plate_v0_1_png,assets/backdrops/maim-academy_backdrop_filament_CLEAN-PLATE_v0.1.png,v0.1,approved,Major Dream Williams,2026-11-01,handoffs/FOUNDER_DECISIONS_2026-11-01.md,UPDATE existing row: in_review -> approved
+maim-academy_schedule_teaching-sequence_v0_1,design/Academy Cohort Schedule.dc.html,v0.1,approved,Major Dream Williams,2026-11-01,handoffs/FOUNDER_DECISIONS_2026-11-01.md,each project taught before due · 13 Dec showcase
+maim-academy_readiness_operational-launch_v0_1,handoffs/FOUNDER_DECISIONS_2026-11-01.md,v0.1,open,,,,times · timezone · platform · contact · links · integration checks
+# Also UPDATE every existing in_review template row (enrollment-status, project-submission, email-set, abcs-vol-2-card, offer-cards-launch, community-recognition, template-library) to approved with the same approver/date/evidence; notes "visual design only".

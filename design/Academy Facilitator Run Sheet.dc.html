@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>html{background:#0E0E0E}body{margin:0;background:#0E0E0E;color:#050505;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#006BB6}a:hover{color:#050505}*{box-sizing:border-box}</style>
+<meta name="omelette-owns-print" content="true">
+<style>@media print{@page{size:11in 8.5in;margin:0}html,body{background:none!important}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}*:has([data-print-page]){display:block!important;padding:0!important;margin:0!important;gap:0!important;background:none!important;outline:none!important;border:0!important;width:auto!important}*:has([data-print-page])>:not([data-print-page]):not(:has([data-print-page])){display:none!important}[data-print-page]{break-after:page;break-inside:avoid;margin:0!important;outline:none!important}[data-print-page]:last-of-type{break-after:auto}}</style>
+</helmet>
+<div style="padding:64px;display:flex;justify-content:center">
+<div data-print-page="" data-screen-label="Facilitator run sheet" style="width:1056px;background:#F7F4EA;padding:48px 56px;display:flex;flex-direction:column;gap:36px">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding-bottom:20px;border-bottom:2px solid #050505">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;font-weight:700;color:#5A574F">FACILITATOR RUN SHEET · NOT FOR LEARNERS</div>
+      <div style="font-size:40px;font-weight:900;line-height:1.05;letter-spacing:-.02em">{{ sessionTitle }}</div>
+      <div style="font-size:15px;color:#5A574F">{{ cohortName }} · {{ sessionDate }} · {{ sessionTime }} · {{ duration }}</div>
+    </div>
+    <img src="../logos/approved/vector/maim-academy_crest_simplified_flat-color_transparent_v0.1.svg" alt="MAIM Academy" style="width:84px;height:84px;flex:none">
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px">
+    <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid #050505;padding-top:12px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.18em;font-weight:700">PREPARE · DAY BEFORE</div>
+      <sc-for list="{{ prep }}" as="x" hint-placeholder-count="4"><div style="display:grid;grid-template-columns:16px 1fr;gap:10px;font-size:16px;line-height:1.5"><span style="width:14px;height:14px;border:1.5px solid #050505;margin-top:3px"></span><span>{{ x }}</span></div></sc-for>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid #050505;padding-top:12px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.18em;font-weight:700">ON THE DAY · 15 MIN BEFORE</div>
+      <sc-for list="{{ before }}" as="x" hint-placeholder-count="4"><div style="display:grid;grid-template-columns:16px 1fr;gap:10px;font-size:16px;line-height:1.5"><span style="width:14px;height:14px;border:1.5px solid #050505;margin-top:3px"></span><span>{{ x }}</span></div></sc-for>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid #050505;padding-top:12px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.18em;font-weight:700">SESSION GOAL</div>
+      <div style="font-size:17px;line-height:1.5;font-weight:600">{{ goal }}</div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:0">
+    <div style="display:grid;grid-template-columns:90px 190px minmax(0,1fr) 210px;gap:20px;padding:10px 0;border-bottom:2px solid #050505;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.16em;font-weight:700;color:#5A574F"><span>TIME</span><span>SEGMENT</span><span>TEACHING NOTES</span><span>LEARNER CHECKPOINT</span></div>
+    <sc-for list="{{ run }}" as="r" hint-placeholder-count="7">
+      <div style="display:grid;grid-template-columns:90px 190px minmax(0,1fr) 210px;gap:20px;padding:16px 0;border-bottom:1px solid #D9D3C2;align-items:start">
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:15px;font-weight:700">{{ r.t }}</span><span style="font-size:14px;color:#5A574F">{{ r.len }}</span></div>
+        <div style="font-size:16px;font-weight:800;line-height:1.3">{{ r.seg }}</div>
+        <div style="font-size:16px;line-height:1.55">{{ r.notes }}</div>
+        <div style="font-size:16px;line-height:1.5;color:#1F7A3A;font-weight:600">{{ r.check }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px">
+    <div style="display:flex;flex-direction:column;gap:10px;border-top:3px solid #F58426;padding-top:12px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.18em;font-weight:700">TECHNICAL FALLBACK</div>
+      <sc-for list="{{ fallback }}" as="f" hint-placeholder-count="4"><div style="display:grid;grid-template-columns:150px 1fr;gap:12px;font-size:16px;line-height:1.5"><b>{{ f.if }}</b><span>{{ f.then }}</span></div></sc-for>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;border-top:3px solid #006BB6;padding-top:12px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.18em;font-weight:700">FOLLOW-UP · WITHIN 24 H</div>
+      <sc-for list="{{ follow }}" as="x" hint-placeholder-count="4"><div style="display:grid;grid-template-columns:16px 1fr;gap:10px;font-size:16px;line-height:1.5"><span style="width:14px;height:14px;border:1.5px solid #050505;margin-top:3px"></span><span>{{ x }}</span></div></sc-for>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid #050505;font-size:12px;color:#5A574F"><span>MAIM Academy · facilitator use only</span><span>Notes: ________________________________________________</span></div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;sessionTitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Group session 1 · A is for Audit&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;cohortName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;MAIM Academy — Founding Cohort 01&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;sessionDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Date]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;sessionTime&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Time · timezone]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session&quot;},&quot;duration&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;60 min&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return {
+      sessionTitle: p.sessionTitle ?? 'Group session 1 · A is for Audit',
+      cohortName: p.cohortName ?? 'MAIM Academy — Founding Cohort 01', sessionDate: p.sessionDate ?? '[Date]', sessionTime: p.sessionTime ?? '[Time · timezone]', duration: p.duration ?? '60 min',
+      goal: p.goal ?? 'Every learner leaves with one real, repetitive problem written down, ready to submit as their Audit project.',
+      prep: ['Open the session deck and check every slide loads', 'Run the live demo end to end once', 'Pull the list of who has finished onboarding', 'Post the session link in the cohort space'],
+      before: ['Open the room 15 minutes early', 'Start recording, confirm it is running', 'Pin the exercise prompt in chat', 'Co-host ready to admit people and watch chat'],
+      run: [
+        { t: '0:00', len: '5 min', seg: 'Open', notes: 'Welcome by name as people join. State the goal for today in one sentence. Remind them the replay goes up within 24 h.', check: 'Cameras on or a hello in chat' },
+        { t: '0:05', len: '5 min', seg: 'Story', notes: 'One short real example of a task that was repeated every week until it was fixed.', check: '' },
+        { t: '0:10', len: '10 min', seg: 'Concept', notes: 'What makes a problem worth solving: it repeats, it costs time or money, and you can see the result when it is fixed.', check: 'Chat: “one task I repeat every week is…”' },
+        { t: '0:20', len: '10 min', seg: 'Live demo', notes: 'Audit one real task on screen: list the steps, time each one, mark the step that hurts most.', check: '' },
+        { t: '0:30', len: '15 min', seg: 'Exercise', notes: 'Learners audit their own task using the workbook page. Visit breakouts or watch chat for anyone stuck.', check: 'Each learner has steps listed with times' },
+        { t: '0:45', len: '10 min', seg: 'Share + review', notes: 'Three volunteers share. Check each one against the three tests from the concept. Note who needs help in office hours.', check: '3 shares, everyone else posts their problem in chat' },
+        { t: '0:55', len: '5 min', seg: 'Action + next', notes: 'Audit project due [day, time]. Design starts next. Point to office hours and the 1:1 booking link.', check: 'Everyone knows the deadline' }
+      ],
+      fallback: [
+        { if: 'Video platform down', then: 'Post the backup link in the cohort space and by email within 5 minutes.' },
+        { if: 'Demo fails', then: 'Switch to the pre-recorded demo clip; carry on with the exercise.' },
+        { if: 'Recording fails', then: 'Post your slides and a 5-minute voice recap instead.' },
+        { if: 'Facilitator connection drops', then: 'Co-host runs the exercise from the run sheet until you rejoin.' }
+      ],
+      follow: ['Post the replay and slides in the cohort space', 'Message anyone who missed the session with the replay link', 'Note learners flagged for office hours', 'Log attendance for the completion record']
+    };
+  }
+}
+</script>
+</body>
+</html>

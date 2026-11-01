@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>html{background:#0E0E0E}body{margin:0;background:#0E0E0E;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
+<meta name="omelette-owns-print" content="true">
+<style>@media print{@page{size:8.5in 11in;margin:0}html,body{background:none!important}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}*:has([data-print-page]){display:block!important;padding:0!important;margin:0!important;gap:0!important;background:none!important;outline:none!important;border:0!important;width:auto!important}*:has([data-print-page])>:not([data-print-page]):not(:has([data-print-page])){display:none!important}[data-print-page]{break-after:page;break-inside:avoid;margin:0!important;outline:none!important}[data-print-page]:last-of-type{break-after:auto}}</style>
+</helmet>
+<div style="padding:64px;display:flex;flex-direction:column;gap:24px">
+  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:15px;letter-spacing:.2em;color:#D8AF55">ABC’S VOL 2 · REFERENCE CARD · US LETTER PORTRAIT, TWO SIDES</div>
+  <div style="display:flex;gap:48px;flex-wrap:wrap;align-items:flex-start">
+
+    <div data-print-page="" data-screen-label="Card front" style="width:816px;height:1056px;background:#050505;padding:56px;display:flex;flex-direction:column;gap:28px;outline:1px solid #2A2A2A">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:24px">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;letter-spacing:.22em;color:#D8AF55;font-weight:700">MAIM ACADEMY · ABC’S VOL 2</div>
+          <div style="font-size:44px;font-weight:900;line-height:1.02;letter-spacing:-.02em">26 things we do and build.</div>
+          <div style="font-size:17px;line-height:1.5;color:#A8A49A;max-width:520px">Workshop themes and project prompts. Use them in any order.</div>
+        </div>
+        <img src="../logos/approved/png/maim-academy_crest_metallic-presentation_transparent_512px_v0.1.png" alt="MAIM Academy crest" style="width:104px;height:104px;flex:none">
+      </div>
+      <div style="display:flex;width:120px;height:4px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#006BB6"></div></div>
+      <div style="flex:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:1fr;gap:6px">
+        <sc-for list="{{ abc }}" as="a" hint-placeholder-count="26">
+          <div style="display:grid;grid-template-columns:44px 1fr;align-items:center;gap:10px;padding:0 12px;background:{{ a.bg }};border-left:3px solid {{ a.edge }}">
+            <span style="font-size:30px;font-weight:900;line-height:1;color:{{ a.letterColor }}">{{ a.letter }}</span>
+            <span style="font-size:17px;font-weight:{{ a.weight }};line-height:1.2">{{ a.word }}</span>
+          </div>
+        </sc-for>
+        <div style="display:flex;align-items:center;gap:10px;padding:0 12px;font-size:15px;line-height:1.35;color:#A8A49A"><span style="width:12px;height:12px;background:#D8AF55;flex:none"></span>Opening sequence (see back)</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid #D8AF55;font-size:15px;color:#A8A49A"><span>Learn it. Build it. Use it.</span><span style="color:#D8AF55">majoraimindset.com</span></div>
+    </div>
+
+    <div data-print-page="" data-screen-label="Card back" style="width:816px;height:1056px;background:#F7F4EA;color:#050505;padding:56px;display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;letter-spacing:.22em;font-weight:700;color:#5A574F">OPENING SEQUENCE</div>
+        <div style="font-size:40px;font-weight:900;line-height:1.05;letter-spacing:-.02em">Start here. Six steps to a working result.</div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column">
+        <sc-for list="{{ seq }}" as="s" hint-placeholder-count="6">
+          <div style="flex:1;display:grid;grid-template-columns:72px minmax(0,1fr);gap:20px;align-items:center;border-top:2px solid #050505">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:2px"><span style="font-size:56px;font-weight:900;line-height:1">{{ s.letter }}</span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#5A574F">STEP {{ s.n }}</span></div>
+            <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:26px;font-weight:900">{{ s.word }}</span><span style="font-size:17px;line-height:1.45">{{ s.desc }}</span></div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="background:#050505;color:#F7F4EA;padding:20px 24px;display:flex;flex-direction:column;gap:6px"><div style="font-size:17px;font-weight:700">After the sequence</div><div style="font-size:16px;line-height:1.5;color:#D9D5CA">Go back to any letter when the work needs it: Guard before you share data, Refine after feedback, Zero to One for the next idea.</div></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;font-size:15px;color:#5A574F"><span>MAIM certifies the mindset. MAIM Academy certifies the work.</span><img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="" style="width:28px;height:28px"></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const A = [['A','Audit','Find a real problem or repetitive task worth solving.'],['B','Build'],['C','Connect'],['D','Design','Map the user’s journey and the result they need.'],['E','Evaluate'],['F','Flow'],['G','Guard'],['H','Handoff'],['I','Integrate'],['J','Journey'],['K','Knowledge'],['L','Launch'],['M','Measure','Track time saved, quality, adoption, or revenue.'],['N','Navigate'],['O','Optimize'],['P','Prototype','Test an idea quickly before a full build.'],['Q','Quality'],['R','Refine'],['S','Ship','Deliver a complete, usable piece of work.'],['T','Test','Check the workflow with realistic cases.'],['U','Use'],['V','Validate'],['W','Workflow'],['X','eXchange'],['Y','Yield'],['Z','Zero to One']];
+    const order = ['A', 'D', 'P', 'T', 'S', 'M'];
+    return {
+      abc: A.map(([letter, word]) => { const on = order.includes(letter); return { letter, word, bg: on ? '#141414' : '#0B0B0B', edge: on ? '#D8AF55' : 'transparent', letterColor: on ? '#D8AF55' : '#F7F4EA', weight: on ? 800 : 500 }; }),
+      seq: order.map((l, i) => { const r = A.find(x => x[0] === l); return { n: i + 1, letter: l, word: r[1], desc: r[2] }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

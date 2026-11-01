@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>html{background:#0E0E0E}body{margin:0;background:#0E0E0E;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
+</helmet>
+<div style="padding:80px;display:flex;flex-direction:column;gap:32px">
+  <div style="display:flex;flex-direction:column;gap:8px;max-width:1100px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.2em;color:#006BB6">COMMUNITY RECOGNITION · SEPARATE FROM CREDENTIALS</div>
+    <div style="font-size:16px;line-height:1.6;color:#A8A49A">For participants who invited at least one person and shared one useful lesson or resource. This is a thank-you, not a credential: no crest, no gold frame, no “certifies” language. Blue leads, so it never reads as the gold Academy badge.</div>
+  </div>
+  <div style="display:flex;gap:64px;align-items:flex-start;flex-wrap:wrap">
+
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-size:24px;font-weight:900">Contribution card · 1080×1080 (shown at 50%)</div>
+      <div style="width:540px;height:540px;overflow:hidden;position:relative">
+        <div data-screen-label="Contribution card" style="width:1080px;height:1080px;transform:scale(.5);transform-origin:0 0;position:absolute;left:0;top:0;background:#050505;display:flex;flex-direction:column;justify-content:space-between;padding:96px;border-top:16px solid #006BB6">
+          <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:28px;letter-spacing:.24em;color:#006BB6;font-weight:700">COMMUNITY CONTRIBUTOR</div><img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="" style="width:88px;height:88px"></div>
+          <div style="display:flex;flex-direction:column;gap:32px">
+            <div style="font-size:96px;font-weight:900;line-height:1;letter-spacing:-.02em">{{ name }}</div>
+            <div style="font-size:40px;line-height:1.35;color:#D9D5CA;max-width:820px">Thank you for bringing someone new to the table and sharing what you learned with {{ cohortName }}.</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px">
+            <div style="display:flex;flex-direction:column;gap:14px;font-size:30px"><div style="display:flex;gap:16px;align-items:center"><span style="width:18px;height:18px;background:#006BB6"></span>Invited {{ invites }}</div><div style="display:flex;gap:16px;align-items:center"><span style="width:18px;height:18px;background:#1F7A3A"></span>Shared {{ shared }}</div></div>
+            <div style="font-size:26px;color:#A8A49A;text-align:right">MAIM Academy<br>{{ month }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-size:24px;font-weight:900">Cohort shout-out · 1080×1350 (shown at 50%)</div>
+      <div style="width:540px;height:675px;overflow:hidden;position:relative">
+        <div data-screen-label="Cohort shout-out" style="width:1080px;height:1350px;transform:scale(.5);transform-origin:0 0;position:absolute;left:0;top:0;background:#F7F4EA;color:#050505;display:flex;flex-direction:column;gap:56px;padding:96px">
+          <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:28px;letter-spacing:.24em;font-weight:700;color:#006BB6">COHORT SHOUT-OUT</div><img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="" style="width:80px;height:80px"></div>
+          <div style="font-size:84px;font-weight:900;line-height:1.02;letter-spacing:-.02em">These people grew the room.</div>
+          <div style="font-size:34px;line-height:1.4;color:#5A574F">{{ cohortName }} members who invited someone new and shared a lesson or resource with the group.</div>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;border-top:3px solid #050505">
+            <sc-for list="{{ names }}" as="n" hint-placeholder-count="8"><div style="font-size:40px;font-weight:700;padding:22px 0;border-bottom:1px solid #D9D3C2">{{ n }}</div></sc-for>
+          </div>
+          <div style="margin-top:auto;display:flex;justify-content:space-between;font-size:26px;color:#5A574F"><span>Thank you.</span><span>majoraimindset.com</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:16px;max-width:520px">
+      <div style="font-size:24px;font-weight:900">Wording rules</div>
+      <div style="display:flex;flex-direction:column;background:#141414">
+        <div style="padding:16px 20px;border-bottom:1px solid #2A2A2A;font-size:15px;line-height:1.55"><b style="color:#1F7A3A">Use:</b> contributor, thank you, invited, shared, grew the room</div>
+        <div style="padding:16px 20px;border-bottom:1px solid #2A2A2A;font-size:15px;line-height:1.55"><b style="color:#F58426">Never use:</b> certified, certificate, badge, earned, accredited, credential</div>
+        <div style="padding:16px 20px;border-bottom:1px solid #2A2A2A;font-size:15px;line-height:1.55"><b>Counts:</b> one personal invite (enrolled or not) and one shared lesson or resource</div>
+        <div style="padding:16px 20px;font-size:15px;line-height:1.55"><b>Never shown:</b> who the invitee was or whether they enrolled</div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;name&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Participant name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Card&quot;},&quot;cohortName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;MAIM Academy — Founding Cohort 01&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Shared&quot;},&quot;month&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Month Year]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Card&quot;},&quot;names&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[Name],[Name],[Name],[Name],[Name],[Name],[Name],[Name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Shout-out&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return {
+      name: p.name ?? '[Participant name]', cohortName: p.cohortName ?? 'MAIM Academy — Founding Cohort 01', month: p.month ?? '[Month Year]',
+      invites: p.invites ?? '1 person', shared: p.shared ?? '1 resource',
+      names: (p.names ?? '[Name],[Name],[Name],[Name],[Name],[Name],[Name],[Name]').split(',').map(s => s.trim()).filter(Boolean)
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>html{background:#050505}body{margin:0;background:#050505;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
+</helmet>
+<div data-screen-label="Cohort schedule" style="min-height:100vh;display:flex;flex-direction:column;background:#050505">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px clamp(20px,5vw,64px);border-bottom:1px solid #2A2A2A">
+    <div style="display:flex;align-items:center;gap:12px"><img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="MAIM Academy" style="width:36px;height:36px"><span style="font-size:14px;letter-spacing:.22em;font-weight:700">MAIM ACADEMY</span></div>
+    <div style="font-size:14px;color:#A8A49A">{{ cohortName }}</div>
+  </div>
+  <div style="display:flex;width:100%;height:3px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#006BB6"></div></div>
+
+  <div style="width:100%;max-width:1200px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,64px) 32px;display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-end">
+    <div style="display:flex;flex-direction:column;gap:14px;max-width:640px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.2em;color:#D8AF55">COHORT SCHEDULE · 30 DAYS</div>
+      <h1 style="margin:0;font-size:clamp(36px,5.5vw,56px);font-weight:900;line-height:1.04;letter-spacing:-.02em">{{ startDate }} – {{ endDate }}</h1>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#A8A49A">Day 1 is Wednesday 18 November (orientation + office hours). Four Sunday group sessions: 22 Nov, 29 Nov, 6 Dec, 13 Dec. All times in <b style="color:#F7F4EA">{{ timezone }}</b>.</p>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="{{ icsUrl }}" style="background:{{ icsBg }};color:{{ icsInk }};font-weight:700;font-size:16px;padding:15px 22px;text-decoration:none">{{ icsLabel }}</a>
+      <a href="{{ replayUrl }}" style="border:1px solid {{ replayColor }};color:{{ replayColor }};font-weight:600;font-size:16px;padding:14px 21px;text-decoration:none">{{ replayLabel }}</a>
+    </div>
+  </div>
+
+  <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,64px) 24px">
+    <div style="display:flex;flex-wrap:wrap;gap:20px;font-size:13px;color:#A8A49A">
+      <span style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;background:#D8AF55"></span>Group session (live)</span>
+      <span style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;background:#006BB6"></span>Office hours</span>
+      <span style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;background:#F58426"></span>Project due</span>
+      <span style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;background:#1F7A3A"></span>1:1 window</span>
+    </div>
+  </div>
+
+  <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,64px) 48px;display:flex;flex-direction:column;gap:16px">
+    <sc-for list="{{ weeks }}" as="w" hint-placeholder-count="4">
+      <div style="display:flex;flex-wrap:wrap;background:#141414;border-top:3px solid {{ w.edge }}">
+        <div style="padding:24px;display:flex;flex-direction:column;gap:8px;flex:1 1 200px;max-width:100%;border-right:1px solid #2A2A2A;border-bottom:1px solid #2A2A2A">
+          <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.18em;color:#A8A49A">WEEK {{ w.n }} · {{ w.dates }}</div>
+          <div style="font-size:24px;font-weight:900;line-height:1.15">{{ w.theme }}</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap"><sc-for list="{{ w.letters }}" as="l" hint-placeholder-count="2"><span style="background:#D8AF55;color:#050505;font-size:12px;font-weight:800;padding:3px 7px">{{ l }}</span></sc-for></div>
+        </div>
+        <div style="display:flex;flex-direction:column;flex:4 1 320px;min-width:0">
+          <sc-for list="{{ w.items }}" as="it" hint-placeholder-count="3">
+            <div style="display:grid;grid-template-columns:6px minmax(0,1fr) auto;gap:16px;align-items:center;padding:14px 20px;border-bottom:1px solid #2A2A2A">
+              <div style="width:6px;align-self:stretch;background:{{ it.color }}"></div>
+              <div style="display:flex;flex-direction:column;gap:3px;min-width:0"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.06em;color:#D9D5CA">{{ it.when }}</span><span style="font-size:16px;font-weight:700">{{ it.title }}</span><span style="font-size:13px;line-height:1.45;color:#A8A49A">{{ it.sub }}</span></div>
+              <a href="{{ it.href }}" style="font-size:14px;font-weight:700;color:{{ it.linkColor }};text-decoration:{{ it.linkDeco }};cursor:{{ it.cursor }};white-space:nowrap">{{ it.link }}</a>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,64px) 64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
+    <div style="background:#141414;border-top:3px solid #1F7A3A;padding:24px;display:flex;flex-direction:column;gap:8px"><div style="font-size:18px;font-weight:700">Your 45-minute 1:1</div><div style="font-size:15px;line-height:1.55;color:#A8A49A">Book any slot between week 1 and week 3. Bring your Prototype or Test results.</div><a href="{{ bookingUrl }}" style="font-size:14px;font-weight:700;color:{{ bookingColor }};margin-top:6px">{{ bookingLabel }}</a></div>
+    <div style="background:#141414;border-top:3px solid #006BB6;padding:24px;display:flex;flex-direction:column;gap:8px"><div style="font-size:18px;font-weight:700">Replays</div><div style="font-size:15px;line-height:1.55;color:#A8A49A">Every group session is recorded and posted within 24 hours in {{ replayPlace }}.</div></div>
+    <div style="background:#141414;border-top:3px solid #F58426;padding:24px;display:flex;flex-direction:column;gap:8px"><div style="font-size:18px;font-weight:700">Deadlines</div><div style="font-size:15px;line-height:1.55;color:#A8A49A">Projects are due at {{ dueTime }} on the day shown. Late work is still reviewed, after on-time submissions.</div></div>
+  </div>
+
+  <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,64px) 64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px">
+    <div style="background:#141414;border-top:3px solid #D8AF55;padding:24px;display:flex;flex-direction:column;gap:8px"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.18em;color:#D8AF55;font-weight:700">INCLUDED IN YOUR $249</div><div style="font-size:15px;line-height:1.6;color:#A8A49A">The sessions above: four Sunday group sessions, Wednesday office hours, one 45-minute 1:1 and review of your six projects. These are fixed and you can plan around them.</div></div>
+    <div style="background:#141414;border-top:3px solid #006BB6;padding:24px;display:flex;flex-direction:column;gap:8px"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.18em;color:#006BB6;font-weight:700">EXTRA SESSIONS · WHEN AVAILABLE</div><div style="font-size:15px;line-height:1.6;color:#A8A49A">Other times may open during the cohort, depending on the calendar, what the session is for and how many people need it. They are offered as they come up and are not part of the cohort commitment.</div><a href="{{ extraUrl }}" style="font-size:14px;font-weight:700;color:{{ extraColor }};margin-top:4px">{{ extraLabel }}</a></div>
+  </div>
+
+  <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:24px clamp(20px,5vw,64px);border-top:1px solid #D8AF55">
+    <div style="display:flex;align-items:center;gap:12px"><img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="" style="width:24px;height:24px"><span style="font-size:14px;color:#A8A49A">MAIM Academy is part of MAIM — Major AI Mindset</span></div>
+    <span style="font-size:14px;color:#D8AF55">majoraimindset.com</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;cohortName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;MAIM Academy — Founding Cohort 01&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Cohort&quot;},&quot;startDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Wed 18 Nov 2026&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Cohort&quot;},&quot;endDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Thu 17 Dec 2026&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Cohort&quot;},&quot;timezone&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[timezone TBC]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Cohort&quot;},&quot;liveTime&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[time TBC]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Times&quot;},&quot;officeTime&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[time TBC]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Times&quot;},&quot;dueTime&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[time TBC]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Times&quot;},&quot;platform&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[platform pending]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Times&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    const lt = p.liveTime ?? '[time TBC]', ot = p.officeTime ?? '[time TBC]', due = p.dueTime ?? '[time TBC]';
+    const G = '#D8AF55', B = '#006BB6', O = '#F58426', Gr = '#1F7A3A';
+    const lk = (label, url) => url && url !== '#' ? { link: label, href: url, linkColor: '#D8AF55', linkDeco: 'underline', cursor: 'pointer' } : { link: label ? 'Link pending' : '', href: undefined, linkColor: '#5A574F', linkDeco: 'none', cursor: 'default' };
+    const plat = p.platform ?? '[platform pending]';
+    const session = (n, d, t) => ({ when: 'Sun ' + d + ' · ' + lt, title: 'Group session ' + n + ' · ' + t, sub: 'Live on ' + plat + ' · replay within 24 h', color: G, ...lk('Join', p.joinUrl) });
+    const office = (d) => ({ when: 'Wed ' + d + ' · ' + ot, title: 'Office hours', sub: 'Drop in with questions on this week’s project', color: B, ...lk('Join', p.officeUrl) });
+    const dueItem = (d, l, w) => ({ when: d + ' · ' + due, title: l + ' project due', sub: w, color: O, ...lk('Open brief', p.briefUrl) });
+    const weeks = [
+      { n: 1, dates: '18–24 Nov', theme: 'Find it and map it', letters: ['A', 'D'], edge: G, items: [{ when: 'Wed 18 Nov · ' + ot, title: 'Orientation + office hours', sub: 'Day 1. Meet the cohort, walk the 30 days, start Audit', color: B, ...lk('Join', p.officeUrl) }, session(1, '22 Nov', 'Audit + Design'), dueItem('Tue 24 Nov', 'Audit', 'One real problem worth solving'), { when: 'Week 1–3', title: '1:1 window opens', sub: '45 minutes, book any open slot', color: Gr, ...lk('Book', p.bookingUrl) }] },
+      { n: 2, dates: '25 Nov–1 Dec', theme: 'Make it and check it', letters: ['P', 'T'], edge: G, items: [office('25 Nov'), dueItem('Fri 27 Nov', 'Design', 'Journey map and the result the user needs'), session(2, '29 Nov', 'Prototype + Test'), dueItem('Tue 1 Dec', 'Prototype', 'A quick test of the idea before a full build'), dueItem('Fri 4 Dec', 'Test', 'The workflow run against realistic cases')] },
+      { n: 3, dates: '2–8 Dec', theme: 'Deliver it and measure it', letters: ['S', 'M'], edge: G, items: [office('2 Dec'), session(3, '6 Dec', 'Ship + Measure'), dueItem('Tue 8 Dec', 'Ship', 'A complete, usable piece of work')] },
+      { n: 4, dates: '9–17 Dec', theme: 'Show what it did', letters: ['M', '★'], edge: Gr, items: [office('9 Dec'), dueItem('Sat 12 Dec', 'Measure', 'One tracked result: time, quality, adoption or revenue'), { ...session(4, '13 Dec', 'Showcase'), sub: 'Each learner presents: problem, build, Measure result' }, office('16 Dec'), { when: 'Thu 17 Dec', title: 'Cohort closes · Day 30', sub: 'Credentials issued when six projects are accepted, four sessions attended and the showcase delivered', color: Gr, link: '', href: undefined, linkColor: '#5A574F', linkDeco: 'none', cursor: 'default' }] }
+    ];
+    const ics = lk('Add all sessions to calendar', p.icsUrl), rep = lk('Replays', p.replayUrl), book = lk('Book your 1:1', p.bookingUrl), extra = lk('See open times', p.extraUrl);
+    return {
+      weeks, cohortName: p.cohortName ?? 'MAIM Academy — Founding Cohort 01', startDate: p.startDate ?? 'Wed 18 Nov 2026', endDate: p.endDate ?? 'Thu 17 Dec 2026',
+      timezone: p.timezone ?? '[timezone TBC]', dueTime: due, replayPlace: p.replayPlace ?? '[the cohort space, pending]',
+      icsUrl: ics.href, icsLabel: p.icsUrl && p.icsUrl !== '#' ? 'Add all sessions to calendar' : 'Calendar link pending', icsBg: p.icsUrl && p.icsUrl !== '#' ? '#D8AF55' : '#2A2A2A', icsInk: p.icsUrl && p.icsUrl !== '#' ? '#050505' : '#A8A49A',
+      replayUrl: rep.href, replayLabel: rep.link === 'Link pending' ? 'Replays · pending' : 'Replays', replayColor: rep.linkColor,
+      bookingUrl: book.href, bookingLabel: book.link === 'Link pending' ? 'Booking link pending' : 'Book your 1:1', bookingColor: book.linkColor,
+      extraUrl: extra.href, extraLabel: extra.link === 'Link pending' ? 'Open times link pending' : 'See open times', extraColor: extra.linkColor
+    };
+  }
+}
+</script>
+</body>
+</html>

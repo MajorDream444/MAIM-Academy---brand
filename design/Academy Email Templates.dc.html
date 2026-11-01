@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>html{background:#0E0E0E}body{margin:0;background:#0E0E0E;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
+</helmet>
+<div data-screen-label="Email templates" style="min-height:100vh;display:grid;grid-template-columns:minmax(240px,300px) minmax(0,1fr)">
+  <div style="background:#050505;border-right:1px solid #2A2A2A;padding:32px 20px;display:flex;flex-direction:column;gap:20px">
+    <div style="display:flex;flex-direction:column;gap:6px;padding:0 8px"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;color:#D8AF55">ACADEMY EMAILS</div><div style="font-size:13px;line-height:1.5;color:#A8A49A">One layout, eight messages. Bracketed values are merge fields.</div></div>
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <sc-for list="{{ list }}" as="m" hint-placeholder-count="8">
+        <div onClick="{{ m.pick }}" style="display:grid;grid-template-columns:24px 1fr;gap:10px;padding:12px 8px;background:{{ m.bg }};border-left:3px solid {{ m.edge }};cursor:pointer">
+          <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#A8A49A;padding-top:2px">{{ m.n }}</span>
+          <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:14px;font-weight:700">{{ m.name }}</span><span style="font-size:12px;color:#A8A49A">{{ m.trigger }}</span></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:40px clamp(20px,4vw,56px);display:flex;flex-direction:column;align-items:center;gap:20px">
+    <div style="width:100%;max-width:600px;display:flex;flex-direction:column;gap:6px;font-size:13px;color:#A8A49A">
+      <div><b style="color:#F7F4EA">Subject:</b> {{ e.subject }}</div>
+      <div><b style="color:#F7F4EA">Preview text:</b> {{ e.preview }}</div>
+      <div><b style="color:#F7F4EA">Sent when:</b> {{ e.trigger }}</div>
+    </div>
+    <div style="width:100%;max-width:600px;background:#050505;border:1px solid #2A2A2A;display:flex;flex-direction:column">
+      <div style="padding:24px 32px;display:flex;align-items:center;gap:12px"><img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="MAIM Academy" style="width:32px;height:32px"><span style="font-size:13px;letter-spacing:.22em;font-weight:700">MAIM ACADEMY</span></div>
+      <div style="display:flex;height:3px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#006BB6"></div></div>
+      <div style="padding:36px 32px 12px;display:flex;flex-direction:column;gap:16px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.2em;font-weight:700;color:{{ e.color }}">{{ e.tag }}</div>
+        <div style="font-size:30px;font-weight:900;line-height:1.15;letter-spacing:-.01em">{{ e.headline }}</div>
+        <sc-for list="{{ e.body }}" as="para" hint-placeholder-count="2"><p style="margin:0;font-size:16px;line-height:1.65;color:#D9D5CA">{{ para }}</p></sc-for>
+      </div>
+      <sc-if value="{{ e.hasDetails }}" hint-placeholder-val="{{ true }}">
+        <div style="margin:16px 32px 0;background:#141414;padding:8px 20px">
+          <sc-for list="{{ e.details }}" as="d" hint-placeholder-count="3"><div style="display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid #2A2A2A;font-size:14px"><span style="color:#A8A49A">{{ d.k }}</span><span style="font-weight:600;text-align:right">{{ d.v }}</span></div></sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ e.hasCta }}" hint-placeholder-val="{{ true }}">
+        <div style="padding:28px 32px 0"><div style="display:inline-block;background:#D8AF55;color:#050505;font-weight:700;font-size:16px;padding:15px 26px">{{ e.cta }}</div></div>
+      </sc-if>
+      <div style="padding:28px 32px 32px;font-size:15px;line-height:1.6;color:#D9D5CA">{{ signoff }}</div>
+      <div style="padding:20px 32px;border-top:1px solid #D8AF55;display:flex;flex-direction:column;gap:6px;font-size:12px;line-height:1.55;color:#A8A49A">
+        <span>MAIM Academy is part of MAIM — Major AI Mindset · majoraimindset.com</span>
+        <span>You are receiving this because you applied to or joined a MAIM Academy cohort. [Postal address] · [Manage email preferences]</span>
+      </div>
+    </div>
+    <div style="width:100%;max-width:600px;font-size:12px;line-height:1.55;color:#A8A49A">Build note: 600 px wide, single column. In the production email, set the button as a table cell and use Arial as the fallback for Archivo; most email clients don’t load web fonts.</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;firstName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[First name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Merge fields&quot;},&quot;cohortName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;MAIM Academy — Founding Cohort 01&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Merge fields&quot;},&quot;signoff&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;— Major Dream Williams, MAIM Academy&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Merge fields&quot;}}">
+class Component extends DCLogic {
+  state = { i: 0 };
+  renderVals() {
+    const p = this.props, fn = p.firstName ?? '[First name]', co = p.cohortName ?? 'MAIM Academy — Founding Cohort 01';
+    const G = '#D8AF55', Gr = '#1F7A3A', B = '#006BB6', O = '#F58426';
+    const msgs = [
+      { name: 'Application receipt', trigger: 'Readiness check submitted', tag: 'APPLICATION RECEIVED', color: G, subject: 'We have your application', preview: 'Decision within 2 working days.', headline: 'Thanks, ' + fn + '. We have your answers.', body: ['We review every readiness check ourselves. You will hear from us within 2 working days with a decision.', 'Nothing to pay yet. If the cohort fits, the next email has your payment invite.'], details: [{ k: 'Cohort', v: co }, { k: 'Starts', v: 'Wed 18 Nov 2026' }, { k: 'Reference', v: '[APP-0000]' }], cta: '' },
+      { name: 'Readiness decision', trigger: 'Reviewer approves or redirects', tag: 'READINESS DECISION', color: Gr, subject: 'Your readiness decision', preview: 'You fit this cohort. Your seat is held until [hold date].', headline: 'You fit this cohort.', body: ['Your goal and the problem you described are a good match for the 30 days.', 'We are holding a seat for you for 72 hours, until [hold date]. Confirm it with the payment link below.', 'Redirect variant: “Start with MAIM learning first” plus one line on why and a link to MAIM learning.'], details: [{ k: 'Investment', v: '$249 one-time' }, { k: 'Seat held until', v: '[hold date]' }], cta: 'Pay $249 and confirm' },
+      { name: 'Payment confirmation', trigger: 'Payment clears', tag: 'SEAT CONFIRMED', color: Gr, subject: 'You’re in: ' + co, preview: 'Receipt inside. Setup takes about 20 minutes.', headline: 'Your seat is confirmed.', body: ['Payment received. Your receipt is below and attached as a PDF.', 'Your welcome email with setup steps follows in a few minutes.'], details: [{ k: 'Paid', v: '$249.00' }, { k: 'Date', v: '[date]' }, { k: 'Receipt', v: '[RCPT-0000]' }], cta: '' },
+      { name: 'Welcome', trigger: 'Right after payment confirmation', tag: 'WELCOME', color: G, subject: 'Welcome to ' + co + ': four steps before day one', preview: 'Join the space, add sessions, start Audit, introduce yourself.', headline: 'Welcome, ' + fn + '. Let’s get you set up.', body: ['Four steps before the first session: join the cohort space, add sessions to your calendar, complete A is for Audit, and introduce yourself.', 'Each takes a few minutes.'], details: [{ k: 'First session', v: '[date · time · timezone]' }, { k: 'Where', v: '[platform]' }], cta: 'Start setup' },
+      { name: 'Reminder · 24 hours', trigger: '24 h before each group session', tag: 'SESSION TOMORROW', color: B, subject: 'Tomorrow: group session [n] · [letter] is for [word]', preview: '[day · time · timezone]. Bring [what to bring].', headline: 'Group session [n] is tomorrow.', body: ['[Letter] is for [Word]. Bring [what to bring] so you can work on it live.', 'Can’t make it? Watch the replay and post one takeaway in the cohort space before the next session; that counts as attendance.'], details: [{ k: 'When', v: '[day · time · timezone]' }, { k: 'Where', v: '[platform]' }], cta: 'Add to calendar' },
+      { name: 'Reminder · 1 hour', trigger: '1 h before each group session', tag: 'STARTING SOON', color: B, subject: 'Starting in 1 hour: [letter] is for [word]', preview: 'Join link inside.', headline: 'We start in one hour.', body: ['Have [what to bring] open. The room opens 15 minutes early.'], details: [{ k: 'Starts', v: '[time · timezone]' }], cta: 'Join the session' },
+      { name: 'Feedback ready', trigger: 'Reviewer accepts or requests revision', tag: 'FEEDBACK READY', color: O, subject: 'Feedback on your [Project] project', preview: '[Accepted / One criterion to fix].', headline: 'Your [Project] feedback is ready.', body: ['Your peer reviewer and [Reviewer] checked your work against the brief: [n] of [n] criteria met. Feedback is returned within 3 working days of submission.', 'Revision variant: one line on what to fix and the resubmission date. Accepted variant: what comes next.'], details: [{ k: 'Project', v: '[Project]' }, { k: 'Status', v: '[Accepted / Revision requested]' }], cta: 'See feedback' },
+      { name: 'Completion', trigger: 'All criteria met', tag: 'PROGRAM COMPLETE', color: Gr, subject: 'You finished. Your certificate and badge are ready.', preview: 'Six projects accepted.', headline: 'You finished ' + co + ', ' + fn + '.', body: ['All six projects accepted, all four sessions attended and your showcase delivered. Your certificate and badge are ready to download and share.', 'Your credential ID links to a page anyone can use to verify it. Your work stays available for 12 months; we will email you 30 days before with a link to download everything.'], details: [{ k: 'Projects accepted', v: '6 of 6' }, { k: 'Credential ID', v: '[ID]' }], cta: 'Get your credentials' }
+    ];
+    const i = this.state.i, m = msgs[i];
+    return {
+      list: msgs.map((x, j) => ({ n: String(j + 1).padStart(2, '0'), name: x.name, trigger: x.trigger, bg: j === i ? '#141414' : 'transparent', edge: j === i ? '#D8AF55' : 'transparent', pick: () => this.setState({ i: j }) })),
+      e: { ...m, hasCta: !!m.cta, hasDetails: m.details.length > 0 },
+      signoff: p.signoff ?? '— Major Dream Williams, MAIM Academy'
+    };
+  }
+}
+</script>
+</body>
+</html>

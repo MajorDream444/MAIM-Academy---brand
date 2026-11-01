@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>html{background:#050505}body{margin:0;background:#050505;color:#F7F4EA;font-family:"Archivo",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#D8AF55}a:hover{color:#F7F4EA}*{box-sizing:border-box}</style>
+</helmet>
+<div data-screen-label="Enrollment status" style="min-height:100vh;display:flex;flex-direction:column;background:#050505">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px clamp(20px,5vw,64px);border-bottom:1px solid #2A2A2A">
+    <div style="display:flex;align-items:center;gap:12px"><img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="MAIM Academy" style="width:36px;height:36px"><span style="font-size:14px;letter-spacing:.22em;font-weight:700">MAIM ACADEMY</span></div>
+    <div style="font-size:14px;color:#A8A49A">{{ firstName }} · {{ email }}</div>
+  </div>
+  <div style="display:flex;width:100%;height:3px"><div style="flex:1;background:#1F7A3A"></div><div style="flex:1;background:#D8AF55"></div><div style="flex:1;background:#006BB6"></div></div>
+
+<sc-if value="{{ annotate }}" hint-placeholder-val="{{ true }}">  <div style="width:100%;max-width:1040px;margin:0 auto;padding:24px clamp(20px,5vw,64px) 0">
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.18em;color:#F58426;font-weight:700">PREVIEW STATE</span>
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="6"><div onClick="{{ t.pick }}" style="font-size:13px;padding:8px 12px;border:1px solid {{ t.border }};color:{{ t.color }};cursor:pointer">{{ t.label }}</div></sc-for>
+    </div>
+  </div></sc-if>
+
+  <div style="width:100%;max-width:1040px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,64px);display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start">
+    <div style="display:flex;flex-direction:column;gap:24px;flex:2 1 520px;min-width:0">
+      <div style="display:flex;align-items:center;gap:10px"><div style="width:12px;height:12px;background:{{ s.color }}"></div><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.2em;color:{{ s.color }};font-weight:700">{{ s.tag }}</div></div>
+      <h1 style="margin:0;font-size:clamp(36px,5.5vw,56px);font-weight:900;line-height:1.04;letter-spacing:-.02em;text-wrap:balance">{{ s.title }}</h1>
+      <p style="margin:0;font-size:19px;line-height:1.6;color:#A8A49A;max-width:600px;text-wrap:pretty">{{ s.body }}</p>
+      <sc-if value="{{ s.hasCta }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center"><a href="{{ s.url }}" style="background:{{ s.ctaBg }};color:{{ s.ctaInk }};font-weight:700;font-size:17px;padding:16px 26px;text-decoration:none">{{ s.ctaLabel }}</a><sc-if value="{{ s.hasNote }}" hint-placeholder-val="{{ false }}"><span style="font-size:14px;color:#F58426;font-weight:600">{{ s.note }}</span></sc-if></div>
+      </sc-if>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:12px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.18em;color:#A8A49A">YOUR PATH</div>
+        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px">
+          <sc-for list="{{ path }}" as="p" hint-placeholder-count="4">
+            <div style="display:flex;flex-direction:column;gap:8px"><div style="height:6px;background:{{ p.bar }}"></div><div style="font-size:13px;line-height:1.35;color:{{ p.color }};font-weight:{{ p.weight }}">{{ p.label }}</div></div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px;flex:1 1 300px;min-width:0">
+      <div style="background:#141414;padding:28px;display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;align-items:center;gap:14px"><img src="../logos/approved/png/maim-academy_crest_metallic-presentation_transparent_512px_v0.1.png" alt="" style="width:56px;height:56px"><div style="font-size:13px;letter-spacing:.2em;color:#D8AF55;font-weight:700">APPLICATION</div></div>
+        <div style="display:flex;flex-direction:column;border-top:1px solid #2A2A2A">
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #2A2A2A;font-size:15px"><span style="color:#A8A49A">Cohort</span><span style="font-weight:600;text-align:right">{{ cohortName }}</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #2A2A2A;font-size:15px"><span style="color:#A8A49A">Starts</span><span style="font-weight:600;text-align:right">{{ startDate }}</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #2A2A2A;font-size:15px"><span style="color:#A8A49A">Investment</span><span style="font-weight:600;text-align:right">$249 one-time</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #2A2A2A;font-size:15px"><span style="color:#A8A49A">Seats</span><span style="font-weight:600;text-align:right">{{ seatsLeft }} of 20 left</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0;font-size:15px"><span style="color:#A8A49A">Reference</span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;text-align:right">{{ refId }}</span></div>
+        </div>
+      </div>
+      <div style="border-top:3px solid #006BB6;background:#141414;padding:20px 24px;display:flex;flex-direction:column;gap:6px"><div style="font-size:15px;font-weight:700">Questions?</div><div style="font-size:15px;line-height:1.55;color:#A8A49A">Write to {{ contactEmail }} and quote your reference.</div></div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:24px clamp(20px,5vw,64px);border-top:1px solid #D8AF55">
+    <div style="display:flex;align-items:center;gap:12px"><img src="../logos/approved/vector/maim-academy_mark-small_flat-color_transparent_v0.1.svg" alt="" style="width:24px;height:24px"><span style="font-size:14px;color:#A8A49A">MAIM Academy is part of MAIM — Major AI Mindset</span></div>
+    <span style="font-size:14px;color:#D8AF55">majoraimindset.com</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;annotate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;status&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;received&quot;,&quot;approved&quot;,&quot;invited&quot;,&quot;paid&quot;,&quot;waitlist&quot;,&quot;redirect&quot;],&quot;default&quot;:&quot;invited&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;State&quot;},&quot;firstName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[First name]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Fields&quot;},&quot;cohortName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;MAIM Academy — Founding Cohort 01&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Fields&quot;},&quot;startDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Wed 18 Nov 2026&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Fields&quot;},&quot;holdUntil&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[hold date · 72 h after invite]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Fields&quot;},&quot;reviewDays&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;2 working days&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Fields&quot;},&quot;seatsLeft&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[N]&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Fields&quot;}}">
+class Component extends DCLogic {
+  state = { i: null };
+  renderVals() {
+    const p = this.props;
+    const states = [
+      { key: 'received', label: 'Application received', tag: 'APPLICATION RECEIVED', color: '#D8AF55', step: 0, title: 'We have your answers, ' + (p.firstName ?? '[First name]') + '.', body: 'We review every readiness check by hand. You will hear from us within ' + (p.reviewDays ?? '2 working days') + ', by email.', cta: '' },
+      { key: 'approved', label: 'Readiness approved', tag: 'READINESS APPROVED', color: '#1F7A3A', step: 1, title: 'You fit this cohort.', body: 'Your goal and the problem you described are a good match for the 30 days. A payment invite is on its way.', cta: '' },
+      { key: 'invited', label: 'Payment invited', tag: 'PAYMENT INVITED', color: '#D8AF55', step: 2, title: 'Your seat is held until ' + (p.holdUntil ?? '[hold date · 72 h after invite]') + '.', body: 'Pay $249 one-time within 72 hours to confirm it. After that the seat goes to the next approved applicant.', cta: 'Pay $249 and confirm', note: 'Seat held until ' + (p.holdUntil ?? '[hold date · 72 h after invite]') },
+      { key: 'paid', label: 'Payment confirmed', tag: 'SEAT CONFIRMED', color: '#1F7A3A', step: 3, title: 'You are in. Welcome to the cohort.', body: 'Receipt sent to your email. Next: four setup steps before the first session.', cta: 'Start setup' },
+      { key: 'waitlist', label: 'Waitlisted', tag: 'WAITLIST', color: '#F58426', step: 1, title: 'This cohort is full. You are on the waitlist.', body: 'You were approved, and all 20 seats are taken. If a seat opens we email you first. Otherwise you get first access to the next cohort.', cta: '' },
+      { key: 'redirect', label: 'Redirected to MAIM', tag: 'START WITH MAIM LEARNING', color: '#006BB6', step: 0, title: 'Start with MAIM learning first.', body: 'The cohort builds on a working business or offer, with 2–3 hours a week outside sessions. MAIM learning gets you there. Apply again when you are ready; your answers are saved.', cta: 'Go to MAIM learning' }
+    ];
+    const idx = this.state.i ?? Math.max(0, states.findIndex(s => s.key === (p.status ?? 'invited')));
+    const s = states[idx];
+    const pathLabels = ['Check readiness', 'Decision', 'Payment invite', 'Seat confirmed'];
+    const redirect = s.key === 'redirect', wait = s.key === 'waitlist';
+    return {
+      annotate: p.annotate ?? false,
+      s: (() => { const url = { invited: p.payUrl, paid: p.setupUrl, redirect: p.maimUrl }[s.key]; return { ...s, hasCta: !!s.cta, hasNote: !!s.note, url, ctaLabel: url ? s.cta : s.cta + ' · link pending', ctaBg: url ? '#D8AF55' : '#2A2A2A', ctaInk: url ? '#050505' : '#A8A49A' }; })(),
+      tabs: states.map((t, i) => ({ label: t.label, border: i === idx ? '#D8AF55' : '#2A2A2A', color: i === idx ? '#D8AF55' : '#A8A49A', pick: () => this.setState({ i }) })),
+      path: pathLabels.map((label, i) => {
+        const done = i < s.step || (i === s.step && (s.key === 'paid' || s.key === 'approved'));
+        const cur = i === s.step;
+        const bar = redirect && i === 1 ? '#006BB6' : wait && i === 1 ? '#F58426' : done ? '#1F7A3A' : cur ? '#D8AF55' : '#2A2A2A';
+        return { label: redirect && i === 1 ? 'Redirected' : wait && i === 1 ? 'Waitlisted' : label, bar, color: cur || done ? '#F7F4EA' : '#A8A49A', weight: cur ? 700 : 400 };
+      }),
+      firstName: p.firstName ?? '[First name]', email: p.email ?? '[email]',
+      cohortName: p.cohortName ?? 'MAIM Academy — Founding Cohort 01', startDate: p.startDate ?? 'Wed 18 Nov 2026',
+      seatsLeft: wait ? '0' : (p.seatsLeft ?? '[N]'), refId: p.refId ?? '[APP-0000]', contactEmail: p.contactEmail ?? '[contact email]'
+    };
+  }
+}
+</script>
+</body>
+</html>
