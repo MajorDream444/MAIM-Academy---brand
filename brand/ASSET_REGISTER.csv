@@ -69,3 +69,15 @@ maim-academy_mark-small_one-color-black_transparent_v0_1_svg,logos/review/vector
 maim-academy_mark-small_one-color-gold_transparent_v0_1_svg,logos/review/vector/maim-academy_mark-small_one-color-gold_transparent_v0.1.svg,v0.1,in_review,,,,single-ink small applications
 maim-academy_mark-small_one-color-white_transparent_v0_1_svg,logos/review/vector/maim-academy_mark-small_one-color-white_transparent_v0.1.svg,v0.1,in_review,,,,single-ink small applications
 maim-academy_crest_source-metallic_black-bg_1254px_reference_png,logos/sources/maim-academy_crest_source-metallic_black-bg_1254px_reference.png,reference,reference,,,,original crest source
+maim-academy_design-system_foundation-board_v0_1,design/MAIM Academy Foundation Board.dc.html,v0.1,approved,Major Dream Williams,2026-10-31,handoffs/FOUNDER_DECISIONS_2026-11-01.md,"Academy foundation: logo roles, color, type, components, media rules"
+maim-academy_example_enrollment-page_v0_1,design/MAIM Academy Foundation Board.dc.html#1,v0.1,approved,Major Dream Williams,2026-10-31,handoffs/FOUNDER_DECISIONS_2026-11-01.md,checkpoint example 1
+maim-academy_example_lesson-page_v0_1,design/MAIM Academy Foundation Board.dc.html#2,v0.1,approved,Major Dream Williams,2026-10-31,handoffs/FOUNDER_DECISIONS_2026-11-01.md,checkpoint example 2 (rebuilt: MAIM 07 ten beats + ABC’s Vol 2 D is for Design; approved 2026-11-01)
+maim-academy_example_youtube-thumbnail_v0_1,design/MAIM Academy Foundation Board.dc.html#3,v0.1,approved,Major Dream Williams,2026-10-31,handoffs/FOUNDER_DECISIONS_2026-11-01.md,checkpoint example 3
+maim-academy_decisions_c1-c11_v0_1,handoffs/FOUNDER_DECISIONS_2026-11-01.md,v0.1,approved,Major Dream Williams,2026-11-01,handoffs/FOUNDER_DECISIONS_2026-11-01.md,MAIM 00/07 reconciliation decisions
+maim-academy_abcs-vol-2_a-z_v0_1,handoffs/FOUNDER_DECISIONS_2026-11-01.md,v0.1,approved,Major Dream Williams,2026-11-01,handoffs/FOUNDER_DECISIONS_2026-11-01.md,MAIM Academy ABC’s Volume 2 (26 action letters)
+maim-academy_abcs-vol-2_opening-sequence_v0_1,handoffs/FOUNDER_DECISIONS_2026-11-01.md,v0.1,approved,Major Dream Williams,2026-11-01,handoffs/FOUNDER_DECISIONS_2026-11-01.md,Audit → Design → Prototype → Test → Ship → Measure
+maim-academy_type_archivo-900-headlines_v0_1,design/MAIM Academy Foundation Board.dc.html#typetest,v0.1,approved,Major Dream Williams,2026-11-01,handoffs/FOUNDER_DECISIONS_2026-11-01.md,Academy headlines: Archivo 900 sentence case
+maim-academy_template-library_v0_1,design/MAIM Academy Template Library.dc.html,v0.1,in_review,,,,index of Academy templates
+maim-academy_backdrop_filament_mirrored_reference_png,assets/backdrops/maim-academy_backdrop_filament_MIRRORED_reference.png,reference,reference,,,,camera/monitor backdrop as supplied (MIRRORED)
+maim-academy_backdrop_filament_normal_v0_1_png,assets/backdrops/maim-academy_backdrop_filament_NORMAL_v0.1.png,v0.1,in_review,,,,normal orientation with original text
+maim-academy_backdrop_filament_clean-plate_v0_1_png,assets/backdrops/maim-academy_backdrop_filament_CLEAN-PLATE_v0.1.png,v0.1,in_review,,,,normal orientation; no text; base for media templates
