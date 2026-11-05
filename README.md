@@ -15,6 +15,7 @@ Operational launch readiness remains open: times, timezone, platform, cohort spa
 - [Design tokens and unresolved specifications](tokens/README.md)
 - [Template scope](templates/README.md)
 - [Usage and approval](guidelines/APPROVAL.md)
+- [Commerce product-family application](guidelines/COMMERCE_PRODUCT_FAMILY_APPLICATION_2026-11-05.md)
 - [Claude Design handoff](handoffs/CLAUDE_DESIGN.md)
 - [Archive rules](archive/README.md)
 
