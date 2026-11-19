@@ -1,3 +1,5 @@
+[![Edit on Hanzo](https://hanzo.ai/badges/edit-on-hanzo.svg)](https://hanzo.app/dev?repo=https%3A%2F%2Fgithub.com%2FMajorDream444%2FMAIM-Academy---brand)
+
 # MAIM Academy Brand
 
 MAIM Academy is the practical learning and implementation expression of MAIM / Major AI Mindset. This repository holds brand assets, reusable templates, and team handoff guidance. Website application code stays in its existing repository.
